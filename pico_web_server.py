@@ -8,8 +8,9 @@ import time
 def sendCMD_waitResp(cmd, uart=machine.UART(0, baudrate=115200), timeout=100):
     print("CMD: " + cmd)
     uart.write(cmd)
-    waitResp(uart, timeout)
+    resp=waitResp(uart, timeout)
     print()
+    return resp
     
 def waitResp(uart=machine.UART(0, baudrate=115200), timeout=100):
     prvMills = utime.ticks_ms()
@@ -22,6 +23,7 @@ def waitResp(uart=machine.UART(0, baudrate=115200), timeout=100):
         print(resp.decode())
     except UnicodeError:
         print(resp)
+    return resp
         
 # send CMD to uart,
 # wait and show response without return
@@ -34,7 +36,10 @@ def sendCMD_waitAndShow(cmd, uart=machine.UART(0, baudrate=115200)):
 def espSend(text="test", uart=machine.UART(0, baudrate=115200)):
     sendCMD_waitResp('AT+CIPSEND=' + str(len(text)) + '\r\n')
     sendCMD_waitResp(text)
-    
+
+def html_to_strigline_transformer(html):
+    string_line=html.replace("\n","")
+    return string_line
         
 if __name__ == "__main__":    
     server_ip="192.168.20.10"
@@ -65,20 +70,36 @@ if __name__ == "__main__":
     sensor_temp = machine.ADC(4)
     conversion_factor = 3.3 / (65535)
     
+    file = open("init_page.html", "r")
+    html_code=str(file.read())
+    print(html_code)
+    file.close()
+    
     while True:
         #temperature reading
-        reading_temp = sensor_temp.read_u16() * conversion_factor 
-        temperature = 27 - (reading_temp - 0.706)/0.001721
+        #reading_temp = sensor_temp.read_u16() * conversion_factor 
+        #temperature = 27 - (reading_temp - 0.706)/0.001721
         #Place basic code for HTML page display
-        val='<head><title>Rasberry Pi Pico Server</title></head><body><p>Temperature is: '+str(int(temperature))+' deg'+'</p></body>'
+        #val='<head><title>Rasberry Pi Pico Server</title></head><body><p>Temperature is: '+str(int(temperature))+' deg'+'</p></body>'
+        #val='<html> <head> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"> <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.7.2/css/all.css\" integrity=\"sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr\" crossorigin=\"anonymous\"> <style> html { font-family: Arial; display: inline-block; margin: 0px auto; text-align: center; } .button { background-color: #ce1b0e; border: none; color: white; padding: 16px 40px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer; } .button1 { background-color: #000000; } </style> </head> <body> <h2>Raspberry Pi Pico Web Server</h2> <p>LED state: <strong></strong></p> <p> <i class=\"fas fa-lightbulb fa-3x\" style=\"color:#c81919;\"></i> <a href=\\\"?led_on\\\"><button class=\"button\">LED ON</button></a> </p> <p> <i class=\"far fa-lightbulb fa-3x\" style=\"color:#000000;\"></i> <a href=\\\"?led_off\\\"><button class=\"button button1\">LED OFF</button></a> </p> </body> </html>'
+        val=html_to_strigline_transformer(html_code)
         print(val)
         length=str(len(val))
         send='AT+CIPSEND=1,'+length+'\r\n'
-        sendCMD_waitResp(send)
+        volcado1=sendCMD_waitResp(send)
         time.sleep(2)
         send=val+'\r\n'
-        sendCMD_waitResp(send)
-        time.sleep(10)
+        volcado2=sendCMD_waitResp(send)
+        time.sleep(2)
+        print()
+        print('--------------------------------')
+        print('volcado1:'+str(volcado1))
+        print('--------------------------------')
+        print()
+        print('--------------------------------')
+        print('volcado2:'+str(volcado2))
+        print('--------------------------------')
+        print()
         
  
     
