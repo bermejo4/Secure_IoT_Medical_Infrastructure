@@ -1,13 +1,28 @@
 <html>
-<body>
-<h2>IoT Device Configuration</h2>
+<head>
+  <script>
+  function myFunction() {
+    document.getElementById("demo").innerHTML = "Paragraph changed.";
+  }
+  </script></head>
+<body style="margin: auto; width: 50%;background-color: rgb(103, 169, 217); ">
+<h1><br></h1>
+<h2 style="background-color: rgb(162, 213, 240); text-align: center; border-radius: 20px;">IoT Medical Device Configuration</h2>
 <form action="/action_page.php">
-  <label for="server_ip">Server Ip Address:</label><br>
-  <input type="text" id="server_ip" name="server_ip" value="192.168.x.x"><br>
-  <label for="server_port">Server Port:</label><br>
+  <label for="server_ip">Server Ip Address:</label>
+  <input type="text" id="server_ip" name="server_ip" value="192.168.x.x"><br><br>
+  <label for="server_port">Server Port:</label>
   <input type="text" id="server_port" name="server_port" value="9999"><br><br>
+  <label for="wifi_name">Wi-Fi Network:</label>
+  <input type="text" id="wifi_name" name="wifi_name" value="iot4"><br><br>
+  <label for="wifi_name">Wi-Fi Password:</label>
+  <input type="text" id="wifi_pass" name="wifi_pass" value="1234"><br><br>
+  <label for="key">Key: </label>
+  <input type="text" id="key" name="key" value="1234ABC"><br><br>
   <input type="submit" value="Save">
 </form>
+<p id="demo">A Paragraph.</p>
+<button type="button" onclick="myFunction()">Try it</button>
 <p>If you click the "Save" button, the information will be saved in the device.</p>
 </body>
 </html>

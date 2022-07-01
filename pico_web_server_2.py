@@ -44,6 +44,8 @@ def html_to_strigline_transformer(html_file):
     html_code=str(file.read())
     file.close()
     string_line=html_code.replace("\n","")
+    html_code=string_line
+    string_line=html_code.replace("\t","")
     return string_line
 
 def find_ip_server(response_string):
@@ -96,6 +98,7 @@ if __name__ == "__main__":
             connection_id =  res[id_index+5]
             print("connectionId:" + connection_id)
             print ('! Incoming connection - sending webpage')
+            print(html)
             uart0.write('AT+CIPSEND='+connection_id+','+ str(len(html)) + '\r\n')  #Send a HTTP response then a webpage as bytes the 108 is the amount of bytes you are sending, change this if you change the data sent below
             utime.sleep(1.0)
             uart0.write('HTTP/1.1 200 OK'+'\r\n')
