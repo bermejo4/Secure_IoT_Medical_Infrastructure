@@ -1,17 +1,58 @@
 <html>
   <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.rawgit.com/ricmoo/aes-js/e27b99df/index.js"
+    ></script>
     <script>
-      function encrypt() {
-        var encrypted = CryptoJS.AES.encrypt(
-          document.getElementById("server_ip").value,
-          document.getElementById("key").value
-        );
-        console.log(encrypted);
-        document.getElementById("cipher_text").innerHTML = encrypted;
-        var hola = document.getElementById("cipher_text").value;
-        console.log(document.getElementById("cipher_text").value);
-        console.log(hola);
+      function encrypt(text, mk) {
+        // CBC Mode
+      // An example 128-bit key
+      var key = [mk.charCodeAt(0), 
+      mk.charCodeAt(1), 
+      mk.charCodeAt(2), 
+      mk.charCodeAt(3),
+      mk.charCodeAt(4), 
+      mk.charCodeAt(5), 
+      mk.charCodeAt(6), 
+      mk.charCodeAt(7), 
+      mk.charCodeAt(8), 
+      mk.charCodeAt(9), 
+      mk.charCodeAt(10), 
+      mk.charCodeAt(11), 
+      mk.charCodeAt(12),
+      mk.charCodeAt(13),
+      mk.charCodeAt(14), 
+      mk.charCodeAt(15)];
+      console.log(key);
+      // The initialization vector (must be 16 bytes)
+      var iv = [66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66];
+      // Convert text to bytes (text must be a multiple of 16 bytes)
+      //var text = "TextMustBe16Byte";
+      //var text=document.getElementById("server_ip").value;
+      text=text.padStart(16,"A");
+      console.log(text);
+      var textBytes = aesjs.utils.utf8.toBytes(text);
+      var aesCbc = new aesjs.ModeOfOperation.cbc(key, iv);
+      var encryptedBytes = aesCbc.encrypt(textBytes);
+      // To print or store the binary data, you may convert it to hex
+      var encryptedHex = aesjs.utils.hex.fromBytes(encryptedBytes);
+      console.log(encryptedHex);
+      return encryptedHex;
+      // "104fb073f9a131f2cab49184bb864ca2"
+
+      //------Decryption------------:
+      // When ready to decrypt the hex string, convert it back to bytes
+      //var encryptedBytes = aesjs.utils.hex.toBytes(encryptedHex);
+      // The cipher-block chaining mode of operation maintains internal
+      // state, so to decrypt a new instance must be instantiated.
+      //var aesCbc = new aesjs.ModeOfOperation.cbc(key, iv);
+      //var decryptedBytes = aesCbc.decrypt(encryptedBytes);
+
+      // Convert our bytes back into text
+      //var decryptedText = aesjs.utils.utf8.fromBytes(decryptedBytes);
+      //console.log(decryptedText);
+      // "TextMustBe16Byte"
       }
 
       function myFunction() {
@@ -24,7 +65,10 @@
 
         console.log(server_ip);
         console.log(key);
-        encrypt();
+        console.log(encrypt(server_ip, key));
+        console.log(encrypt(server_port, key));
+        console.log(encrypt(wifi_name, key));
+        console.log(encrypt(wifi_pass, key));
       }
     </script>
   </head>
@@ -69,7 +113,7 @@
         value="1234"
       /><br /><br />
       <label for="key">Key: </label>
-      <input type="text" id="key" name="key" value="1234ABC" /><br /><br />
+      <input type="text" id="key" name="key" value="AAAAAAAAAAAAAAAA" /><br /><br />
       <input type="submit" value="php" />
     </form>
 
