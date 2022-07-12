@@ -19,5 +19,12 @@ print(ubinascii.hexlify(ciphertext))
 print(ubinascii.b2a_base64(ciphertext))
 print(ciphertext)
 
+cifra=b'7132be0d941d7c1d937a77d77af9c8cc'
+print(cifra)
+print(ubinascii.unhexlify(cifra))
+cifra=ubinascii.unhexlify(cifra)
+print(cifra)
+ciphertext=cifra
+
 decryptor = maes.new(key, maes.MODE_CBC, IV=iv)
 print(array_tostring(decryptor.decrypt(ciphertext)))
