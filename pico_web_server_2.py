@@ -41,12 +41,20 @@ def Wait_ESP_Rsp(uart=uart0, timeout=300):
         
 def html_to_strigline_transformer(html_file):
     file = open(html_file, "r")
-    html_code=str(file.read())
+    html_array=[]
+    html_code=" "
+    while True:
+        if not html_code:
+            break
+        else:
+            html_code=file.read(2000)
+            #string_line=html_code.replace("\n","")
+            #html_code=string_line
+            string_line=html_code
+            #string_line=html_code.replace("\t","")
+            html_array.append(string_line)
     file.close()
-    string_line=html_code.replace("\n","")
-    html_code=string_line
-    string_line=html_code.replace("\t","")
-    return string_line
+    return html_array
 
 def find_ip_server(response_string):
     tmp=response_string.partition('server_ip=')[2]
@@ -77,8 +85,7 @@ if __name__ == "__main__":
     Send_AT_Cmd('AT+CIPSERVER=1,80\r\n')    #
     utime.sleep(1.0)
     print ('Starting connection to ESP8266...')
-    html=html_to_strigline_transformer('init_page.html')
-    print(html)
+    html_array=html_to_strigline_transformer('init_page.html')
     while True:
         res =""
         res=Rx_ESP_Data()
@@ -98,18 +105,48 @@ if __name__ == "__main__":
             connection_id =  res[id_index+5]
             print("connectionId:" + connection_id)
             print ('! Incoming connection - sending webpage')
-            print(html)
-            uart0.write('AT+CIPSEND='+connection_id+','+ str(len(html)) + '\r\n')  #Send a HTTP response then a webpage as bytes the 108 is the amount of bytes you are sending, change this if you change the data sent below
-            utime.sleep(1.0)
-            uart0.write('HTTP/1.1 200 OK'+'\r\n')
-            uart0.write('Content-Type: text/html'+'\r\n')
-            uart0.write('Connection: close'+'\r\n')
-            uart0.write(''+'\r\n')
-            uart0.write('<!DOCTYPE HTML>'+'\r\n')
+            #print(html1+"----html1------"+str(len(html1)))
+            for segment in html_array:
+                #print(segment)
+                uart0.write('AT+CIPSEND='+connection_id+','+ str(len(segment)) + '\r\n')  #Send a HTTP response then a webpage as bytes the 108 is the amount of bytes you are sending, change this if you change the data sent below
+                #uart0.write('AT+CIPSEND='+connection_id+','+ str(700) + '\r\n')
+                utime.sleep_ms(500)
+                #uart0.write('HTTP/1.1 200 OK'+'\r\n')
+                #uart0.write('Content-Type: text/html'+'\r\n')
+                #uart0.write('Connection: close'+'\r\n')
+                #uart0.write(''+'\r\n')
+                #uart0.write('<!DOCTYPE HTML>'+'\r\n')
+                #html ='<html> <head> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"> <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.7.2/css/all.css\" integrity=\"sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr\" crossorigin=\"anonymous\"> <style> html { font-family: Arial; display: inline-block; margin: 0px auto; text-align: center; } .button { background-color: #ce1b0e; border: none; color: white; padding: 16px 40px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer; } .button1 { background-color: #000000; } </style> </head> <body> <h2>Raspberry Pi Pico Web Server</h2> <p>LED state: <strong></strong></p> <p> <i class=\"fas fa-lightbulb fa-3x\" style=\"color:#c81919;\"></i> <a href=\\\"?led_on\\\"><button class=\"button\">LED ON</button></a> </p> <p> <i class=\"far fa-lightbulb fa-3x\" style=\"color:#000000;\"></i> <a href=\\\"?led_off\\\"><button class=\"button button1\">LED OFF</button></a> </p> </body> </html>'
+                uart0.write(segment +'\r\n')
+                utime.sleep_ms(500)
+                #print(html2+"-----html2------"+str(len(html2)))
+            #uart0.write('AT+CIPSEND='+connection_id+','+ str(len(html2)) + '\r\n')  #Send a HTTP response then a webpage as bytes the 108 is the amount of bytes you are sending, change this if you change the data sent below
+            #uart0.write('AT+CIPSEND='+connection_id+','+ str(700) + '\r\n')
+            #utime.sleep(1.0)
+            #uart0.write(html2 +'\r\n')
+            #uart0.write('HTTP/1.1 200 OK'+'\r\n')
+            #uart0.write('Content-Type: text/html'+'\r\n')
+            #uart0.write('Connection: close'+'\r\n')
+            #uart0.write(''+'\r\n')
+            #uart0.write('<!DOCTYPE HTML>'+'\r\n')
             #html ='<html> <head> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"> <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.7.2/css/all.css\" integrity=\"sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr\" crossorigin=\"anonymous\"> <style> html { font-family: Arial; display: inline-block; margin: 0px auto; text-align: center; } .button { background-color: #ce1b0e; border: none; color: white; padding: 16px 40px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer; } .button1 { background-color: #000000; } </style> </head> <body> <h2>Raspberry Pi Pico Web Server</h2> <p>LED state: <strong></strong></p> <p> <i class=\"fas fa-lightbulb fa-3x\" style=\"color:#c81919;\"></i> <a href=\\\"?led_on\\\"><button class=\"button\">LED ON</button></a> </p> <p> <i class=\"far fa-lightbulb fa-3x\" style=\"color:#000000;\"></i> <a href=\\\"?led_off\\\"><button class=\"button button1\">LED OFF</button></a> </p> </body> </html>'
-            uart0.write(html +'\r\n')
-            utime.sleep(9.0)
+            #uart0.write(html2 +'\r\n')
+            #utime.sleep(5.0)
+            #print(html2+"-----html2------"+str(len(html2)))
+            #uart0.write('AT+CIPSEND='+connection_id+','+ str(len(html3)) + '\r\n')  #Send a HTTP response then a webpage as bytes the 108 is the amount of bytes you are sending, change this if you change the data sent below
+            #uart0.write('AT+CIPSEND='+connection_id+','+ str(700) + '\r\n')
+            #utime.sleep(1.0)
+            #uart0.write(html3 +'\r\n')
+            #uart0.write('HTTP/1.1 200 OK'+'\r\n')
+            #uart0.write('Content-Type: text/html'+'\r\n')
+            #uart0.write('Connection: close'+'\r\n')
+            #uart0.write(''+'\r\n')
+            #uart0.write('<!DOCTYPE HTML>'+'\r\n')
+            #html ='<html> <head> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"> <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.7.2/css/all.css\" integrity=\"sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr\" crossorigin=\"anonymous\"> <style> html { font-family: Arial; display: inline-block; margin: 0px auto; text-align: center; } .button { background-color: #ce1b0e; border: none; color: white; padding: 16px 40px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer; } .button1 { background-color: #000000; } </style> </head> <body> <h2>Raspberry Pi Pico Web Server</h2> <p>LED state: <strong></strong></p> <p> <i class=\"fas fa-lightbulb fa-3x\" style=\"color:#c81919;\"></i> <a href=\\\"?led_on\\\"><button class=\"button\">LED ON</button></a> </p> <p> <i class=\"far fa-lightbulb fa-3x\" style=\"color:#000000;\"></i> <a href=\\\"?led_off\\\"><button class=\"button button1\">LED OFF</button></a> </p> </body> </html>'
+            #uart0.write(html3 +'\r\n')
+            #utime.sleep(5.0)
+            utime.sleep(40)
             Send_AT_Cmd('AT+CIPCLOSE='+ connection_id+'\r\n') # once file sent, close connection
-            utime.sleep(3.0)
+            utime.sleep(3)
             res="" #reset buffer
             print ('Waiting For connection...')
