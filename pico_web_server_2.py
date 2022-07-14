@@ -1,10 +1,11 @@
+import sys
+import maes
+import ubinascii
+import maes_decrypter
 import uos
 import machine
 import utime
 from machine import Pin
-import pyaes
-import ubinascii
-
 
 recv_buf="" # receive buffer global variable
 uart0 = machine.UART(0, baudrate=115200)
@@ -114,7 +115,7 @@ if __name__ == "__main__":
                 #print(segment)
                 uart0.write('AT+CIPSEND='+connection_id+','+ str(len(segment)) + '\r\n')  #Send a HTTP response then a webpage as bytes the 108 is the amount of bytes you are sending, change this if you change the data sent below
                 #uart0.write('AT+CIPSEND='+connection_id+','+ str(700) + '\r\n')
-                utime.sleep_ms(500)
+                utime.sleep_ms(250)
                 #uart0.write('HTTP/1.1 200 OK'+'\r\n')
                 #uart0.write('Content-Type: text/html'+'\r\n')
                 #uart0.write('Connection: close'+'\r\n')
@@ -122,7 +123,7 @@ if __name__ == "__main__":
                 #uart0.write('<!DOCTYPE HTML>'+'\r\n')
                 #html ='<html> <head> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"> <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.7.2/css/all.css\" integrity=\"sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr\" crossorigin=\"anonymous\"> <style> html { font-family: Arial; display: inline-block; margin: 0px auto; text-align: center; } .button { background-color: #ce1b0e; border: none; color: white; padding: 16px 40px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer; } .button1 { background-color: #000000; } </style> </head> <body> <h2>Raspberry Pi Pico Web Server</h2> <p>LED state: <strong></strong></p> <p> <i class=\"fas fa-lightbulb fa-3x\" style=\"color:#c81919;\"></i> <a href=\\\"?led_on\\\"><button class=\"button\">LED ON</button></a> </p> <p> <i class=\"far fa-lightbulb fa-3x\" style=\"color:#000000;\"></i> <a href=\\\"?led_off\\\"><button class=\"button button1\">LED OFF</button></a> </p> </body> </html>'
                 uart0.write(segment +'\r\n')
-                utime.sleep_ms(500)
+                utime.sleep_ms(250)
                 #print(html2+"-----html2------"+str(len(html2)))
             #uart0.write('AT+CIPSEND='+connection_id+','+ str(len(html2)) + '\r\n')  #Send a HTTP response then a webpage as bytes the 108 is the amount of bytes you are sending, change this if you change the data sent below
             #uart0.write('AT+CIPSEND='+connection_id+','+ str(700) + '\r\n')
@@ -154,5 +155,18 @@ if __name__ == "__main__":
             utime.sleep(3)
             res="" #reset buffer
             print ('Waiting For connection...')
-    #Desncrypted:
-    SERVER_IP = 
+    #Decryption:
+    SERVER_IP = maes_decrypter.decrypt_cipher_data(SERVER_IP_ENCRYPTED)
+    SERVER_PORT = maes_decrypter.decrypt_cipher_data(SERVER_PORT_ENCRYPTED)
+    WIFI_NAME = maes_decrypter.decrypt_cipher_data(WIFI_NAME_ENCRYPTED)
+    WIFI_PASS = maes_decrypter.decrypt_cipher_data(WIFI_PASS_ENCRYPTED)
+    print('Server ip:'+SERVER_IP)
+    print('Server port:'+SERVER_PORT)
+    print('Wifi name:'+WIFI_NAME)
+    print('Wifi password:'+WIFI_PASS)
+    
+    f = open ('conf_file.txt','w')
+    f.write('Server ip:'+SERVER_IP+'\n'+'Server port:'+SERVER_PORT+'\n'+'Wifi name:'+WIFI_NAME+'\n'+'Wifi password:'+WIFI_PASS)
+    f.close()
+    
+    
