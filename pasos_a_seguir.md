@@ -3,12 +3,12 @@
 ## Fase 1:
 ### Pico servidor:
 
-- Código Micropython para levantar un punto de acceso en modo servidor.
-- Levantar un servidor web.
-- Crear página HTML para la configuración del dispositivo.
-- Código Micropython para leer el archivo html en tramos de 2048 y enviarlo. [Intentar reducir tiempos].
-- Código Javascript de cifrado de los datos de configuración con AES. (aes-js).
-- Código Micropython para el desencriptado de AES. (pyaes).
+- Código Micropython para levantar un punto de acceso en modo servidor. ✅
+- Levantar un servidor web. ✅
+- Crear página HTML para la configuración del dispositivo. ✅
+- Código Micropython para leer el archivo html en tramos de 2048 y enviarlo. [Intentar reducir tiempos]. ✅
+- Código Javascript de cifrado de los datos de configuración con AES. (aes-js). ✅
+- Código Micropython para el desencriptado de AES. (pyaes). ✅
 - Código Micropython para guardar lo desencriptado en un archivo de configuración. (.txt o .cfg ¿?)
 - Código Micropython para cambiar de modo Servidor a modo Cliente. (Cambio a Fase 2).
 
