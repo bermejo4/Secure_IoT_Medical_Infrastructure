@@ -166,7 +166,7 @@ if __name__ == "__main__":
     print('Wifi password:'+WIFI_PASS)
     
     f = open ('conf_file.txt','w')
-    f.write('Server ip:'+SERVER_IP+'\n'+'Server port:'+SERVER_PORT+'\n'+'Wifi name:'+WIFI_NAME+'\n'+'Wifi password:'+WIFI_PASS)
+    f.write('{\"Server ip\":\"'+SERVER_IP+'\",\n'+'\"Server port\":\"'+SERVER_PORT+'\",\n'+'\"Wifi name\":\"'+WIFI_NAME+'\",\n'+'\"Wifi password\":\"'+WIFI_PASS+'\"}')
     f.close()
     
     
