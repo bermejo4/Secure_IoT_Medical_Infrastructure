@@ -2,6 +2,9 @@ import uos
 import machine
 import utime
 from machine import Pin
+import pyaes
+import ubinascii
+
 
 recv_buf="" # receive buffer global variable
 uart0 = machine.UART(0, baudrate=115200)
@@ -56,14 +59,10 @@ def html_to_strigline_transformer(html_file):
     file.close()
     return html_array
 
-def find_ip_server(response_string):
-    tmp=response_string.partition('server_ip=')[2]
-    tmp2=tmp.partition('&')[0]
-    return tmp2
 
-def find_port_server(response_string):
-    tmp=response_string.partition('server_port=')[2]
-    tmp2=tmp.partition(' HTTP/1.1')[0]
+def filter_response(response_string, delimiter1, delimiter2):
+    tmp=response_string.partition(delimiter1)[2]
+    tmp2=tmp.partition(delimiter2)[0]
     return tmp2
     
 
@@ -94,12 +93,17 @@ if __name__ == "__main__":
             id_index = res.find('+IPD')
             if 'server_ip' in res:
                 print('+++++++++++++++++++++++++')
-                SERVER_IP=find_ip_server(res)
-                SERVER_PORT=find_port_server(res)
-                print('Server_ip:'+SERVER_IP)
-                print('Server_port:'+SERVER_PORT)
+                SERVER_IP_ENCRYPTED=filter_response(res, 'server_ip=', '&')
+                SERVER_PORT_ENCRYPTED=filter_response(res, 'server_port=', '&')
+                WIFI_NAME_ENCRYPTED=filter_response(res, 'wifi_name=', '&')
+                WIFI_PASS_ENCRYPTED=filter_response(res, 'wifi_pass=', ' HTTP/1.1')
+                print('Server_ip:'+SERVER_IP_ENCRYPTED)
+                print('Server_port:'+SERVER_PORT_ENCRYPTED)
+                print('Wifi name:'+WIFI_NAME_ENCRYPTED)
+                print('Wifi password:'+WIFI_PASS_ENCRYPTED)
                 print('+++++++++++++++++++++++++')
                 utime.sleep(1)
+                break
             print("resp:")
             print(res)
             connection_id =  res[id_index+5]
@@ -145,8 +149,10 @@ if __name__ == "__main__":
             #html ='<html> <head> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"> <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.7.2/css/all.css\" integrity=\"sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr\" crossorigin=\"anonymous\"> <style> html { font-family: Arial; display: inline-block; margin: 0px auto; text-align: center; } .button { background-color: #ce1b0e; border: none; color: white; padding: 16px 40px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer; } .button1 { background-color: #000000; } </style> </head> <body> <h2>Raspberry Pi Pico Web Server</h2> <p>LED state: <strong></strong></p> <p> <i class=\"fas fa-lightbulb fa-3x\" style=\"color:#c81919;\"></i> <a href=\\\"?led_on\\\"><button class=\"button\">LED ON</button></a> </p> <p> <i class=\"far fa-lightbulb fa-3x\" style=\"color:#000000;\"></i> <a href=\\\"?led_off\\\"><button class=\"button button1\">LED OFF</button></a> </p> </body> </html>'
             #uart0.write(html3 +'\r\n')
             #utime.sleep(5.0)
-            utime.sleep(40)
+            utime.sleep(4)
             Send_AT_Cmd('AT+CIPCLOSE='+ connection_id+'\r\n') # once file sent, close connection
             utime.sleep(3)
             res="" #reset buffer
             print ('Waiting For connection...')
+    #Desncrypted:
+    SERVER_IP = 
