@@ -35,3 +35,20 @@ Intentos:
     from Crypto.Random import 
     
     - km
+
+### Las librerías de JS referenciadas con https://... no funcionan aqui:
+Las librerías de Javaescript que son llamadas como importación mediante src=https://... no funcionan en el dispositivo cuando hace de servidor web porque estas librerías necesitan internet. Pero la librería de Javascript para AES es necesaria, para ello he tenido que descargarla entera (62,2 KB - https://github.com/ricmoo/aes-js/blob/master/index.js) e introducirla en un script en la página de configuración html. Esto ocasiona un problema puesto que a la página hay que sumarle los 62,2 KB de código adicional a enviar cuando se solicite la página, y esta solo puede ser enviada en tramos de 2048 Bytes, es decir, 2,048KB, por lo que la página tarda en ser enviada unos 30 segundos, he probado a enviarla más rápido y empieza a haber fallos en el código entregado y ensamblado.
+
+### Problemas con la librería pyaes en desencriptado de la primera fase:
+Error con la memoria RAM de la pico, a la hora de importar todos los paquetes necesarios el de pyaes da problemas porque se queda supuestamente sin memoria. Da el siguiente error:
+
+```
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/lib/pyaes/__init__.py", line 51, in <module>
+MemoryError: memory allocation failed, allocating 164 bytes
+```
+
+Y no se cual es el problema. La librería pyaes es demasido sensible con la pico. Aunque corra un programa sin casi nada muchas veces da fallo. He encontrado el siguiente manual de buenas prácticas para programar en micropython: https://docs.micropython.org/en/latest/reference/constrained.html#fragmentation. 
+No se debe olvidar que se está programando en un dispositivo con una memoria RAM limitada y muchas de las librerías de python no tienen en cuanta esta característica limitante, ya que son diseñadas para correr en ordenadores con suficiente RAM, pyaes es una de ellas.
+Es por ello que he cambiado a la librería maes.py que es una librería de AES creada especialmente para micropython.
