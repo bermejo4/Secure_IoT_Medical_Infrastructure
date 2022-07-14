@@ -3,6 +3,8 @@ import sys
 import maes
 import ubinascii
 
+import maes_decrypter
+
 def array_tostring(array_data):
     _string = ""
     for _array in array_data:
@@ -19,7 +21,7 @@ print(ubinascii.hexlify(ciphertext))
 print(ubinascii.b2a_base64(ciphertext))
 print(ciphertext)
 
-cifra=b'86858d74ed5eaff88c1428b89afca624'
+cifra="86858d74ed5eaff88c1428b89afca624"
 print(cifra)
 print(ubinascii.unhexlify(cifra))
 cifra=ubinascii.unhexlify(cifra)
@@ -28,3 +30,6 @@ ciphertext=cifra
 
 decryptor = maes.new(key, maes.MODE_CBC, IV=iv)
 print(array_tostring(decryptor.decrypt(ciphertext)))
+
+print("--------------------")
+print(maes_decrypter.decrypt_cipher_data("86858d74ed5eaff88c1428b89afca624"))
