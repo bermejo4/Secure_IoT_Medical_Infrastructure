@@ -10,8 +10,9 @@
 - Código Javascript de cifrado de los datos de configuración con AES. (aes-js). ✅
 - Código Micropython para el desencriptado de AES. (pyaes). ✅
 - Código Micropython para guardar lo desencriptado en un archivo de configuración. (.txt) ✅
-- Código Micropython para cambiar de modo Servidor a modo Cliente. (Cambio a Fase 2).
+- Código Micropython para cambiar de modo Servidor a modo Cliente. (Cambio a Fase 2). ✅
 
+- Arreglar Router.
 
 ## Fase 2:
 ### Pico cliente:
