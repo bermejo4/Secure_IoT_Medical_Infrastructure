@@ -79,10 +79,12 @@ if __name__ == "__main__":
     Send_AT_Cmd('AT+GMR\r\n')      #Check version information
     Send_AT_Cmd('AT+CIPSERVER=0\r\n')      #Check version information
     Send_AT_Cmd('AT+CWMODE?\r\n')  #Query the Wi-Fi mode
-    Send_AT_Cmd('AT+CWMODE=3\r\n') #Set the Wi-Fi mode = Station mode
-    Send_AT_Cmd('AT+CIPMUX=1\r\n')    #
+    Send_AT_Cmd('AT+CWMODE=3\r\n') #Set the Wi-Fi 3=Station mode+AP, 1=staMode, 2=ApMode 
+    Send_AT_Cmd('AT+CWSAP="Med_IoT","",11,0,3\r\n') #ssid, passwd, channel, encryp_mod, max_stations
+    #encryp_mod: 0: OPEN//2: WPA_PSK//3: WPA2_PSK//4: WPA_WPA2_PSK
+    Send_AT_Cmd('AT+CIPMUX=1\r\n') #Establish TCP connections, 0=single 1=Multiple
     utime.sleep(1.0)
-    Send_AT_Cmd('AT+CIPSERVER=1,80\r\n')    #
+    Send_AT_Cmd('AT+CIPSERVER=1,80\r\n')    #Enable web server port 80
     utime.sleep(1.0)
     print ('Starting connection to ESP8266...')
     html_array=html_to_strigline_transformer('init_page.html')
@@ -115,7 +117,7 @@ if __name__ == "__main__":
                 #print(segment)
                 uart0.write('AT+CIPSEND='+connection_id+','+ str(len(segment)) + '\r\n')  #Send a HTTP response then a webpage as bytes the 108 is the amount of bytes you are sending, change this if you change the data sent below
                 #uart0.write('AT+CIPSEND='+connection_id+','+ str(700) + '\r\n')
-                utime.sleep_ms(250)
+                utime.sleep_ms(100)
                 #uart0.write('HTTP/1.1 200 OK'+'\r\n')
                 #uart0.write('Content-Type: text/html'+'\r\n')
                 #uart0.write('Connection: close'+'\r\n')
@@ -168,5 +170,8 @@ if __name__ == "__main__":
     f = open ('conf_file.txt','w')
     f.write('{\"Server ip\":\"'+SERVER_IP+'\",\n'+'\"Server port\":\"'+SERVER_PORT+'\",\n'+'\"Wifi name\":\"'+WIFI_NAME+'\",\n'+'\"Wifi password\":\"'+WIFI_PASS+'\"}')
     f.close()
+    #Changing to Second Phase:
+    Send_AT_Cmd('AT+CWMODE=1\r\n')
+    utime.sleep(10)
     
     
