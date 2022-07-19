@@ -23,6 +23,7 @@ Intentos:
 ![](Tama%C3%B1oCrypto.png)
 3. Realizar un pequeño programa que utilice crypto, como me interesa el programa que se vicula al aes de JS y supuestamente funcuiona utilizaré ese, se encuentra en: https://medium.com/@sachadehe/encrypt-decrypt-data-between-python-3-and-javascript-true-aes-algorithm-7c4e2fa3a9ff
 5. Ir eliminando cosas y ejecutanto el código, hasta que algo se rompa.
+
     -  https://github.com/Legrandin/pycryptodome/blob/master/lib/Crypto/Cipher/AES.py [9.3 KB]
 
     ```python
@@ -35,7 +36,7 @@ Intentos:
     from Crypto.Random import 
     
     - km
-
+    
 ### Las librerías de JS referenciadas con https://... no funcionan aqui:
 Las librerías de Javaescript que son llamadas como importación mediante src=https://... no funcionan en el dispositivo cuando hace de servidor web porque estas librerías necesitan internet. Pero la librería de Javascript para AES es necesaria, para ello he tenido que descargarla entera (62,2 KB - https://github.com/ricmoo/aes-js/blob/master/index.js) e introducirla en un script en la página de configuración html. Esto ocasiona un problema puesto que a la página hay que sumarle los 62,2 KB de código adicional a enviar cuando se solicite la página, y esta solo puede ser enviada en tramos de 2048 Bytes, es decir, 2,048KB, por lo que la página tarda en ser enviada unos 30 segundos, he probado a enviarla más rápido y empieza a haber fallos en el código entregado y ensamblado.
 
