@@ -6,6 +6,7 @@ import uos
 import machine
 import utime
 from machine import Pin
+import DataExterCollector
 
 recv_buf="" # receive buffer global variable
 uart0 = machine.UART(0, baudrate=115200)
