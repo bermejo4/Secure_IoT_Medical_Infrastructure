@@ -7,6 +7,8 @@ import machine
 import utime
 from machine import Pin
 import DataExterCollector
+from mpu6050 import MPU6050
+
 
 recv_buf="" # receive buffer global variable
 uart0 = machine.UART(0, baudrate=115200)
