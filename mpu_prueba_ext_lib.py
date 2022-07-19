@@ -2,6 +2,7 @@
 from mpu6050 import MPU6050
 
 
+
 def data_collector():
     UseFifo = True
     mpu = MPU6050()
