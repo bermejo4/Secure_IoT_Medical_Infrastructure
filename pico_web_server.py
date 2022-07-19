@@ -4,6 +4,8 @@ import uos
 import rp2
 from time import sleep
 import time
+from mpu6050 import MPU6050
+
 
 def sendCMD_waitResp(cmd, uart=machine.UART(0, baudrate=115200), timeout=100):
     print("CMD: " + cmd)
