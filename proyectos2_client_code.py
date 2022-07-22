@@ -502,21 +502,22 @@ def data_collector():
     #INICIALIZACIÓN DEL OBJETO pico
     pico=pico_data()
     #--------------------------------------------------
-    #SENSOR TEMPERATURE
-    ow = onewire.OneWire(Pin(16)) #Prepara GPIO4 para usar con OneWire
-    sensor = DS18X20(ow) #define un sensor en ese pin
-    direcciones = sensor.scan()  #Lee el ID del sensor conectado
-    id=direcciones[0]
-    #Pasa el ID a formato de texto e imprime
-    idHex = binascii.hexlify(bytearray(id))
-    print ("ID=",idHex)
-    #Lee e imprime la temperatura cada 1 segundo
-    #while (True):
-    sensor.convert_temp ()
-        #sleep (1)
-    temperatura = sensor.read_temp (id)
-        #print (temperatura)
-    pico.temp=temperatura
+#     #SENSOR TEMPERATURE
+#     ow = onewire.OneWire(Pin(16)) #Prepara GPIO4 para usar con OneWire
+#     sensor = DS18X20(ow) #define un sensor en ese pin
+#     direcciones = sensor.scan()  #Lee el ID del sensor conectado
+#     id=direcciones[0]
+#     #Pasa el ID a formato de texto e imprime
+#     idHex = binascii.hexlify(bytearray(id))
+#     print ("ID=",idHex)
+#     #Lee e imprime la temperatura cada 1 segundo
+#     #while (True):
+#     sensor.convert_temp ()
+#         #sleep (1)
+#     temperatura = sensor.read_temp (id)
+#         #print (temperatura)
+#     pico.temp=temperatura
+    pico.temp=33
     #--------------------------------------------------
     #MCU TEMPERATURE
     sensortemp = machine.ADC(4)
@@ -586,7 +587,7 @@ if __name__ == "__main__":
     #--------------
     print(data_collector())
     
-    server_ip="192.168.20.10"
+    server_ip="192.168.0.100"
     server_port=9999
 
     print()
@@ -606,7 +607,7 @@ if __name__ == "__main__":
     
     sendCMD_waitResp('AT\r\n')          #Test AT startup
     #sendCMD_waitResp('AT+CWLAP\r\n', timeout=5000) #List available APs
-    sendCMD_waitResp('AT+CWJAP="iot4",""\r\n', timeout=5000) #Connect to AP
+    sendCMD_waitResp('AT+CWJAP="IoT4","Iothacking"\r\n', timeout=5000) #Connect to AP
     sendCMD_waitResp('AT+CIFSR\r\n')    #Obtain the Local IP Address
     #sendCMD_waitResp('AT+CIPSTART="TCP","192.168.12.147",9999\r\n')
     sendCMD_waitResp('AT+CIPSTART="TCP","' +
