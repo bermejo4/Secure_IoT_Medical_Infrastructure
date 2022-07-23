@@ -11,7 +11,7 @@
 - Código Micropython para leer el archivo html en tramos de 2048 y enviarlo. [Intentar reducir tiempos]. ✅
 - Código Javascript de cifrado de los datos de configuración con AES. (aes-js). ✅
 - Código Micropython para el desencriptado de AES. (maes). ✅
-- Código Micropython para guardar lo desencriptado en un archivo de configuración. (.txt) ✅
+- Código Micropython para guardar lo desencriptado en un archivo de configuración. (.txt). Guardado en formato JSON para mejor lectura posterior. ✅
 - Código Micropython para cambiar de modo Servidor a modo Cliente. (Cambio a Fase 2). ✅
 
 - Arreglar Router.✅
@@ -21,6 +21,8 @@
 
 - Código para incorporar los datos del archivo de configuración como variables, lectura del archivo.  ✅
 - Probar que todo funciona como en proyectos 2.  ✅
+- Código micropython para cambiar con el interruptor entre modo configuración y modo trabajo (conf_mode and work_mode).
+- Para work_mode, código micropython de lectura del archivo de configuración y guardado en variables.
 - Enviar los datos securizados SSL. ❌ No va a ser posible. Utilizar la librería de AES. Nuevas Claves.
 - Introducir clave de Autentificación de cara al servidor. Las claves de AES serviran como autentificación.
 - Paquetización de los datos con el protocolo MQTT.❌ No es posible, los comandos AT necesarios no son soportados por la tarjeta ESP8266. 
