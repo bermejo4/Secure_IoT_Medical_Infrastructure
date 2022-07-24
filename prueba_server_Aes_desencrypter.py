@@ -17,12 +17,27 @@ def clean_string_binary_remains(binary_string):
     tmp=tmp.replace('b','',1)
     return tmp
 
-obj = AES.new('1234567890123456'.encode("utf8"), AES.MODE_CBC, 'AAAAAAAAAAAAAAAA'.encode("utf8"))
-message = "TextMustBe16Byte"
-ciphertext = obj.encrypt(message.encode("utf8"))
-print(binascii.b2a_base64(ciphertext))
-print(binascii.hexlify(ciphertext))
-print(ciphertext)
+def data_from_pico_desencrypter(text):
+    segundo=text
+    data_decrypted = ''
+    obj2 = AES.new('1234567890123456'.encode("utf8"), AES.MODE_CBC, 'AAAAAAAAAAAAAAAA'.encode("utf8"))
+    for i in range(segundo.count('+') + 1):
+        primer, segundo = sementate_in_ciphered_strings(segundo)
+        print('primer: ' + primer)
+        print('segundo: ' + segundo)
+        cifrado = primer.encode("utf8")
+        cifra = binascii.unhexlify(cifrado)
+        data_decrypted += clean_string_binary_remains(str(obj2.decrypt(cifra)))
+        print(obj2.decrypt(cifra))
+    return data_decrypted
+
+
+# obj = AES.new('1234567890123456'.encode("utf8"), AES.MODE_CBC, 'AAAAAAAAAAAAAAAA'.encode("utf8"))
+# message = "TextMustBe16Byte"
+# ciphertext = obj.encrypt(message.encode("utf8"))
+# print(binascii.b2a_base64(ciphertext))
+# print(binascii.hexlify(ciphertext))
+# print(ciphertext)
 
 cifrado="0f1d1d12a6fc85ae06ad25c817d25595".encode("utf8")
 cifra=binascii.unhexlify(cifrado)
@@ -44,3 +59,7 @@ for i in range(segundo.count('+')+1):
     print(obj2.decrypt(cifra))
 
 print(data_decrypted)
+
+print('-----------------------------')
+text= "b102ea0ad185e800792364c204a18248+899bb316388e8ecadffaba6ec444aff8+0acc0fbee5f4d34a817ebec3274f3809+eeac468bd440860236cccbc20839077f+359acdaadca5fe4525df209f8612576f+685ab32bb4a06671f18b621114e6c93a+9aef30d18f1daa4c161a57d9f402c86b+280e25e1a5f44f1b94534d8f15d25086+9ff3efa26680a606e70ce1b1e1d52630+f1ad6eb975c70272658321ab25f145bd"
+print(data_from_pico_desencrypter(text))
