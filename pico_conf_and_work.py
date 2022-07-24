@@ -47,6 +47,11 @@ def Wait_ESP_Rsp(uart=uart0, timeout=300):
         print(resp.decode())
     except UnicodeError:
         print(resp)
+
+def espSend(text="test", uart=machine.UART(0, baudrate=115200)):
+    Send_AT_Cmd('AT+CIPSEND=' + str(len(text)) + '\r\n')
+    Send_AT_Cmd(text)
+    
         
 def html_to_strigline_transformer(html_file):
     file = open(html_file, "r")
@@ -202,12 +207,33 @@ if __name__ == "__main__":
     IV=key_as_client["iv"]
     print(KEY)
     print(IV)    
-    string_to_send=DataExterCollector.data_collector()
-    print(string_to_send)
-    string_to_send=maes_encrypter.encrypt_data(KEY.encode('ascii'), IV.encode('ascii'), DataExterCollector.data_collector().encode('ascii'))
-    print(string_to_send)
-
+#     string_to_send=DataExterCollector.data_collector()
+#     print(string_to_send)
+#     string_to_send=maes_encrypter.encrypt_data(KEY.encode('ascii'), IV.encode('ascii'), DataExterCollector.data_collector().encode('ascii'))
+#     print(string_to_send)
+    #Send process:
+    Send_AT_Cmd('AT\r\n')
+    Send_AT_Cmd('AT+CWJAP="'+WIFI_NAME+'","'+WIFI_PASS+'"\r\n', timeout=5000) #Connect to AP
+    Send_AT_Cmd('AT+CIFSR\r\n')    #Obtain the Local IP Address
+    #sendCMD_waitResp('AT+CIPSTART="TCP","192.168.12.147",9999\r\n')
+    Send_AT_Cmd('AT+CIPSTART="TCP","' +
+                 SERVER_IP +
+                 '",' +
+                 str(SERVER_PORT) +
+                 '\r\n')
+    espSend()
     
+    while True:
+        string_to_send=""
+        #string_to_send=str(data_collector())
+        string_to_send=maes_encrypter.encrypt_data(KEY.encode('ascii'), IV.encode('ascii'), DataExterCollector.data_collector().encode('ascii'))
+        Send_AT_Cmd('AT+CIPSTART="TCP","' +
+                     SERVER_IP +
+                     '",' +
+                     str(SERVER_PORT) +
+                     '\r\n')
+        print("enviando:"+string_to_send)
+        espSend(string_to_send)
     
         
         
