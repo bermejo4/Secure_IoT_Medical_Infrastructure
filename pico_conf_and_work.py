@@ -2,6 +2,7 @@ import sys
 import maes
 import ubinascii
 import maes_decrypter
+import maes_encrypter
 import uos
 import machine
 import utime
@@ -199,9 +200,11 @@ if __name__ == "__main__":
     key_as_client=json.loads(keys_as_client_file)
     KEY=key_as_client["key"]
     IV=key_as_client["iv"]
-    print(KEY[0:16])
+    print(KEY)
     print(IV)    
     string_to_send=DataExterCollector.data_collector()
+    print(string_to_send)
+    string_to_send=maes_encrypter.encrypt_data(KEY.encode('ascii'), IV.encode('ascii'), DataExterCollector.data_collector().encode('ascii'))
     print(string_to_send)
 
     
