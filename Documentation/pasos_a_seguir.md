@@ -35,9 +35,9 @@
 - Archivo de configuración con claves dependiendo de dispositivos. Así se hará la autentificación.
 - Por el momento prescindir de código para plotear gráficos.
 - Levantar el código del servidor en un docker y probar que funcione.
-- Investigar EMQX como posible mqtt broker.
-- Levantar EMQX como servicio en docker y comunicar aplicaciones.
-- Dejar un puerto abierto desde el exterior para que se pueda solicitar datos del MQTT broker.
+- Investigar EMQX como posible mqtt broker. ✅
+- Levantar EMQX como servicio en docker y comunicar aplicaciones.  ✅
+- Dejar un puerto abierto desde el exterior para que se pueda solicitar datos del MQTT broker. ✅
 - Levantar Node Red en docker. ✅
 - Ver que se pueden obtener datos del broker mediante MQTT plugins de Node Red.
 - PASAR A LA FASE 4 Y LUEGO VOLVER AQUI CUANDO ESTÉ TODO ACABADO. (INCLUSO EL PAPER !!!)
