@@ -21,16 +21,16 @@
 
 - Código para incorporar los datos del archivo de configuración como variables, lectura del archivo.  ✅
 - Probar que todo funciona como en proyectos 2.  ✅
-- Código micropython para cambiar con el interruptor entre modo configuración y modo trabajo (conf_mode and work_mode).
-- Para work_mode, código micropython de lectura del archivo de configuración y guardado en variables.
-- Enviar los datos securizados SSL. ❌ No va a ser posible. Utilizar la librería de AES. Nuevas Claves.
-- Introducir clave de Autentificación de cara al servidor. Las claves de AES serviran como autentificación.
-- Paquetización de los datos con el protocolo MQTT.❌ No es posible, los comandos AT necesarios no son soportados por la tarjeta ESP8266. 
+- Código micropython para cambiar con el interruptor entre modo configuración y modo trabajo (conf_mode and work_mode). ✅
+- Para work_mode, código micropython de lectura del archivo de configuración y guardado en variables. ✅
+- Enviar los datos securizados SSL. ❌ No va a ser posible. Utilizar la librería de AES. Nuevas Claves. ✅
+- Introducir clave de Autentificación de cara al servidor. Las claves de AES serviran como autentificación. ✅
+- Paquetización de los datos con el protocolo MQTT.❌ No es posible, los comandos AT necesarios no son soportados por la tarjeta ESP8266. MQTT para servidor.
 
 ## Fase 3:
 ### Servidor Externo:
 - Seguir trabajando con el servidor en python, nueva temperatura a incoroporar como variable (temp_mpu).
-- El servidor deberá incorporar desencriptado de AES.
+- El servidor deberá incorporar desencriptado de AES. ✅
 - Ver si los tiempos empeoran mucho por el descifrado.
 - Archivo de configuración con claves dependiendo de dispositivos. Así se hará la autentificación.
 - Por el momento prescindir de código para plotear gráficos.
