@@ -7,3 +7,22 @@ services:
     ports:
       - 1880:1880
       - 9999:9999
+    links:
+      - emqx1
+    networks:
+      emqx-bridge:
+
+  emqx1:
+    image: emqx/emqx:latest
+    ports:
+      - 18083:18083
+      - 1883:1883
+    networks:
+      emqx-bridge:
+        aliases:
+        - node1.emqx.io
+
+
+networks:
+  emqx-bridge:
+    driver: bridge
