@@ -48,9 +48,9 @@ def data_collector():
         else:
             g=mpu.readData()
             #utime.sleep_ms(25)
-        pico.cord_x=g.Gx
-        pico.cord_y=g.Gy
-        pico.cord_z=g.Gz
+        pico.cord_x="{:.3f}".format(g.Gx)
+        pico.cord_y="{:.3f}".format(g.Gy)
+        pico.cord_z="{:.3f}".format(g.Gz)
         pico.temp_mpu=g.Temperature
         #print("X:{:.2f}  Y:{:.2f}  Z:{:.2f}  Temp:{:.2f}".format(g.Gx,g.Gy,g.Gz,g.Temperature))
         break
@@ -78,7 +78,7 @@ def data_collector():
 #To Test Sensors and code:
 #-----------------------------------
 # if __name__ == "__main__":
-#     while True:
-#         print(data_collector())
+#      while True:
+#          print(data_collector())
 
 
