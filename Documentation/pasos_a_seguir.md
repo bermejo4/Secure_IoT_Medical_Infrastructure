@@ -25,21 +25,21 @@
 - Para work_mode, código micropython de lectura del archivo de configuración y guardado en variables. ✅
 - Enviar los datos securizados SSL. ❌ No va a ser posible. Utilizar la librería de AES. Nuevas Claves. ✅
 - Introducir clave de Autentificación de cara al servidor. Las claves de AES serviran como autentificación. ✅
-- Paquetización de los datos con el protocolo MQTT.❌ No es posible, los comandos AT necesarios no son soportados por la tarjeta ESP8266. MQTT para servidor.
+- Paquetización de los datos con el protocolo MQTT.❌ No es posible, los comandos AT necesarios no son soportados por la tarjeta ESP8266. MQTT para servidor. ✅ 
 
 ## Fase 3:
 ### Servidor Externo:
-- Seguir trabajando con el servidor en python, nueva temperatura a incoroporar como variable (temp_mpu).
+- Seguir trabajando con el servidor en python, nueva temperatura a incoroporar como variable (temp_mpu). ✅ 
 - El servidor deberá incorporar desencriptado de AES. ✅
 - Ver si los tiempos empeoran mucho por el descifrado.
-- Archivo de configuración con claves dependiendo de dispositivos. Así se hará la autentificación.
-- Por el momento prescindir de código para plotear gráficos.
+- Archivo de configuración con claves dependiendo de dispositivos. Así se hará la autentificación. ✅ 
+- Por el momento prescindir de código para plotear gráficos.  ✅ -> He creado uno nuevo con NodeRed y Dashboard.✅ 
 - Levantar el código del servidor en un docker y probar que funcione.
 - Investigar EMQX como posible mqtt broker. ✅
 - Levantar EMQX como servicio en docker y comunicar aplicaciones.  ✅
 - Dejar un puerto abierto desde el exterior para que se pueda solicitar datos del MQTT broker. ✅
 - Levantar Node Red en docker. ✅
-- Ver que se pueden obtener datos del broker mediante MQTT plugins de Node Red.
+- Ver que se pueden obtener datos del broker mediante MQTT plugins de Node Red. ✅ 
 - PASAR A LA FASE 4 Y LUEGO VOLVER AQUI CUANDO ESTÉ TODO ACABADO. (INCLUSO EL PAPER !!!)
 - ###########################################################################
 - Escribir código de pyhton para guardar los datos en una base de datos (MongoDB o Mysql).
@@ -50,5 +50,5 @@
 
 ## Fase 4: 
 ### Hardware:
-- Incorporar el interruptor para establecer el modo en el que funcionará el aparato. Modo configuración o modo ya Configurado.
-- Medir cuanto es el consumo del aparato con el encriptado.
+- Incorporar el interruptor para establecer el modo en el que funcionará el aparato. Modo configuración o modo ya Configurado. ✅ 
+- Medir cuanto es el consumo del aparato con el encriptado. 
