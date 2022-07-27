@@ -9,6 +9,8 @@ services:
       - 9999:9999
     links:
       - emqx1
+    volumes:
+      - node-red-data:/data
     networks:
       emqx-bridge:
 
@@ -22,6 +24,8 @@ services:
         aliases:
         - node1.emqx.io
 
+volumes:
+  node-red-data:
 
 networks:
   emqx-bridge:
