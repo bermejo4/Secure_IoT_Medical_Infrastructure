@@ -178,4 +178,4 @@ while True:
         publish(client_mqtt_publisher,mqtt_publisher.topic[3] , str(pico["Acel_y"]))
         publish(client_mqtt_publisher,mqtt_publisher.topic[4] , str(pico["Acel_z"]))
         publish(client_mqtt_publisher,mqtt_publisher.topic[5] , str(pico["TempMcu"]))
-        publish(client_mqtt_publisher,mqtt_publisher.topic[5] , str(pico["TempMpu"]))
+        publish(client_mqtt_publisher,mqtt_publisher.topic[6] , str(pico["TempMpu"]))
