@@ -16,7 +16,7 @@ client_id = f'python-mqtt-{random.randint(0, 1000)}'
 # username = 'emqx'
 # password = 'public'
 
-def connect_mqtt():
+def connect_mqtt(client_id, broker, port):
     def on_connect(client, userdata, flags, rc):
         if rc == 0:
             print("Connected to MQTT Broker!")
@@ -30,7 +30,7 @@ def connect_mqtt():
     return client
 
 
-def publish(client):
+def publish(client, topic):
     msg_count = 0
     while True:
         time.sleep(1)
@@ -46,9 +46,10 @@ def publish(client):
 
 
 def run():
-    client = connect_mqtt()
-    client.loop_start()
-    publish(client)
+    client = connect_mqtt(client_id, broker, port)
+    #client.loop_start()
+    while True:
+        publish(client, topic)
 
 
 if __name__ == '__main__':
