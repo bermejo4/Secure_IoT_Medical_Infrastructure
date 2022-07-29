@@ -31,15 +31,17 @@
 ### Servidor Externo:
 - Seguir trabajando con el servidor en python, nueva temperatura a incoroporar como variable (temp_mpu). ✅ 
 - El servidor deberá incorporar desencriptado de AES. ✅
-- Ver si los tiempos empeoran mucho por el descifrado.
+- Ver si los tiempos empeoran mucho por el descifrado. ⬅️
 - Archivo de configuración con claves dependiendo de dispositivos. Así se hará la autentificación. ✅ 
 - Por el momento prescindir de código para plotear gráficos.  ✅ -> He creado uno nuevo con NodeRed y Dashboard.✅ 
-- Levantar el código del servidor en un docker y probar que funcione.
+- Levantar el código del servidor en un docker y probar que funcione. ⬅️
 - Investigar EMQX como posible mqtt broker. ✅
 - Levantar EMQX como servicio en docker y comunicar aplicaciones.  ✅
 - Dejar un puerto abierto desde el exterior para que se pueda solicitar datos del MQTT broker. ✅
 - Levantar Node Red en docker. ✅
 - Ver que se pueden obtener datos del broker mediante MQTT plugins de Node Red. ✅ 
+- Servidor da servicio a varias conexiones de clientes.
+- Crear un programa que se comporte como lo haría la pico (es decir, un pseudocliente), y lanzar varios a que se conecten al servidor. ⬅️
 - PASAR A LA FASE 4 Y LUEGO VOLVER AQUI CUANDO ESTÉ TODO ACABADO. (INCLUSO EL PAPER !!!)
 - ###########################################################################
 - Escribir código de pyhton para guardar los datos en una base de datos (MongoDB o Mysql).
@@ -51,4 +53,7 @@
 ## Fase 4: 
 ### Hardware:
 - Incorporar el interruptor para establecer el modo en el que funcionará el aparato. Modo configuración o modo ya Configurado. ✅ 
-- Medir cuanto es el consumo del aparato con el encriptado. 
+- Medir cuanto es el consumo del aparato con el encriptado. ⬅️
+
+# Documentación:
+- Hacer un readme de como se monta el proyecto de docker y la imagen personalizada.
