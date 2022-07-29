@@ -142,48 +142,56 @@ class Mqtt_publisher:
     
 
 if sys.argv[len(sys.argv)-1]==sys.argv[0]:
-    print("No hay:"+str(sys.argv))
+    #print("No hay:"+str(sys.argv))
     server=Servidor(9998)
 else:
-    print("Hay:"+str(sys.argv))
+    #print("Hay:"+str(sys.argv))
     server=Servidor(sys.argv[1])
+
+
 socketTCP=socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 socketTCP.bind(server.SERVER_ADDRESS)
-socketTCP.listen(2)
+socketTCP.listen(1)
 solicitud = ''
-print('Server listening in the port: ' + str(server.PORT_ADDRESS))
-conexion, CLIENT_ADDRESS = socketTCP.accept()
-
-atentication_check=False
-
-
+print("Server in port ["+str(server.PORT_ADDRESS)+"] says: "+'Server listening in the port: ' + str(server.PORT_ADDRESS))
 while True:
-        solicitud = ''
-        solicitud = conexion.recv(400)
-        print("solicitud:" + str(solicitud))
-        print("\n")
-        data_from_pico = solicitud.decode()
-        print(data_from_pico)
-        # data_json=json.loads(data_from_pico)
-        print('RECIBO:'+str(data_from_pico))
-        ###----------------checkear si esto funciona:
-        if not atentication_check:
-            device_id, KEY, IV = autentication_and_ID_assignation(str(data_from_pico))
-            if device_id=="Not_found_dev":
-                print("POSSIBLE HACKING ATTACK DETECTED!!! SERVER DOWN")
-                sys.exit()
-            mqtt_publisher=Mqtt_publisher(device_id)
-            client_mqtt_publisher = connect_mqtt(mqtt_publisher.client_id , mqtt_publisher.broker, mqtt_publisher.port)
-            print(device_id, KEY, IV)
-            atentication_check=True
+    conexion, CLIENT_ADDRESS = socketTCP.accept()
 
-        print('RECIBOO:' + str(data_from_pico))
-        data_string=data_from_pico_desencrypter(data_from_pico, KEY, IV)
-        pico=json.loads(data_string)
-        publish(client_mqtt_publisher,mqtt_publisher.topic[0] , str(pico["Temp"]))
-        publish(client_mqtt_publisher,mqtt_publisher.topic[1] , str(pico["PulseSig"]))
-        publish(client_mqtt_publisher,mqtt_publisher.topic[2] , str(pico["Acel_x"]))
-        publish(client_mqtt_publisher,mqtt_publisher.topic[3] , str(pico["Acel_y"]))
-        publish(client_mqtt_publisher,mqtt_publisher.topic[4] , str(pico["Acel_z"]))
-        publish(client_mqtt_publisher,mqtt_publisher.topic[5] , str(pico["TempMcu"]))
-        publish(client_mqtt_publisher,mqtt_publisher.topic[6] , str(pico["TempMpu"]))
+    atentication_check=False
+
+
+    while True:
+            solicitud = ''
+            solicitud = conexion.recv(400)
+            print("Server in port ["+str(server.PORT_ADDRESS)+"] says: "+ "solicitud:" + str(solicitud))
+            data_from_pico = solicitud.decode()
+            print("\n")
+            print(data_from_pico)
+            # data_json=json.loads(data_from_pico)
+            print("Server in port ["+str(server.PORT_ADDRESS)+"] says: "+'RECIBO:'+str(data_from_pico))
+            ###----------------checkear si esto funciona:
+            if '+' in data_from_pico:
+                if not atentication_check:
+                    device_id, KEY, IV = autentication_and_ID_assignation(str(data_from_pico))
+                    if device_id=="Not_found_dev":
+                        print("Server in port ["+str(server.PORT_ADDRESS)+"] says: "+"POSSIBLE HACKING ATTACK DETECTED!!! SERVER DOWN")
+                        sys.exit()
+                    mqtt_publisher=Mqtt_publisher(device_id)
+                    client_mqtt_publisher = connect_mqtt(mqtt_publisher.client_id , mqtt_publisher.broker, mqtt_publisher.port)
+                    print(device_id, KEY, IV)
+                    atentication_check=True
+
+                print("Server in port ["+str(server.PORT_ADDRESS)+"] says: "+'RECIBOO:' + str(data_from_pico))
+                data_string=data_from_pico_desencrypter(data_from_pico, KEY, IV)
+                pico=json.loads(data_string)
+                publish(client_mqtt_publisher,mqtt_publisher.topic[0] , str(pico["Temp"]))
+                publish(client_mqtt_publisher,mqtt_publisher.topic[1] , str(pico["PulseSig"]))
+                publish(client_mqtt_publisher,mqtt_publisher.topic[2] , str(pico["Acel_x"]))
+                publish(client_mqtt_publisher,mqtt_publisher.topic[3] , str(pico["Acel_y"]))
+                publish(client_mqtt_publisher,mqtt_publisher.topic[4] , str(pico["Acel_z"]))
+                publish(client_mqtt_publisher,mqtt_publisher.topic[5] , str(pico["TempMcu"]))
+                publish(client_mqtt_publisher,mqtt_publisher.topic[6] , str(pico["TempMpu"]))
+            else:
+                print("Server in port ["+str(server.PORT_ADDRESS)+"] says:"+"Something strange received, CLOSING CONNECTION")
+                conexion.close()
+                break
