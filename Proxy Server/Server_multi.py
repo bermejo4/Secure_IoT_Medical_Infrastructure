@@ -3,10 +3,11 @@ import socket
 import os
 from _thread import *
 import subprocess
+import time
 
 ServerSocket = socket.socket()
-host = '127.0.0.1'
-port = 1233
+host = '0.0.0.0'
+port = 9998
 ThreadCount = 0
 try:
     ServerSocket.bind((host, port))
@@ -16,33 +17,40 @@ except socket.error as e:
 print('Waitiing for a Connection..')
 ServerSocket.listen(5)
 
-def threaded_internal_servers(port_number):
-    pass
-    #while True:
-        #out = subprocess.Popen(['python3', 'AesPythonServerToMQTT.py', str(port_number), '&'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-        #stdout,stderr = out.communicate()
-        #print("stdout:"+str(stdout))
-        #print("stdeer:"+str(stderr))
-        #if "Address already in use" in str(stdout):
-            #port_number=port_number+1
-        #else:
-            #break
-        #out = subprocess.Popen(['python3', 'client_multi.py'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT) 
-
-
+def deploy_new_AesPythonServerToMQTT(port_number):
+    while True:
+            with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+                if s.connect_ex(('localhost', port_number)) == 0:
+                    s.close() 
+                    print("Puerto: "+ str(port_number)+" ocupado, siguiente puerto.")
+                    port_number=port_number+1
+                else:
+                    s.close() 
+                    break
+    subprocess.Popen(['python3', 'AesPythonServerToMQTT.py', str(port_number)])
+    return port_number 
 
 
 
 def threaded_client(connection):
-    start_new_thread(threaded_internal_servers, (9995,))
-    connection.send(str.encode('Welcome to the Servern'))
+    server_deployed_port_number=deploy_new_AesPythonServerToMQTT(9995)
+    time.sleep(1)
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    server_address = ('localhost', server_deployed_port_number)
+    try:
+        sock.connect(server_address)
+    except socket.error as e:
+        print("Conexion Rechazada, mensaje: "+str(e))
+    #connection.send(str.encode('Welcome to the Servern'))
     while True:
         data = connection.recv(2048)
-        reply = 'Server Says: ' + data.decode('utf-8')
+        #reply = 'Server Says: ' + data.decode('utf-8')
         if not data:
             break
-        connection.sendall(str.encode(reply))
+        #connection.sendall(str.encode(reply))
+        sock.sendall(data)
     connection.close()
+    sock.close()
 
 while True:
     Client, address = ServerSocket.accept()
