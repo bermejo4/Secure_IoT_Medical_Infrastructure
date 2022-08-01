@@ -15,8 +15,6 @@ import socket
 
 
 def deploy_new_AesPythonServerToMQTT(port_number):
-    #resp=os.system('python3 AesPythonServerToMQTT.py ' +str(port_number)+' &')
-
     while True:
             with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                 if s.connect_ex(('localhost', port_number)) == 0:

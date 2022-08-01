@@ -32,9 +32,8 @@ while inputs:
     # Wait for at least one of the sockets to be
     # ready for processing
     print('waiting for the next event', file=sys.stderr)
-    readable, writable, exceptional = select.select(inputs,
-                                                    outputs,
-                                                    inputs)
+    readable, writable, exceptional = select.select(inputs, outputs, inputs)
+    
     # Handle inputs
     for s in readable:
 
