@@ -1,3 +1,5 @@
+import binascii
+import json
 from mimetypes import init
 import socket
 import sys
@@ -7,6 +9,8 @@ from pip import main
 from scipy.misc import electrocardiogram
 from _thread import *
 import time
+from Crypto.Cipher import AES
+
 
 
 class Pseudo_Pico():
@@ -67,7 +71,7 @@ def conexion_to_server(SERVER_PORT):
                 counter = 0
             # Send data
             time.sleep(0.5)
-            message = str(pico.JSON_transform(counter))
+            message = cipher_data_chain_builder(str(pico.JSON_transform(counter)))
             message = message.encode()
             #message = b'This is the message.  It will be repeated.'
             #print('sending {!r}'.format(message))
@@ -152,13 +156,54 @@ def modification_pico_paramenters_manually(option):
             pico.accelerometer_z = -1 + (-1 *( (pico.accelerometer_z - 0.1) + 1))
         else:
             pico.accelerometer_z = pico.accelerometer_z - 0.1
-    
+
+def load_keys():
+    file = open('KEY_PSEUDO_PICO.txt', 'r')
+    text = str(file.read())
+    #print(text)
+    json_keys = json.loads(text)
+    key = json_keys["key"]
+    iv = json_keys["iv"]
+    return key, iv
+
+def clean_string_binary_remains(binary_string):
+    tmp=binary_string.replace('\'','')
+    tmp=tmp.replace('b','', 1)
+    return tmp
+
+def add_until_16(word):
+    for i in range(16-len(word)):
+        word+='&'
+    return word
 
 
+def cipher_data_chain_builder(data):
+    KEY, IV = load_keys()
+    chain = ""
+    while len(data)>=16:
+        ciphertext = encrypt_data_by_16_block(data[0:16], KEY, IV)
+        cifrado_limpio=clean_string_binary_remains(str(binascii.hexlify(ciphertext)))
+        chain+=cifrado_limpio
+        chain+="+"
+        data=data[16:len(data)]
+    if len(data)<16:
+        ciphertext = encrypt_data_by_16_block(add_until_16(data),KEY, IV)
+        cifrado_limpio=clean_string_binary_remains(str(binascii.hexlify(ciphertext)))
+        chain+=cifrado_limpio
+    return chain
+
+
+def encrypt_data_by_16_block(text, key, iv):
+    obj = AES.new(key.encode("utf8"), AES.MODE_CBC, iv.encode("utf8"))
+    message = text
+    ciphertext = obj.encrypt(message.encode("utf8"))
+    return ciphertext
 
 pico=Pseudo_Pico()
 
+
 if __name__ == '__main__':
+    print("return load keys: "+str(load_keys()))
     #pico=Pseudo_Pico()
     pico.initialize_ecg()
     start_new_thread(conexion_to_server, (9998, ))
