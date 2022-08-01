@@ -33,7 +33,7 @@ def deploy_new_AesPythonServerToMQTT(port_number):
 
 
 def threaded_client(connection):
-    server_deployed_port_number=deploy_new_AesPythonServerToMQTT(9995)
+    server_deployed_port_number=deploy_new_AesPythonServerToMQTT(10700)
     time.sleep(1)
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_address = ('localhost', server_deployed_port_number)
