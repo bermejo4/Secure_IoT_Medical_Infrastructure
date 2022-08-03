@@ -170,7 +170,7 @@ while True:
 
     while True:
             solicitud = ''
-            solicitud = conexion.recv(2048)
+            solicitud = conexion.recv(263)
             print("Server in port ["+str(server.PORT_ADDRESS)+"] says: "+ "solicitud:" + str(solicitud))
             data_from_pico = solicitud.decode()
             print("\n")
@@ -191,6 +191,7 @@ while True:
 
                 print("Server in port ["+str(server.PORT_ADDRESS)+"] says: "+'RECIBOO:' + str(data_from_pico))
                 data_string=data_from_pico_desencrypter(data_from_pico, KEY, IV)
+                print("Data String:"+str(data_string))
                 pico=json.loads(data_string)
                 publish(client_mqtt_publisher,mqtt_publisher.topic[0] , str(pico["Temp"]))
                 publish(client_mqtt_publisher,mqtt_publisher.topic[1] , str(pico["PulseSig"]))

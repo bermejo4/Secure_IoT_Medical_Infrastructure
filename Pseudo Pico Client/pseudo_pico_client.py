@@ -29,11 +29,11 @@ class Pseudo_Pico():
     def ecg_transformation(self):
         ecg = electrocardiogram()
         new_ecg=[ecg[0]]
-        ecg2=electrocardiogram()[0:400]
+        ecg2=electrocardiogram()[0:1600]
         #print("Ecg2: "+str(ecg2))
         counter=0
         for val in ecg:
-            if counter == 2:
+            if counter == 5:
                 new_ecg.append(val+2)
                 counter=0
             else:
@@ -43,18 +43,19 @@ class Pseudo_Pico():
     
     def JSON_transform(self, moment):
         data_string="{"\
-                     +"\"Temp\":\""+str(self.patient_temp)+"\""\
-                     +",\"TempMcu\":\""+str(self.mcu_temp)+"\""\
-                     +",\"PulseSig\":\""+str(self.pulse_signal[moment])+"\""\
-                     +",\"Acel_x\":\""+str(self.accelerometer_x)+"\""\
-                     +",\"Acel_y\":\""+str(self.accelerometer_y)+"\""\
-                     +",\"Acel_z\":\""+str(self.accelerometer_z)+"\""\
-                     +",\"TempMpu\":\""+str(self.mpu_temp)+"\""\
+                     +"\"Temp\":\""+"{:.3f}".format(self.patient_temp)+"\""\
+                     +",\"TempMcu\":\""+"{:.3f}".format(self.mcu_temp)+"\""\
+                     +",\"PulseSig\":\""+"{:.3f}".format(self.pulse_signal[moment])+"\""\
+                     +",\"Acel_x\":\""+"{:.3f}".format(self.accelerometer_x)+"\""\
+                     +",\"Acel_y\":\""+"{:.3f}".format(self.accelerometer_y)+"\""\
+                     +",\"Acel_z\":\""+"{:.3f}".format(self.accelerometer_z)+"\""\
+                     +",\"TempMpu\":\""+"{:.3f}".format(self.mpu_temp)+"\""\
                      +"}"
+        #print("Data String: "+ data_string)
         return data_string
 
 
-def conexion_to_server(SERVER_PORT):
+def conexion_to_server(SERVER_PORT, device_id):
     SERVER_IP = 'localhost'
     #SERVER_PORT = 9998
     # Create a TCP/IP socket
@@ -65,13 +66,16 @@ def conexion_to_server(SERVER_PORT):
     sock.connect(server_address)
 
     try:
+        counter = 0
         while True:
-            counter = 0
-            if counter == 400:
+            if counter == 399:
                 counter = 0
+            counter = counter+1
             # Send data
-            time.sleep(0.5)
-            message = cipher_data_chain_builder(str(pico.JSON_transform(counter)))
+            #print("counter:"+str(counter))
+            time.sleep(0.05)
+            message = cipher_data_chain_builder(device_id, str(pico.JSON_transform(counter)))
+            #print("Message sending:"+str(message))
             message = message.encode()
             #message = b'This is the message.  It will be repeated.'
             #print('sending {!r}'.format(message))
@@ -157,13 +161,20 @@ def modification_pico_paramenters_manually(option):
         else:
             pico.accelerometer_z = pico.accelerometer_z - 0.1
 
-def load_keys():
-    file = open('KEY_PSEUDO_PICO.txt', 'r')
-    text = str(file.read())
-    #print(text)
-    json_keys = json.loads(text)
-    key = json_keys["key"]
-    iv = json_keys["iv"]
+def load_keys(device_id):
+    json_dict={}
+    device_searched=""
+    f = open("KEY_PSEUDO_PICO.txt", "r")
+    while True:
+        linea=f.readline()
+        if linea=='':
+            break
+        else:
+            device=json.loads(linea)
+            json_dict[device["id"]]=[device["key"], device["iv"]]
+    #print("json_dict:"+str(json_dict))
+    key=json_dict[str((int(device_id)))][0]
+    iv=json_dict[str((int(device_id)))][1]
     return key, iv
 
 def clean_string_binary_remains(binary_string):
@@ -177,8 +188,8 @@ def add_until_16(word):
     return word
 
 
-def cipher_data_chain_builder(data):
-    KEY, IV = load_keys()
+def cipher_data_chain_builder(device_id, data):
+    KEY, IV = load_keys(device_id)
     chain = ""
     while len(data)>=16:
         ciphertext = encrypt_data_by_16_block(data[0:16], KEY, IV)
@@ -203,10 +214,13 @@ pico=Pseudo_Pico()
 
 
 if __name__ == '__main__':
-    print("return load keys: "+str(load_keys()))
-    #pico=Pseudo_Pico()
+    print("return load keys: "+str(load_keys(sys.argv[1])))
+    #if sys.argv[len(sys.argv)-1]==sys.argv[0]:
+        #print("No hay:"+str(sys.argv))
+    #else:
+        #print("Hay:"+str(sys.argv))
     pico.initialize_ecg()
-    start_new_thread(conexion_to_server, (9998, ))
+    start_new_thread(conexion_to_server, (9998, sys.argv[1], ))
     while True:
         option=modification_menu()
         print("Selected option: "+str(option))

@@ -22,7 +22,7 @@ def deploy_new_AesPythonServerToMQTT(port_number):
             with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                 if s.connect_ex(('localhost', port_number)) == 0:
                     s.close() 
-                    print("Puerto: "+ str(port_number)+" ocupado, siguiente puerto.")
+                    print("[Multiserver Says:]"+" Port: "+ str(port_number)+" used, trying the next port.")
                     port_number=port_number+1
                 else:
                     s.close() 
@@ -43,7 +43,7 @@ def threaded_client(connection):
         print("Conexion Rechazada, mensaje: "+str(e))
     #connection.send(str.encode('Welcome to the Servern'))
     while True:
-        data = connection.recv(2048)
+        data = connection.recv(263)
         #reply = 'Server Says: ' + data.decode('utf-8')
         if not data:
             break
