@@ -1,4 +1,5 @@
 #Bermejo4
+from encodings import utf_8
 import socket
 import json
 from Crypto.Cipher import AES
@@ -31,24 +32,30 @@ def data_from_pico_desencrypter(text, key, iv):
     obj2 = AES.new(key.encode("utf8"), AES.MODE_CBC, iv.encode("utf8"))
     for i in range(segundo.count('+') + 1):
         primer, segundo = segmentate_in_ciphered_strings(segundo)
-        #print('primer: ' + primer)
-        #print('segundo: ' + segundo)
-        cifrado = primer.encode("utf8")
+        cifrado = primer.encode("utf_8")
+        obj2 = AES.new(key.encode("utf8"), AES.MODE_CBC, iv.encode("utf8"))
         cifra = binascii.unhexlify(cifrado)
         data_decrypted += clean_string_binary_remains(str(obj2.decrypt(cifra)))
-        #print(obj2.decrypt(cifra))
+        primer=''
     data_decrypted=data_decrypted.replace('&','')
     return data_decrypted
 
 
 def check_words_in_decrypted_string(text):
     if "\"Temp\"" in text:
+        print("temp_si:"+text)
         if "\"TempMcu\"" in text:
+            print("temp_mcu_si")
             if "\"PulseSig\"" in text:
+                print("pulse_sig_si")
                 if "\"Acel_x\"" in text:
+                    print("accel_x_si")
                     if "\"Acel_y\"" in text:
+                        print("accel_y_si")
                         if "\"Acel_z\"" in text:
+                            print("accel_z_si")
                             if "\"TempMpu\"" in text:
+                                print("temp_mpu_si")
                                 return True
     return False
 
@@ -65,11 +72,12 @@ def autentication_and_ID_assignation(ciphertext):
         else:
             device=json.loads(linea)
             json_dict[device["id"]]=[device["key"], device["iv"]]
-    print(json_dict)
+    #print(json_dict)
     for a in json_dict:
         key=json_dict[a][0]
         iv=json_dict[a][1]
-        print(data_from_pico_desencrypter(ciphertext, key, iv))
+        print("Key used:"+str(key)+"// Iv used:"+str(iv)+"|")
+        print("Data from pico desencripted:"+str(data_from_pico_desencrypter(ciphertext, key, iv)))
         if check_words_in_decrypted_string(data_from_pico_desencrypter(ciphertext, key, iv)):
             print("Founded: "+ a)
             device_searched=a
@@ -162,7 +170,7 @@ while True:
 
     while True:
             solicitud = ''
-            solicitud = conexion.recv(400)
+            solicitud = conexion.recv(2048)
             print("Server in port ["+str(server.PORT_ADDRESS)+"] says: "+ "solicitud:" + str(solicitud))
             data_from_pico = solicitud.decode()
             print("\n")
