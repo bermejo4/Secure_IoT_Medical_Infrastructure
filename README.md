@@ -18,3 +18,12 @@ They are not the official keys or password.
 - [conf_file.txt](/Raspberry%20Pi%20Pico/conf_file.txt) 
 
 **Please, if you are going to use this code change the keys and password!!!**
+
+## Some useful tricks to monitoring the project:
+
+#### View ports listening in your unix computer:
+Open the terminal and write:
+```
+lsof -i -P | grep -i listen
+``` 
+A table with the process listening and their ports will be shown.
