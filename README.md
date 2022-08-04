@@ -39,7 +39,7 @@ In the whole project the symetric encryption is used because clients and servers
 The cibersecurity actions taken are to protect the system from "Man in the Middle" attacks, and the consequences of them, like the data reading or the manipulation of the information to change parameters.
 Both modes (Configuration Mode and Working Mode) communications are ciphered with AES, using the CBC mode (Cipher Block Chaining). In CBC mode, each block of plaintext is XORed with the previous ciphertext block before being encrypted. This way, each ciphertext block depends on all plaintext blocks processed up to that point. To make each message unique, an initialization vector must be used in the first block.
 ![](/Documentation/Images/cbc_aes.jpeg)
-The keys and initialization vectors are saved in configuration files. Please read the advice: [Keys Advice](#⚠️-keys-and-password-advice)
+The keys and initialization vectors are saved in configuration files. Please read the advice: [Keys Advice](#keys-and-password-advice)
 
 
 - ### Pseudo Pico Client:
@@ -94,8 +94,8 @@ from scipy.misc import electrocardiogram
 -----------------
 ## Other useful information:
 
-## ⚠️ Keys and Password advice:
-The following files are only to show examples or as samples. 
+## Keys and Password advice:
+ ⚠️ The following files are only to show examples or as samples. 
 They are not the official keys or password.
 
 - [DEVICES_KEYS.txt](/Python%20Server/DEVICES_KEYS.txt)
