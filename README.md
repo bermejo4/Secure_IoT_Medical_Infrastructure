@@ -22,13 +22,24 @@ The pinout diagram is the following:
 3. A configuration page is shown, maybe it takes 15 seconds in load, wait for it to finish please. The page looks like this: 
 ![](/Documentation/Images/Conf_page.png)
 4. Introduce the data required, and the Keys. First one is the key and the second is the initialization vector.
-5. Once the form is completed, clicking on the "Save" button the information is encrypted with Keys using AES 128-bits CBC mode, and the data is sent to the pico. The comunication is encrypted to avoid Man In The Middle attack (To learn more obout it go to Cybersecurity section in this readme).
-6. When the information arrives to the pico it is decrypted and stored in a configuration .txt file --> [conf_file.txt](/Raspberry%20Pi%20Pico/conf_file.txt)
+5. Once the form is completed, clicking on the "Save" button the information is encrypted with Keys using AES 128-bits CBC mode, and the data is sent to the pico. The comunication is encrypted to avoid Man In The Middle attack (To learn more obout it go to [](#cybersecurity) section in this readme).
+6. When the information arrives to the pico it is decrypted and stored as a JSON in a configuration .txt file --> [conf_file.txt](/Raspberry%20Pi%20Pico/conf_file.txt)
+7. After that, the device change itself to the working mode. For that it change its behaviour from Access Point to client.
 
 #### Working Mode:
+1. The device read the [conf_file.txt](/Raspberry%20Pi%20Pico/conf_file.txt) to know the Access Point where it have to connect, it's password, and information about the server, like the Server address or the port, and load this information into varibles.
+2. The device connects to the Access Point.
+3. The device collects data from it's sensors, bunch it in a string JSON format and it is encrypted using AES 128-bit CBC mode. The keys are different from the Configuration mode.
+4. The device sends the information encrypted to the port and address specified by the user. It is the same operation mode than in the previous project mentioned, but a new data have been added, other device information, the accelerometer module temperature.
+5. Steps 3 and 4 are repited in a loop.
 
 
 #### Cybersecurity:
+In the whole project the symetric encryption is used because clients and servers are previously well knowed, because they form part from the same infrastructure.
+The cibersecurity actions taken are to protect the system from "Man in the Middle" attacks, and the consequences of them, like the data reading or the manipulation of the information to change parameters.
+Both modes (Configuration Mode and Working Mode) communications are ciphered with AES, using the CBC mode (Cipher Block Chaining). In CBC mode, each block of plaintext is XORed with the previous ciphertext block before being encrypted. This way, each ciphertext block depends on all plaintext blocks processed up to that point. To make each message unique, an initialization vector must be used in the first block.
+![](/Documentation/Images/cbc_aes.png)
+The keys and initialization vectors are saved in configuration files. Please read the advice: [Keys Advice](#⚠️-keys-and-password-advice)
 
 
 - ### Pseudo Pico Client:
