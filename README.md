@@ -41,6 +41,8 @@ Both modes (Configuration Mode and Working Mode) communications are ciphered wit
 ![](/Documentation/Images/cbc_aes.jpeg)
 The keys and initialization vectors are saved in configuration files. Please read the advice: [Keys Advice](#keys-and-password-advice)
 
+The library used for the AES encryption and decryption inside the pico is the maes from [maes github](https://github.com/piaca/micropython-aes).
+
 
 - ### Pseudo Pico Client:
 [Pseudo Pico Client](/Pseudo%20Pico%20Client/pseudo_pico_client.py) is a Python program that simulates the behaviour of the original IoT device (which is composed by the Raspberry Pi Pico, ESP8266 and some sensors). To avoid the costs of developing many IoT Devices, and to test the Multiclient infrastructure I consider to implement this solution. 
@@ -71,10 +73,10 @@ The ECG cardiogram is provided by [scipy.misc.electrocardiogram](https://docs.sc
 from scipy.misc import electrocardiogram
 ```
 
-
-### Cybersecurity:
-
-### Configurability:
+The data is also encrypted with AES 128-bit key using the CBC mode. But the library used is different. In the Pico maes is employed but here, in the pseudo pico, the cryptodome library is used. 
+```
+from Crypto.Cipher import AES
+``` 
 
 ----------------
 
