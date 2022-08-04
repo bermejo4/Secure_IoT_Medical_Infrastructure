@@ -1,5 +1,4 @@
 # Medical IoT Infrastructure: 
-### Cibersecurity, Multiclient ,Configurability and MQTT:
 
 
 ## IoT Device:
@@ -7,6 +6,16 @@
 ## Cybersecurity:
 
 ## Configurability:
+
+----------------
+
+## Server:
+- #### Proxy Server:
+- #### Internal Server:
+- #### MQTT Broker (EMQX):
+- #### Docker:
+
+-----------------
 
 ## MQTT:
 
