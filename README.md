@@ -22,7 +22,7 @@ The pinout diagram is the following:
 3. A configuration page is shown, maybe it takes 15 seconds in load, wait for it to finish please. The page looks like this: 
 ![](/Documentation/Images/Conf_page.png)
 4. Introduce the data required, and the Keys. First one is the key and the second is the initialization vector.
-5. Once the form is completed, clicking on the "Save" button the information is encrypted with Keys using AES 128-bits CBC mode, and the data is sent to the pico. The comunication is encrypted to avoid Man In The Middle attack (To learn more obout it go to [](#cybersecurity) section in this readme).
+5. Once the form is completed, clicking on the "Save" button the information is encrypted with Keys using AES 128-bits CBC mode, and the data is sent to the pico. The comunication is encrypted to avoid Man In The Middle attack (To learn more obout it go to [cibersecurity](#cybersecurity) section in this readme).
 6. When the information arrives to the pico it is decrypted and stored as a JSON in a configuration .txt file --> [conf_file.txt](/Raspberry%20Pi%20Pico/conf_file.txt)
 7. After that, the device change itself to the working mode. For that it change its behaviour from Access Point to client.
 
