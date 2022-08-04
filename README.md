@@ -5,15 +5,30 @@
 This project is based in a previous one called [IoT_Medical_Device](https://github.com/bermejo4/IoT_Medical_Device) that you can also find in this Github account or clicking into the link.
 
 -------
-## IoT Device:
-- #### Raspberry Pi Pico and ESP8266:
+## IoT Medical Device:
+- ### Raspberry Pi Pico and ESP8266:
 There aren't big changes from the [IoT_Medical_Device](https://github.com/bermejo4/IoT_Medical_Device) previous mentioned, only a slide switch have been added to stablish the operation mode of the device, to change between Configuration Mode or Working Mode. 
 The pinout diagram is the following:
 
 ![Diagram Pico](/Documentation/Images/Diagram_pico.png)
 
 
-- #### Pseudo Pico Client:
+#### Configuration Mode:
+1. The device transform itself in an Access Point, called IoT_Med, to wich a computer or a phone can connect via WiFi. It only accept 1 connection (Cybersecurity action).
+
+![](/Documentation/Images/Ap_view_laptop.png)
+
+2. To access to the device you have to enter in your browser and write "192.168.4.1". The device have deployed a web server in this address.
+3. A configuration page is showed you, maybe it takes 15 seconds in load, wait for it to finish please. The page looks like this: 
+![](/Documentation/Images/Conf_page.png)
+
+#### Working Mode:
+
+
+#### Cybersecurity:
+
+
+- ### Pseudo Pico Client:
 [Pseudo Pico Client](/Pseudo%20Pico%20Client/pseudo_pico_client.py) is a Python program that simulates the behaviour of the original IoT device (which is composed by the Raspberry Pi Pico, ESP8266 and some sensors). To avoid the costs of developing many IoT Devices, and to test the Multiclient infrastructure I consider to implement this solution. 
 The data sent can be modified from the terminal of the program following a menu that is shown during its running, except the ECG cardiogram. 
 
