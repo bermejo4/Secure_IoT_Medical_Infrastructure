@@ -117,7 +117,13 @@ Pico/iot_dev_01//Internal_Device_Data/Temperature/MPU
 Where iot_dev_01 is the device identified previously. 
 The variables that were saved in the JSON unformat are published in their respective topics.
 
-- #### MQTT Broker (EMQX):
+- #### MQTT Broker (EMQX): 
+
+EMQX is an Open-source MQTT broker with a high-performance real-time message processing engine, powering event streaming for IoT devices at massive scale. (https://www.emqx.io/docs/en/v5.0/#benefits)
+As the most scalable MQTT broker, EMQX can connect any device, at any scale. Move and process IoT data anywhere.
+The broker acts as a post office. MQTT clients don't use a direct connection address of the intended recipient, but use the subject line called "Topic". Anyone who subscribes receives a copy of all messages for that topic. Multiple clients can subscribe to a topic from a single broker (one to many capability), and a single client can register subscriptions to topics with multiple brokers (many to one).
+The EMQX service is running in the server with only a piece of code in the [docker-compose.yml](/Python%20Server/docker-compose.yml)
+
 - #### Docker:
 
 -----------------
