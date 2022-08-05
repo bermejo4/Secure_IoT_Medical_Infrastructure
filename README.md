@@ -120,12 +120,12 @@ The variables that were saved in the JSON unformat are published in their respec
 - #### MQTT Broker (EMQX):
 - #### Docker:
 
-
+-----------------
 ## Node Red:
 
 -----------------
 ## Other useful information:
-
+-----------------
 ## Keys and Password advice:
  ⚠️ The following files are only to show examples or as samples. 
 They are not the official keys or password.
@@ -137,6 +137,7 @@ They are not the official keys or password.
 
 **⚠️ Please, if you are going to use this code change the keys and password!!! ⚠️**
 
+-----------------
 ## Some useful tricks to monitoring the project:
 
 #### View ports listening in your unix computer:
