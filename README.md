@@ -120,9 +120,8 @@ The variables that were saved in the JSON unformat are published in their respec
 - #### MQTT Broker (EMQX):
 - #### Docker:
 
-## Cybersecurity:
 
-## MQTT:
+## Node Red:
 
 -----------------
 ## Other useful information:
