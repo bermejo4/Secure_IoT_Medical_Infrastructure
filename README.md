@@ -84,12 +84,38 @@ from Crypto.Cipher import AES
 
 ![](/Documentation/Images/Diagram_Server.png)
 
-- #### Proxy Server:
+- #### Proxy Server: 
+
 [Proxy Server](/Proxy%20Server/Server_multi.py) is a server that listens in 9998 port (the port can be changed), and receives TCP connections to that port from a external device. Once it receives a connection, this connection is managed by a thread, that deploys a [Internal Server](/Proxy%20Server/AesPythonServerToMQTT.py) with a specific port listen (from port 10700 upwards), and then establishes a TCP connection with it. Everything that the proxy server receives from this first external connection it sends to the new intrnal server deployed, it is like a bypass as it can be observed in the previous figure. 
 When other connection arrives from other device to the port 9998, other thread is created and, as previously have been described, a new internal server (different from the another, in other port, maybe 10701) is deployed and is connected to it, sending to it everything that it receives. If it receives other connection, the same process ir repeated, and so on. 
 At the moment it can only manage 5 connections simultaneously, but that can be changed in the code.
 
 - #### Internal Server:
+
+[Internal Server](/Proxy%20Server/AesPythonServerToMQTT.py) is the brain of the whole server. As have been described previously, it is deployed by the [Proxy Server](/Proxy%20Server/Server_multi.py) and it listens from port 10700 upwards. It develops many functions:
+1. Authentication: When data flow arrives to the server, it is ciphered and is unreadable, so the internal server must identify whom it belongs to load the respective keys. For that, it has a file with all the keys and initialization vectors for each device, and it tries to decrypt the message with each one, when it finds something that it expects with a determined format, it assumes that it has identified the user, so it loads the key and the initialization vector.
+
+2. AES Decryption: Once the key and the initialization vector are loaded it decrypts the data with them. The AES is 128-bit and CBC mode. 
+
+3. Unformat JSON into variables: When the decryption occurs the server finds a string with a JSON format, so it unformats the JSON into different variables, which then they will be used in the topic publication.
+
+4. MQTT Connection with Broker: The Broker is listening in the port 1883, so the connection is established with that port. A library in python helps with that process and the next function (the topic publication) and is:
+```
+from paho.mqtt import client as mqtt_client
+```
+
+5. Topics Publication in Broker: The topics follows this directory format:
+```
+Pico/iot_dev_01/Physiological_Data/Temperature
+Pico/iot_dev_01/Physiological_Data/Pulse_Signal
+Pico/iot_dev_01/Physiological_Data/Accelerometer/x
+Pico/iot_dev_01/Physiological_Data/Accelerometer/y
+Pico/iot_dev_01/Physiological_Data/Accelerometer/z
+Pico/iot_dev_01//Internal_Device_Data/Temperature/MCU
+Pico/iot_dev_01//Internal_Device_Data/Temperature/MPU
+```
+Where iot_dev_01 is the device identified previously. 
+The variables that were saved in the JSON unformat are published in their respective topics.
 
 - #### MQTT Broker (EMQX):
 - #### Docker:
