@@ -18,9 +18,14 @@ The pinout diagram is the following:
 
 ![](/Documentation/Images/Ap_view_laptop.png)
 
-2. To access to the device you have to enter in your browser and write "192.168.4.1". The device have deployed a web server in this address.
-3. A configuration page is shown, maybe it takes 15 seconds in load, wait for it to finish please. The page looks like this: 
+2. To access to the device you have to enter in your browser and write "192.168.4.1". The device have deployed a web server in this address. 
+
+3. A configuration page (which code is [init_page.html](/Raspberry%20Pi%20Pico/init_page.html)) is shown, maybe it takes 10 seconds in load, wait for it to finish please. The page looks like this: 
+
 ![](/Documentation/Images/Conf_page.png)
+
+This webpage has been developed using HTML and JavaScript. The HTML for the structure of the page and JS for the functionality. It is important to say that the reason why the time loading average is about 10 seconds is because we are working with a device that hasn't got access to internet in this mode, so the JS library used for the AES encryption is fully injected in the webpage without using script url reference, so all this information have to be sent by the device, about 61772 bytes of library code (all the HTML file is 65.3 KB), in packets of 2000 bytes (esp8266 maximum limit is 2048 bytes buffer to send), in period of 300 ms each packet; it's about 9 additional seconds of loading without taking account the delay time of the browser and the wifi card of your computer or smartphone. The rest of the page without the library is only 3.6KB that is sent in 500 ms more or less. By becoming a better and secure system the price to pay is in time.
+
 4. Introduce the data required, and the Keys. First one is the key and the second is the initialization vector.
 5. Once the form is completed, clicking on the "Save" button the information is encrypted with Keys using AES 128-bits CBC mode, and the data is sent to the pico. The comunication is encrypted to avoid Man In The Middle attack (To learn more obout it go to [cibersecurity](#cybersecurity) section in this readme).
 6. When the information arrives to the pico it is decrypted and stored as a JSON in a configuration .txt file --> [conf_file.txt](/Raspberry%20Pi%20Pico/conf_file.txt)
