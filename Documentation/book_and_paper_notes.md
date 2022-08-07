@@ -11,7 +11,7 @@
 
 * [book, page 6]: " Because IoT security differs from traditional IT security in significant ways, hacking IoT requires different techniques as well."
 
-* [book, page 6-7]: " An IoT ecosystem is typically composed of embedded devices and sensors, mobile applications, cloud infrastructure, and network communication protocols. ⭐
+* [book, pages 6-7]: " An IoT ecosystem is typically composed of embedded devices and sensors, mobile applications, cloud infrastructure, and network communication protocols." ⭐
 
 * [book, page 14]: " Designing and developing IoT devices con force manufacturers to make some difficult trade-offs. "
 
