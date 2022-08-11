@@ -27,4 +27,6 @@
 
 * [book, page 51]: "You must ensure that security doesn't interfere in a negative way".
 
+* [book, page 73]: " MQTT is a Machine-Machine connectivity protocol. It works on top of the TCP/IP stack but is extremely lightweight because it minimizes messaging using a publish-subscribe architecture." 
 
+* [book, page 74]: " One of the main problems with MQTT is that authentication is optional, and even if it is used, it is unencrypted by default. When credentials are transmitted in cleartext, attackers with a man-in-the-middle position on the network can steal them. ... brokers don't typically limit the number of authentication attempts per client. " 
