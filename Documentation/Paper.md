@@ -4,7 +4,8 @@
 
 The Internet of Things (IoT) is the concept of connecting any device (so long as it has an on/off switch) to the Internet and to other connected devices [1]. The IoT world is mostly made up of systems with low computing power, power consumption, memory and disk space that are deployed in insecure networking environments [2] for that reason IoT devices and their infrastructure can be considered vulnerable assets which must be protected using different controls and cybersecurity policies in order to avoid failures, and especially in the health sector, due to, consequences of IoT security failures might cause a direct loss of life [3]. 
 
-An IoT ecosystem is typically composed of embedded devices and sensors, mobile applications, cloud infrastructure, and network communication protocols [4], and in each one of these components must be present the CIA triad (Confidentiality, integrity and availability) that is a model designed to guide policies for information security within an organization. The elements of the triad are considered the three most crucial components of security [5].
+An IoT ecosystem is typically composed of embedded devices and sensors, mobile applications, cloud infrastructure, and network communication protocols [4], and in each one of these components must be present the CIA triad (Confidentiality, integrity and availability) that is a model designed to guide policies for information security within an organization. The elements of the triad are considered the three most crucial components of security [5]. A solution to fulfill these requirements is the encryption of the communication between the elements that compose the IoT infrastructure. Symmetric or asymmetric encryption can be applied, the difference is trust between the data intermediaries. In this work symmetric will be enough because there is trust in the IoT ecosystem. The most famous, used and secure symmetric encryption algorithm is AES (Advanced Encryption Standard). AES is based on a design principle known as a substitution–permutation network and is efficient in both software and hardware. AES processes blocks of 128 bits using a secret key of 128, 192 or 256 bits [6]. AES has a variety of modes of operation. In cryptography, a block cipher mode of operation is an algorithm that uses a block cipher to provide information security such as confidentiality or authenticity. [7]
+
 
 
 
@@ -30,3 +31,12 @@ Power consumption
 [3] Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, Beau Woods. Practical IoT Hacking, The Definitive Guide to Attacking the Internet of Things. no starch press, 2021 (ISBN: 978-1718500907). Page 6.
 [4] 
 [5] Eric Knipp, Cisco Network Security. Syncress, 2002 (ISBN: 978-1931836562)
+[6] Jean-Philippe Aumsson. Serious Cryptography, A Practical Introduction to Modern Encryption. no starch press, 2017 (ISBN: 978-1593278267). Page 59.
+[7] https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation
+
+[] Doarn CR, Adilova F, Lam D. Review of telemedicine in Uzbekistan. Journal of Telemedicine and Telecare, vol 11, sup 3, 2005, pp 135-9 (ISSN: 1357-633X).
+
+[] K. Siva Kumar Swamy, G.Sony, Ch.Jagadeesh Ram, B.Navven ,J.Harshitha. Secure IoT Devices using AES Encryption. Journal of Engineering Sciences. Vol 11, issue 4, 2020 (ISSN: 0377-9354)
+[] Meryam Saad Fadhil, Alaa Kadhim Farhan, Mohammad Natiq Fadhil. A lightweight AES Algorithm Implementation for Secure IoT Environment. Iraqi Journal of Science, vol 62, no 8, 2021, pp: 2759-2770 (ISSN: 0067-2904)
+[] Mohammad Al-Mashhadani, Mohamed Shujaa. IoT Security Using AES Encryption Technology
+based ESP32 Platform. The International Arab Journal of Information Technology, vol 19, no 2, 2022 (ISSN: 1683-3198)
