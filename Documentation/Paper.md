@@ -34,14 +34,16 @@ If the system has never been configured it must be put in configuration mode wit
 ![Configuration Page image](/Documentation/Images/Conf_page.png)
 **Figure 1.** *Configuration page shown in the browser*
 
-Next, the device switches automatically to work mode, it collects data and sends it to an access point (using the Wi-Fi network and password specified in the configuration mode). A server in the IP address and listen in the port specified receives the data and sends it to an MQTT broker where it will be published to be used by authenticated applications, like a dashboard where shows the data in a graphical mode.
+Next, the device switches automatically to work mode, it collects data and sends it to an access point (using the Wi-Fi network and password specified in the configuration mode). A server in the IP address and listen in the port specified receives the data and sends it to an MQTT broker where it will be published to be used by authenticated applications, like a dashboard where the data will be shown in a graphical mode.
 
+# 3. Architecture: 
 
+The architecture can be understood in two phases, the first one the configuration phase, where the device operate as an access point and web server, and the second, the work phase, where the device operates as a client. 
 
-
-
-# 3. Architecture:
 ## 3.1. The device as a Server:
+
+The device works as an access point enabling a Wi-Fi network called "Med_IoT" without a password but allowing only one connection as a cybersecurity policy. Then whatever user can access to it with a laptop or a smartphone.
+
 ## 3.2. The device as a Client:
 ### 3.2.1. Client.
 ### 3.2.2. Server.
