@@ -19,11 +19,26 @@ The main purpose is to develop a platform that reaches the following objectives:
 
 - First, keep the features and objectives reached in the previous project of multisensor, wearable, wireless, low-cost, scalable, and small device system without interfering with the new objectives here proposed. 
 
-- Second, communication encryption and authentification: using AES 128-bit key for both purposes. The encryption is reasonable with AES, authentification is a consequence of it because only those who have the key can encrypt and decrypt the data, and only two parties know the key, so each one can identify the other. 
+- Second, Configurability: some parameters can change in the IoT environment like the Server IP and port, or the wifi network and its password. For a more user-friendly experience, it can be changed put the device in a configuration mode, and modify it in a web browser with a graphical user interface.
 
-- Third, Multiclient service: The server can manipulate multiple TCP/IP connections that arrive and deploy a new service for each connection that arrives authenticating each device depending on a list of keys previously registered in the server as well-known devices.
+- Third, communication encryption and authentification: using AES 128-bit key for both purposes. The encryption is reasonable with AES, authentification is a consequence of it because only those who have the key can encrypt and decrypt the data, and only two parties know the key, so each one can identify the other. 
 
-- Fourth, MQTT Broker and MQTT: as a scalable system to share the data collected from each device and share it with authenticated applications or other devices.
+- Fourth, multiclient service: The server can manipulate multiple TCP/IP connections that arrive and deploy a new service for each connection that arrives authenticating each device depending on a list of keys previously registered in the server as well-known devices.
+
+- Fifth, MQTT Broker and MQTT: as a scalable system to share the data collected from each device and share it with authenticated applications or other devices.
+
+The system now works as follows:
+
+If the system has never been configured it must be put in configuration mode with a slide button that is in the device. Then a wifi network is enabled without a password, when the user access it, opens the web browser and searches "192.168.4.1", then a page is shown as in figure 1, where the user can register the IP address and port of the server, the Wi-Fi where the device will be connected and its password, also there are two keys that must be entered to cipher the data which will be sent to the device. Once everything is completed the user clicks on the save button and this information is saved into the device. 
+
+![Configuration Page image](/Documentation/Images/Conf_page.png)
+**Figure 1.** *Configuration page shown in the browser*
+
+Next, the device switches automatically to work mode, it collects data and sends it to an access point (using the Wi-Fi network and password specified in the configuration mode). A server in the IP address and listen in the port specified receives the data and sends it to an MQTT broker where it will be published to be used by authenticated applications, like a dashboard where shows the data in a graphical mode.
+
+
+
+
 
 # 3. Architecture:
 ## 3.1. The device as a Server:
