@@ -14,6 +14,17 @@ From a broad point of view, the final destination of this project is to improve 
 
 
 # 2. Technical Proposal:
+
+The main purpose is to develop a platform that reaches the following objectives:
+
+- First, keep the features and objectives reached in the previous project of multisensor, wearable, wireless, low-cost, scalable, and small device system without interfering with the new objectives here proposed. 
+
+- Second, communication encryption and authentification: using AES 128-bit key for both purposes. The encryption is reasonable with AES, authentification is a consequence of it because only those who have the key can encrypt and decrypt the data, and only two parties know the key, so each one can identify the other. 
+
+- Third, Multiclient service: The server can manipulate multiple TCP/IP connections that arrive and deploy a new service for each connection that arrives authenticating each device depending on a list of keys previously registered in the server as well-known devices.
+
+- Fourth, MQTT Broker and MQTT: as a scalable system to share the data collected from each device and share it with authenticated applications or other devices.
+
 # 3. Architecture:
 ## 3.1. The device as a Server:
 ## 3.2. The device as a Client:
