@@ -31,18 +31,29 @@ Power consumption
 # Acknowledgments:
 # References:
 [1] https://www.ibm.com/blogs/internet-of-things/what-is-the-iot/
+
 [2] Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, Beau Woods. Practical IoT Hacking, The Definitive Guide to Attacking the Internet of Things. no starch press, 2021 (ISBN: 978-1718500907). Page 18.
+
 [3] Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, Beau Woods. Practical IoT Hacking, The Definitive Guide to Attacking the Internet of Things. no starch press, 2021 (ISBN: 978-1718500907). Page 6.
+
 [4] 
+
 [5] Eric Knipp, Cisco Network Security. Syncress, 2002 (ISBN: 978-1931836562)
+
 [6] Jean-Philippe Aumsson. Serious Cryptography, A Practical Introduction to Modern Encryption. no starch press, 2017 (ISBN: 978-1593278267). Page 59.
+
 [7] https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation
 
 [8] K. Siva Kumar Swamy, G.Sony, Ch.Jagadeesh Ram, B.Navven ,J.Harshitha. Secure IoT Devices using AES Encryption. Journal of Engineering Sciences. Vol 11, issue 4, 2020 (ISSN: 0377-9354)
+
 [9] Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, Beau Woods. Practical IoT Hacking, The Definitive Guide to Attacking the Internet of Things. no starch press, 2021 (ISBN: 978-1718500907). Page 73.
+
 [10] Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, Beau Woods. Practical IoT Hacking, The Definitive Guide to Attacking the Internet of Things. no starch press, 2021 (ISBN: 978-1718500907). Page 74.
-[] Meryam Saad Fadhil, Alaa Kadhim Farhan, Mohammad Natiq Fadhil. A lightweight AES Algorithm Implementation for Secure IoT Environment. Iraqi Journal of Science, vol 62, no 8, 2021, pp: 2759-2770 (ISSN: 0067-2904)
-[11] Mohammad Al-Mashhadani, Mohamed Shujaa. IoT Security Using AES Encryption Technology
-based ESP32 Platform. The International Arab Journal of Information Technology, vol 19, no 2, 2022 (ISSN: 1683-3198)
+
+[11] Mohammad Al-Mashhadani, Mohamed Shujaa. IoT Security Using AES Encryption Technology based ESP32 Platform. The International Arab Journal of Information Technology, vol 19, no 2, 2022 (ISSN: 1683-3198)
+
 [12] Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, Beau Woods. Practical IoT Hacking, The Definitive Guide to Attacking the Internet of Things. no starch press, 2021 (ISBN: 978-1718500907). Page 18.
+
+[13] Meryam Saad Fadhil, Alaa Kadhim Farhan, Mohammad Natiq Fadhil. A lightweight AES Algorithm Implementation for Secure IoT Environment. Iraqi Journal of Science, vol 62, no 8, 2021, pp: 2759-2770 (ISSN: 0067-2904)
+
 [14] J.Bermejo Torres, Development of a medical monitoring system based on the Internet of Things, Madrid, May 2022.
