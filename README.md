@@ -30,7 +30,7 @@ This webpage has been developed using HTML and JavaScript. The HTML for the stru
 
 
 5. Once the form is completed, by clicking on the "Save" button the information is encrypted with Keys using AES 128-bits CBC mode, and the data is sent to the pico. The communication is encrypted to avoid Man In The Middle attack (To learn more about it go to the [cybersecurity](#cybersecurity) section in this readme). 
-![Pico as server Diagram](/Documentation/Images/Pico_as_server_diagram.png) 
+![Pico as server Diagram](/Documentation/Images/Pico_as_web_server.png) 
 
 
 6. When the information arrives at the pico it is decrypted and stored as a JSON in a configuration .txt file --> [conf_file.txt](/Raspberry%20Pi%20Pico/conf_file.txt) 
