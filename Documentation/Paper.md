@@ -49,10 +49,23 @@ Immediately after the access point is enabled, a web server is deployed in port 
 **Figure 2.** *Pico as server diagram*
 
 ## 3.2. The device as a Client:
-Once the data is configured the device starts to operate in work mode or also if the slide button is in work mode state. It takes the parameter that needs to establish the connection with the server (IP address and port, and the Wi-Fi network and password as gateway), collects the data from its sensors, formats it in a JSON, encrypts it using AES and then sends the encrypted data through the connection established. Next, it starts again the loop since the part of collecting sensor data and so on as Figure 3 shows.
+Once the data is configured the device starts to operate in work mode or also if the slide button is in work mode state. It takes the parameter that needs to establish the TCP connection with the server (IP address and port 9998; and the Wi-Fi network and password as network gateway), collects the data from its sensors, formats it in a JSON, encrypts it using AES and then sends the encrypted data through the connection established. Next, it starts again the loop since the part of collecting sensor data and so on as Figure 3 shows.
 
 ![Intern process](/Documentation/Images/pico_intern_process.png) 
-**Figure 3.** *Pico intern process diagram*
+**Figure 3.** *Pico intern process diagram* 
+
+Then the data travel secure, by the encryption, through a network, that can be a local network or the Internet, until arriving at the destination, a server listens in the 9998 port. 
+The server can be explained in three parts: proxy server, internal server and MQTT broker. The proxy server listens in the 9998 port, when a connection arrives it manages the connection, deploys an internal server listens in a specific port (from 10700 upwards), establishes a TCP connection with that port, and bypass all the traffic that arrives from the initial connection to the TCP connection that connects with the internal server. When the data is received by the internal server deployed it has the following tasks:
+
+1. Authentication: When data flow arrives at the server, it is ciphered and is unreadable, so the internal server must identify to whom it belongs to load the respective key. For that, it has a file with all the keys for each device, and it tries to decrypt the message with each one, when it finds something that it expects with a determined format, it assumes that it has identified the user, so it loads the key and the initialization vector.
+
+2. AES Decryption: Once the key is loaded it decrypts the data with it. 
+
+3. Unformat JSON into variables: after decryption, the server finds a string with a JSON format, so it unformats the JSON into different variables, which then will be used in the topic publication.
+
+4. MQTT Connection with Broker: The Broker is listening on port 1883, so the connection is established with that port. 
+
+5. Topics Publication in Broker: The topics format follows this directory structure:
 
 ### 3.2.1. Client Internal Architecture.
 ### 3.2.2. Server Internal Architecture.
