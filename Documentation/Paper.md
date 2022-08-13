@@ -51,7 +51,7 @@ Immediately after the access point is enabled, a web server is deployed in port 
 ## 3.2. The device as a Client:
 Once the data is configured the device starts to operate in work mode or also if the slide button is in work mode state. It takes the parameter that needs to establish the connection with the server (IP address and port, and the Wi-Fi network and password as gateway), collects the data from its sensors, formats it in a JSON, encrypts it using AES and then sends the encrypted data through the connection established. Next, it starts again the loop since the part of collecting sensor data and so on as Figure 3 shows.
 
-![Intern process](/Documentation/Images/pico_intern_process.png)
+![Intern process](/Documentation/Images/pico_intern_process.png) 
 **Figure 3.** *Pico intern process diagram*
 
 ### 3.2.1. Client Internal Architecture.
