@@ -38,11 +38,15 @@ Next, the device switches automatically to work mode, it collects data and sends
 
 # 3. Architecture: 
 
-The architecture can be understood in two phases, the first one the configuration phase, where the device operate as an access point and web server, and the second, the work phase, where the device operates as a client. 
+The architecture can be understood in two phases, the first one the configuration phase, where the device operates as an access point and web server, and the second, the work phase, where the device operates as a client. 
 
 ## 3.1. The device as a Server:
 
-The device works as an access point enabling a Wi-Fi network called "Med_IoT" without a password but allowing only one connection as a cybersecurity policy. Then whatever user can access to it with a laptop or a smartphone.
+The device works as an access point enabling a Wi-Fi network called "Med_IoT" without a password but allowing only one connection as a cybersecurity policy. Then whatever user can access it with a laptop or a smartphone.
+Immediately after the access point is enabled, a web server is deployed in port 80, so the device is working as a server, and the laptop or smartphone that is used to communicate with it as a client. It offers a web page based on HTML and Javascript in the IP address 192.168.4.1 (the IP address of the device in the network created by itself) called "init_page.html". When the user clicks on save the data is sent ciphered to the device, where will be decrypted and stored in a configuration file. All the communication process is carried over HTTP/TCP. The Figure 2 shows the whole process.
+
+![Pico as web server](/Documentation/Images/Pico_as_web_server.png)
+**Figure 2.** *Pico as server diagram*
 
 ## 3.2. The device as a Client:
 ### 3.2.1. Client.
