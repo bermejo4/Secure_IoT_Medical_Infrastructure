@@ -65,7 +65,17 @@ The server can be explained in three parts: proxy server, internal server and MQ
 
 4. MQTT Connection with Broker: The Broker is listening on port 1883, so the connection is established with that port. 
 
-5. Topics Publication in Broker: The topics format follows this directory structure:
+5. Topics Publication in Broker: The topics format follows this directory structure (where iot_dev_01 is the device identified previously):
+
+```
+Pico/iot_dev_01/Physiological_Data/Temperature
+Pico/iot_dev_01/Physiological_Data/Pulse_Signal
+Pico/iot_dev_01/Physiological_Data/Accelerometer/x
+Pico/iot_dev_01/Physiological_Data/Accelerometer/y
+Pico/iot_dev_01/Physiological_Data/Accelerometer/z
+Pico/iot_dev_01//Internal_Device_Data/Temperature/MCU
+Pico/iot_dev_01//Internal_Device_Data/Temperature/MPU
+```
 
 ### 3.2.1. Client Internal Architecture.
 ### 3.2.2. Server Internal Architecture.
