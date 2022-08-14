@@ -55,36 +55,28 @@ Once the data is configured the device starts to operate in work mode or also if
 **Figure 3.** *Pico intern process diagram* 
 
 Then the data travel secure, by the encryption, through a network, that can be a local network or the Internet, until arriving at the destination, a server listens in the 9998 port. 
-The server can be explained in three parts: proxy server, internal server and MQTT broker. The proxy server listens in the 9998 port, when a connection arrives it manages the connection, deploys an internal server listens in a specific port (from 10700 upwards), establishes a TCP connection with that port, and bypass all the traffic that arrives from the initial connection to the TCP connection that connects with the internal server. When the data is received by the internal server deployed it has the following tasks:
+The server can be explained in three parts: proxy server, internal server and MQTT broker. The proxy server listens in the 9998 port, when a connection arrives it manages the connection, deploys an internal server listens in a specific port (from 10700 upwards), establishes a TCP connection with that port, and bypass all the traffic that arrives from the initial connection to the TCP connection that connects with the internal server. If it receives another connection in port 9998, the same process is repeated, and so on but changing the port of the internal server. When the data is received by the internal server deployed it has the following tasks:
 
-1. Authentication: When data flow arrives at the server, it is ciphered and is unreadable, so the internal server must identify to whom it belongs to load the respective key. For that, it has a file with all the keys for each device, and it tries to decrypt the message with each one, when it finds something that it expects with a determined format, it assumes that it has identified the user, so it loads the key and the initialization vector.
+- Authentication: When data flow arrives at the server, it is ciphered and is unreadable, so the internal server must identify to whom it belongs to load the respective key. For that, it has a file with all the keys for each device, and it tries to decrypt the message with each one, when it finds something that it expects with a determined format, it assumes that it has identified the user, so it loads the key and the initialization vector. This process only occurs once, then the key will be associated with the connection.
 
-2. AES Decryption: Once the key is loaded it decrypts the data with it. 
+- MQTT Connection with Broker: When the authentication is successful, the internal server connects with the MQTT Broker. The Broker is listening on port 1883, so the connection is established with that port.
 
-3. Unformat JSON into variables: after decryption, the server finds a string with a JSON format, so it unformats the JSON into different variables, which then will be used in the topic publication.
+- AES Decryption: Once the key is loaded it decrypts the data with it. 
 
-4. MQTT Connection with Broker: The Broker is listening on port 1883, so the connection is established with that port. 
+- Unformat JSON into variables: after decryption, the server finds a string with a JSON format, so it unformats the JSON into different variables, which then will be used in the topic publication.
 
-5. Topics Publication in Broker: The topics format follows this directory structure (where iot_dev_01 is the device identified previously):
+- Topics Publication in Broker: variables are related to an MQTT topic, which will be sent together to the broker.
 
-```
-Pico/iot_dev_01/Physiological_Data/Temperature
-Pico/iot_dev_01/Physiological_Data/Pulse_Signal
-Pico/iot_dev_01/Physiological_Data/Accelerometer/x
-Pico/iot_dev_01/Physiological_Data/Accelerometer/y
-Pico/iot_dev_01/Physiological_Data/Accelerometer/z
-Pico/iot_dev_01//Internal_Device_Data/Temperature/MCU
-Pico/iot_dev_01//Internal_Device_Data/Temperature/MPU
-```
+Figure 4 shows the workflow of the internal diagram between the tasks.
 
-### 3.2.1. Client Internal Architecture.
-### 3.2.2. Server Internal Architecture.
+![workflow internal server](/Documentation/Images/internal_server_process.png)
+**Figure 4.** *Internal server workflow diagram.* 
 
+The broker is at the heart of any publish/subscribe protocol. The broker is responsible for receiving all messages, filtering the messages, determining who is subscribed to each message, and sending the message to these subscribed clients. The broker also holds the session data of all clients that have persistent sessions, including subscriptions and missed messages. Another responsibility of the broker is the authentication and authorization of clients [15].
 
 # 4. Implementations:
 ## 4.1. Configurability:
 ## 4.2. Cybersecurity:
-## 4.3. Multiclient Server.
 ## 4.4. MQTT & Broker
 ## 4.5. Docker.
 # 5. Results:
@@ -119,3 +111,5 @@ Power consumption
 [13] Meryam Saad Fadhil, Alaa Kadhim Farhan, Mohammad Natiq Fadhil. A lightweight AES Algorithm Implementation for Secure IoT Environment. Iraqi Journal of Science, vol 62, no 8, 2021, pp: 2759-2770 (ISSN: 0067-2904)
 
 [14] J.Bermejo Torres, Development of a medical monitoring system based on the Internet of Things, Madrid, May 2022.
+
+[15] https://www.hivemq.com/blog/mqtt-essentials-part-3-client-broker-connection-establishment/
