@@ -74,6 +74,12 @@ Figure 4 shows the workflow of the internal diagram between the tasks.
 
 The broker is at the heart of any publish/subscribe protocol. The broker is responsible for receiving all messages, filtering the messages, determining who is subscribed to each message, and sending the message to these subscribed clients. The broker also holds the session data of all clients that have persistent sessions, including subscriptions and missed messages. Another responsibility of the broker is the authentication and authorization of clients [15].
 
+All the server infrastructure can be dockerized, giving the infrastructure the advantage that offers containerization, like portability, lightweighty and security. Figure 5 shows the whole server work.
+
+![all servers](/Documentation/Images/Diagram_Server.png)
+**Figure 5.** *Server diagram workflow* 
+
+
 # 4. Implementations:
 ## 4.1. Configurability:
 ## 4.2. Cybersecurity:
