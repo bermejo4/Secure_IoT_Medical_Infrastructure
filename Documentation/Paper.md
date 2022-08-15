@@ -92,7 +92,7 @@ The device is configurated thanks to a user graphical interface developed with H
 
 ## 4.3. MQTT & Broker
 
-MQTT is implemented from the internal server towards the MQTT Broker and beyond. For its implementation, the "paho-mqtt" python library is employed in the server. The topics are defined by the internal server, the MQTT broker publishes them, and then each device or service must know the topic which it wants to access for each information. The topic has a directory string structure so it has an intuitive format. The internal server shares the following topics:
+MQTT is implemented from the internal server towards the MQTT Broker and beyond. For its implementation, the "paho-mqtt" python library is employed in the server. The topics are defined by the internal server, the MQTT broker publishes them, and then each device or service must know the topic which it wants to access for each information. The topic has a directory string structure so it has an intuitive format. The internal server shares the following topics (where "iot_dev_01" refers to the identified IoT device):
 ```
 Pico/iot_dev_01/Physiological_Data/Temperature
 Pico/iot_dev_01/Physiological_Data/Pulse_Signal
@@ -102,11 +102,22 @@ Pico/iot_dev_01/Physiological_Data/Accelerometer/z
 Pico/iot_dev_01//Internal_Device_Data/Temperature/MCU
 Pico/iot_dev_01//Internal_Device_Data/Temperature/MPU
 ```
-The Broker is implemented with the most powerful, open-source and industry employed nowadays, called EMQX. It's true that Mosquitto is the most used, but only in maker environments due to the lack of security.
+The Broker is implemented with the most powerful, open-source and industry employed nowadays, called EMQX. It's true that Mosquitto is the most used, but only in maker environments due to its lack of security.
+
+# 4.4 External services using the data
+
+The broker works as an API, where services request a directory (topic) and it sends you the information stored there, but with correct MQTT words, services subscribe to that topic and receive periodically the data that contain that topic. It can be employed by external applications like a dashboard. To show how easy is and how it works a dashboard application using NodeRed has been deployed as shown in Figure 6.
+
+![nodered dashboard](/Documentation/Images/Dashboard.png)
+**Figure 6.** *Dashboard application using NodeRed* 
+
 
 ## 4.5. Docker.
 
-
+Docker offers standardization, being portable anywhere; lightweight, it only installs and uses resources that it will need; and security, isolating the programs and services running from the host machine. First, a dockerfile is used to configure specific dependencies that the containers need, like libraries, but based in an image. Then a docker-compose is used to run the containers. There are 3 containers running with different ports opened depending on the service:
+- Python: 9998
+- EMQX: 18083 and 1883
+- NodeRed: 1880
 
 # 5. Results:
 Power consumption 
