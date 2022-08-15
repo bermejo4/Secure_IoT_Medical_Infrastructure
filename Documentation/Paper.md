@@ -125,6 +125,9 @@ To test all the infrastructure a python program has been written to simulate the
 
 # 6. Conclusion:
 # Acknowledgments:
+
+Finally, I would like to express my gratitude to Eloy José Urendes Jiménez and Teodoro Rojo Aladro to help me to improve some details of this work.
+
 # References:
 [1] https://www.ibm.com/blogs/internet-of-things/what-is-the-iot/
 
