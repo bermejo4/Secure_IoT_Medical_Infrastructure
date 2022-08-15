@@ -104,7 +104,7 @@ Pico/iot_dev_01//Internal_Device_Data/Temperature/MPU
 ```
 The Broker is implemented with the most powerful, open-source and industry employed nowadays, called EMQX. It's true that Mosquitto is the most used, but only in maker environments due to its lack of security.
 
-# 4.4 External services using the data
+# 4.4 External Applications using the data
 
 The broker works as an API, where services request a directory (topic) and it sends you the information stored there, but with correct MQTT words, services subscribe to that topic and receive periodically the data that contain that topic. It can be employed by external applications like a dashboard. To show how easy is and how it works a dashboard application using NodeRed has been deployed as shown in Figure 6.
 
@@ -120,7 +120,9 @@ Docker offers standardization, being portable anywhere; lightweight, it only ins
 - NodeRed: 1880
 
 # 5. Results:
-Power consumption 
+
+To test all the infrastructure a python program has been written to simulate the behavior of the IoT medical device, calling it "pseudo_pico_client.py". It is implemented to avoid the costs of developing many IoT devices and test the multiclient infrastructure. Simultaneous clients are running at the same time using the infrastructure and it responds properly. Respecting the power consumption of the device in the previous work it was of 110 mAh and now in the configuration mode is _____ and in working mode with the encryption is _____ .
+
 # 6. Conclusion:
 # Acknowledgments:
 # References:
