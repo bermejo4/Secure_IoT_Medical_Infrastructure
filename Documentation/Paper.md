@@ -123,9 +123,16 @@ Docker offers standardization, being portable anywhere; lightweight, it only ins
 
 To test all the infrastructure a python program has been written to simulate the behavior of the IoT medical device, calling it "pseudo_pico_client.py". It is implemented to avoid the costs of developing many IoT devices and test the multiclient infrastructure. Simultaneous clients are running at the same time using the infrastructure and it responds properly. 
 
-Respecting the power consumption of the device in the previous work it was of 110 mAh and now in the configuration mode is _____ and in working mode with the encryption is _____ .
+Respecting the power consumption of the device in the previous work it was 110 mAh and now in the configuration mode is _____ and in working mode with the encryption is _____ .
 
 # 6. Conclusion:
+
+A secure IoT infrastructure has been developed fulfilling the initial objectives by keeping the previous project ones, by applying configurability and cybersecurity apart from introducing MQTT and multiclient service on the server side.   
+
+This project could help in the future to secure and deploy IoT multiclient infrastructures in an easy mode in medical environments where a failure can cause a direct loss of life. And also make a better user-friendly experience using the device and the infrastructure providing isolation from the technical layer to non-tech staff.
+
+As future improvements could be to change Wi-Fi by 5G to permit a high range of operation, the incorporation of location into the device, a final application to exploit all the device possibilities or the adaptability of the infrastructure to be used by other different devices.
+
 # Acknowledgments:
 
 Finally, I would like to express my gratitude to Eloy José Urendes Jiménez and Teodoro Rojo Aladro to help me to improve some details of this work.
