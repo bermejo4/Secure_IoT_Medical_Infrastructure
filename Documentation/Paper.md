@@ -123,7 +123,7 @@ Docker offers standardization, being portable anywhere; lightweight, it only ins
 
 To test all the infrastructure a python program has been written to simulate the behavior of the IoT medical device, calling it "pseudo_pico_client.py". It is implemented to avoid the costs of developing many IoT devices and test the multiclient infrastructure. Simultaneous clients are running at the same time using the infrastructure and it responds properly. 
 
-Respecting the power consumption of the device in the previous work it was 110 mAh and now in the configuration mode is _____ and in working mode with the encryption is _____ .
+Regarding the power consumption of the device in the previous work it was 110 mAh and now in the configuration mode is 100 mAh and in working mode with the encryption is the same 110 mAh as without encryption as in the previous work.
 
 # 6. Conclusion:
 
