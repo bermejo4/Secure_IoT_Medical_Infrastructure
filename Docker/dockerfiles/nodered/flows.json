@@ -1,1116 +1,22 @@
 [
     {
-        "id": "f6f2187d.f17ca8",
+        "id": "ff64d5752f28abe6",
         "type": "tab",
         "label": "Flow 1",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "fb2c6620ad6b6081",
-        "type": "mqtt-broker",
-        "name": "",
-        "broker": "emqx@172.25.0.2",
-        "port": "1883",
-        "clientid": "",
-        "autoConnect": true,
-        "usetls": false,
-        "protocolVersion": "4",
-        "keepalive": "60",
-        "cleansession": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthPayload": "",
-        "birthMsg": {},
-        "closeTopic": "",
-        "closeQos": "0",
-        "closePayload": "",
-        "closeMsg": {},
-        "willTopic": "",
-        "willQos": "0",
-        "willPayload": "",
-        "willMsg": {},
-        "userProps": "",
-        "sessionExpiry": ""
-    },
-    {
-        "id": "e237993d6056e24e",
-        "type": "ui_base",
-        "theme": {
-            "name": "theme-dark",
-            "lightTheme": {
-                "default": "#0094CE",
-                "baseColor": "#007ecc",
-                "baseFont": "Arial,Arial,Helvetica,sans-serif",
-                "edited": true,
-                "reset": false
-            },
-            "darkTheme": {
-                "default": "#097479",
-                "baseColor": "#31d0d8",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": true,
-                "reset": false
-            },
-            "customTheme": {
-                "name": "Untitled Theme 1",
-                "default": "#4B7930",
-                "baseColor": "#4B7930",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
-            },
-            "themeState": {
-                "base-color": {
-                    "default": "#097479",
-                    "value": "#31d0d8",
-                    "edited": true
-                },
-                "page-titlebar-backgroundColor": {
-                    "value": "#31d0d8",
-                    "edited": false
-                },
-                "page-backgroundColor": {
-                    "value": "#111111",
-                    "edited": false
-                },
-                "page-sidebar-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "group-textColor": {
-                    "value": "#71dfe4",
-                    "edited": false
-                },
-                "group-borderColor": {
-                    "value": "#555555",
-                    "edited": false
-                },
-                "group-backgroundColor": {
-                    "value": "#333333",
-                    "edited": false
-                },
-                "widget-textColor": {
-                    "value": "#eeeeee",
-                    "edited": false
-                },
-                "widget-backgroundColor": {
-                    "value": "#31d0d8",
-                    "edited": false
-                },
-                "widget-borderColor": {
-                    "value": "#333333",
-                    "edited": false
-                },
-                "base-font": {
-                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
-                }
-            },
-            "angularTheme": {
-                "primary": "indigo",
-                "accents": "blue",
-                "warn": "red",
-                "background": "grey",
-                "palette": "light"
-            }
-        },
-        "site": {
-            "name": "Node-RED Dashboard",
-            "hideToolbar": "false",
-            "allowSwipe": "false",
-            "lockMenu": "false",
-            "allowTempTheme": "true",
-            "dateFormat": "DD/MM/YYYY",
-            "sizes": {
-                "sx": 48,
-                "sy": 48,
-                "gx": 6,
-                "gy": 6,
-                "cx": 6,
-                "cy": 6,
-                "px": 0,
-                "py": 0
-            }
-        }
-    },
-    {
-        "id": "49f5103a07d1476c",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "4f29991b7a5bd322",
-        "order": 3,
-        "width": 2,
-        "height": 1
-    },
-    {
-        "id": "5a628dfe742832e8",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "4f29991b7a5bd322",
-        "order": 6,
-        "width": 2,
-        "height": 1
-    },
-    {
-        "id": "c27c2e57e41ff097",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "4f29991b7a5bd322",
-        "order": 8,
-        "width": 2,
-        "height": 1
-    },
-    {
-        "id": "635c569901eb18de",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "4f29991b7a5bd322",
-        "order": 9,
-        "width": 2,
-        "height": 1
-    },
-    {
-        "id": "a9e8f8d79ca31062",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "4f29991b7a5bd322",
-        "order": 10,
-        "width": 2,
-        "height": 1
-    },
-    {
-        "id": "5770f7414adf2d61",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "4f29991b7a5bd322",
-        "order": 11,
-        "width": 2,
-        "height": 1
-    },
-    {
-        "id": "ee758227acdca991",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "4f29991b7a5bd322",
-        "order": 12,
-        "width": 2,
-        "height": 1
-    },
-    {
-        "id": "2089b1bb979dfc63",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "4f29991b7a5bd322",
-        "order": 14,
-        "width": 2,
-        "height": 1
-    },
-    {
-        "id": "ba9bac58031fe53d",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "4f29991b7a5bd322",
-        "order": 15,
-        "width": 2,
-        "height": 1
-    },
-    {
-        "id": "22dcd2df639c032c",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "4f29991b7a5bd322",
-        "order": 16,
-        "width": 2,
-        "height": 1
-    },
-    {
-        "id": "6724480dd043c4cd",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "4f29991b7a5bd322",
-        "order": 17,
-        "width": 2,
-        "height": 1
-    },
-    {
-        "id": "099dd760ecfb5a82",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "4f29991b7a5bd322",
-        "order": 18,
-        "width": 2,
-        "height": 1
-    },
-    {
-        "id": "949db5d6efc23676",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "4f29991b7a5bd322",
-        "order": 19,
-        "width": 2,
-        "height": 1
-    },
-    {
-        "id": "89d7842f492311f1",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 1,
-        "width": 33,
-        "height": 1
-    },
-    {
-        "id": "652e59a4040c0bb3",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 3,
-        "width": 25,
-        "height": 1
-    },
-    {
-        "id": "a727025ccffc50d5",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 4,
-        "width": 25,
-        "height": 1
-    },
-    {
-        "id": "a33cbe50dda6a50a",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 5,
-        "width": 25,
-        "height": 1
-    },
-    {
-        "id": "991b7d241f9f4b40",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 6,
-        "width": 25,
-        "height": 1
-    },
-    {
-        "id": "b03b02fa7ce41e7a",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 7,
-        "width": 25,
-        "height": 1
-    },
-    {
-        "id": "dc016579f7e2963b",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 8,
-        "width": 25,
-        "height": 1
-    },
-    {
-        "id": "1c1bb4e8befc59df",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 9,
-        "width": 25,
-        "height": 1
-    },
-    {
-        "id": "1370a878a1127e2c",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 10,
-        "width": 33,
-        "height": 1
-    },
-    {
-        "id": "f426e86fd6dc3b6a",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 12,
-        "width": 22,
-        "height": 1
-    },
-    {
-        "id": "e9372bb170c2853a",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 13,
-        "width": 22,
-        "height": 1
-    },
-    {
-        "id": "08ca613965807b12",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 14,
-        "width": 22,
-        "height": 1
-    },
-    {
-        "id": "eec78e0cc2ff4bde",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 15,
-        "width": 22,
-        "height": 1
-    },
-    {
-        "id": "6a1dcaf4757ecc4a",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 16,
-        "width": 22,
-        "height": 1
-    },
-    {
-        "id": "b11f63a91def0ae8",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 17,
-        "width": 22,
-        "height": 1
-    },
-    {
-        "id": "5937f82b963acadf",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 18,
-        "width": 22,
-        "height": 1
-    },
-    {
-        "id": "09635949f55fe11e",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 19,
-        "width": 33,
-        "height": 1
-    },
-    {
-        "id": "41bd807d9065e9e2",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 20,
-        "width": 33,
-        "height": 1
-    },
-    {
-        "id": "cc8b7de5d05102b0",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 21,
-        "width": 33,
-        "height": 1
-    },
-    {
-        "id": "0fd6e822638c9460",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 22,
-        "width": 33,
-        "height": 1
-    },
-    {
-        "id": "1343f497a13ea555",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 23,
-        "width": 33,
-        "height": 1
-    },
-    {
-        "id": "6547938c6efd93e2",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 24,
-        "width": 33,
-        "height": 1
-    },
-    {
-        "id": "0a6ff79d2e9cd10b",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 25,
-        "width": 33,
-        "height": 1
-    },
-    {
-        "id": "e2982ed7b1bec4a9",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 26,
-        "width": 33,
-        "height": 1
-    },
-    {
-        "id": "82849f749c514b5f",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 27,
-        "width": 33,
-        "height": 1
-    },
-    {
-        "id": "4327ab400fbe0aa3",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 28,
-        "width": 33,
-        "height": 1
-    },
-    {
-        "id": "fce4de68c4bd35fd",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 29,
-        "width": 33,
-        "height": 1
-    },
-    {
-        "id": "3d9677c2a7351e23",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 30,
-        "width": 33,
-        "height": 1
-    },
-    {
-        "id": "a03d3c3b040c74b0",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 31,
-        "width": 33,
-        "height": 1
-    },
-    {
-        "id": "68880750598a4208",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 32,
-        "width": 33,
-        "height": 1
-    },
-    {
-        "id": "8bc065b0b1064fe8",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 33,
-        "width": 33,
-        "height": 1
-    },
-    {
-        "id": "edfa5e86d38eac33",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 34,
-        "width": 33,
-        "height": 1
-    },
-    {
-        "id": "c2001e372559da76",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 35,
-        "width": 33,
-        "height": 1
-    },
-    {
-        "id": "3879de97cc171d9e",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 36,
-        "width": 33,
-        "height": 1
-    },
-    {
-        "id": "f4633fc938df687f",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 37,
-        "width": 33,
-        "height": 1
-    },
-    {
-        "id": "f97bc51f0322e1da",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 38,
-        "width": 33,
-        "height": 1
-    },
-    {
-        "id": "0c79618721ca5dd8",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 39,
-        "width": 33,
-        "height": 1
-    },
-    {
-        "id": "bb884a24e8f1ddfa",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 40,
-        "width": 33,
-        "height": 1
-    },
-    {
-        "id": "2c55b9e1ddcbe01f",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 41,
-        "width": 33,
-        "height": 1
-    },
-    {
-        "id": "7bd014a2e0982488",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 42,
-        "width": 33,
-        "height": 1
-    },
-    {
-        "id": "6b5825abf8c51986",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 43,
-        "width": 33,
-        "height": 1
-    },
-    {
-        "id": "90848b5cc41a0861",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 45,
-        "width": 19,
-        "height": 1
-    },
-    {
-        "id": "9ef28cf8b2070ca2",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 46,
-        "width": 19,
-        "height": 1
-    },
-    {
-        "id": "7a329575a4c950a6",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 48,
-        "width": 19,
-        "height": 1
-    },
-    {
-        "id": "249eb5561a53c978",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 49,
-        "width": 19,
-        "height": 1
-    },
-    {
-        "id": "cebb5b3de577941b",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 50,
-        "width": 19,
-        "height": 1
-    },
-    {
-        "id": "ea13d51eed7a0f0a",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 51,
-        "width": 19,
-        "height": 1
-    },
-    {
-        "id": "6fe833361fe94e41",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 52,
-        "width": 19,
-        "height": 1
-    },
-    {
-        "id": "3a84d260f834c11e",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 53,
-        "width": 19,
-        "height": 1
-    },
-    {
-        "id": "ddb156e4174a87a0",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 55,
-        "width": 27,
-        "height": 1
-    },
-    {
-        "id": "617c497f0607d1ea",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 56,
-        "width": 27,
-        "height": 1
-    },
-    {
-        "id": "9de34125d9450926",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 57,
-        "width": 27,
-        "height": 1
-    },
-    {
-        "id": "169c9d1991fd48a6",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 58,
-        "width": 27,
-        "height": 1
-    },
-    {
-        "id": "0e2cf322e5e3759e",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 59,
-        "width": 27,
-        "height": 1
-    },
-    {
-        "id": "f9a5cd8a5062530d",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 62,
-        "width": 27,
-        "height": 1
-    },
-    {
-        "id": "d440cb1d8cd84287",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 63,
-        "width": 27,
-        "height": 1
-    },
-    {
-        "id": "952366729d96d721",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 64,
-        "width": 27,
-        "height": 1
-    },
-    {
-        "id": "a9449fc79709887a",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 65,
-        "width": 27,
-        "height": 1
-    },
-    {
-        "id": "bbb9f134e48554c9",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 66,
-        "width": 27,
-        "height": 1
-    },
-    {
-        "id": "637f0f91e6bdf21c",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 68,
-        "width": 27,
-        "height": 1
-    },
-    {
-        "id": "d30ff1577a70d3ca",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 69,
-        "width": 27,
-        "height": 1
-    },
-    {
-        "id": "d9779b4b3147761c",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 70,
-        "width": 27,
-        "height": 1
-    },
-    {
-        "id": "fabc99ce732cd283",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 71,
-        "width": 27,
-        "height": 1
-    },
-    {
-        "id": "152f29523a9d0c69",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "ef57d5330c6fecd8",
-        "order": 72,
-        "width": 27,
-        "height": 1
-    },
-    {
-        "id": "02f9fb6dffadec5c",
-        "type": "ui_tab",
-        "name": "Raspberry",
-        "icon": "dashboard",
-        "order": 1,
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "f3c1e6a039430860",
-        "type": "ui_group",
-        "name": "Pico",
-        "tab": "02f9fb6dffadec5c",
-        "order": 1,
-        "disp": true,
-        "width": 30,
-        "collapse": false,
-        "className": ".intro {   background-color: yellow; }"
-    },
-    {
-        "id": "cf0cbac4fb6aa890",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "f3c1e6a039430860",
-        "order": 3,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "a6ad3ecdb606be25",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "f3c1e6a039430860",
-        "order": 4,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "3c26b61eb333ec99",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "f3c1e6a039430860",
-        "order": 5,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "a9fff07c87022fa4",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "f3c1e6a039430860",
-        "order": 6,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "5cd510d7fb7735e0",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "f3c1e6a039430860",
-        "order": 7,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "5be12809a543573f",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "f3c1e6a039430860",
-        "order": 9,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "c46e1dbc8f7613f6",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "f3c1e6a039430860",
-        "order": 11,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "7f8c497c9a119cfd",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "f3c1e6a039430860",
-        "order": 12,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "75b6f2a7e321b580",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "f3c1e6a039430860",
-        "order": 13,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "4eee3806f7a2f4ab",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "f3c1e6a039430860",
-        "order": 14,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "c2ddd1a130c7f25b",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "f3c1e6a039430860",
-        "order": 15,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "da5e13fedfc748b2",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "f3c1e6a039430860",
-        "order": 17,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "9eaaeea938153bb7",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "f3c1e6a039430860",
-        "order": 19,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "bec9b2dda95b01d9",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "f3c1e6a039430860",
-        "order": 23,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "928a863602a6a1df",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "f3c1e6a039430860",
-        "order": 24,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "f9e02233621bba61",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "f3c1e6a039430860",
-        "order": 25,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "44087265c7cd13ce",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "f3c1e6a039430860",
-        "order": 26,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "4ebb9526268c7f64",
-        "type": "ui_spacer",
-        "z": "f6f2187d.f17ca8",
-        "name": "spacer",
-        "group": "f3c1e6a039430860",
-        "order": 28,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "447d49bd50338576",
+        "id": "a63e92e18d711f00",
         "type": "debug",
-        "z": "f6f2187d.f17ca8",
-        "name": "debug 1",
-        "active": true,
+        "z": "ff64d5752f28abe6",
+        "name": "Dev_01",
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "payload",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
         "x": 420,
@@ -1118,9 +24,9 @@
         "wires": []
     },
     {
-        "id": "1ed57b01b4ecc8e8",
+        "id": "50d3d0820441a368",
         "type": "mqtt in",
-        "z": "f6f2187d.f17ca8",
+        "z": "ff64d5752f28abe6",
         "name": "Temperature",
         "topic": "Pico/iot_med_dev_01/Physiological_Data/Temperature",
         "qos": "2",
@@ -1134,20 +40,20 @@
         "y": 140,
         "wires": [
             [
-                "447d49bd50338576",
-                "6d7ac7cad56053ea"
+                "a63e92e18d711f00",
+                "1b095437f38976c6"
             ]
         ]
     },
     {
-        "id": "2afd48d8314d9b17",
+        "id": "a8b130a56f42a9c3",
         "type": "mqtt in",
-        "z": "f6f2187d.f17ca8",
+        "z": "ff64d5752f28abe6",
         "name": "Pulse Signal",
         "topic": "Pico/iot_med_dev_01/Physiological_Data/Pulse_Signal",
         "qos": "2",
         "datatype": "auto-detect",
-        "broker": "fb2c6620ad6b6081",
+        "broker": "f998175f7faa53f6",
         "nl": false,
         "rap": true,
         "rh": 0,
@@ -1156,19 +62,19 @@
         "y": 200,
         "wires": [
             [
-                "428e24b7bde1cf4e"
+                "32761a0aeb54a920"
             ]
         ]
     },
     {
-        "id": "d4a133d33d53a6e0",
+        "id": "6c4d45941dc449b2",
         "type": "mqtt in",
-        "z": "f6f2187d.f17ca8",
+        "z": "ff64d5752f28abe6",
         "name": "Temperature MCU",
         "topic": "Pico/iot_med_dev_01/Internal_Device_Data/Temperature/MCU",
         "qos": "2",
         "datatype": "auto-detect",
-        "broker": "fb2c6620ad6b6081",
+        "broker": "f998175f7faa53f6",
         "nl": false,
         "rap": true,
         "rh": 0,
@@ -1177,19 +83,19 @@
         "y": 520,
         "wires": [
             [
-                "4ed2d04c9a666c87"
+                "2e59e9594c0c4e35"
             ]
         ]
     },
     {
-        "id": "a58095c432de0086",
+        "id": "a1c662e2ba605b5b",
         "type": "mqtt in",
-        "z": "f6f2187d.f17ca8",
+        "z": "ff64d5752f28abe6",
         "name": "Accel x",
         "topic": "Pico/iot_med_dev_01/Physiological_Data/Accelerometer/x",
         "qos": "2",
         "datatype": "auto-detect",
-        "broker": "fb2c6620ad6b6081",
+        "broker": "f998175f7faa53f6",
         "nl": false,
         "rap": true,
         "rh": 0,
@@ -1198,19 +104,19 @@
         "y": 300,
         "wires": [
             [
-                "e9a1023464abed2a"
+                "c2e05d515eeb1d34"
             ]
         ]
     },
     {
-        "id": "5cdbe7f59220a462",
+        "id": "ebf0f5cf0a2298f0",
         "type": "mqtt in",
-        "z": "f6f2187d.f17ca8",
+        "z": "ff64d5752f28abe6",
         "name": "Accel y",
         "topic": "Pico/iot_med_dev_01/Physiological_Data/Accelerometer/y",
         "qos": "2",
         "datatype": "auto-detect",
-        "broker": "fb2c6620ad6b6081",
+        "broker": "f998175f7faa53f6",
         "nl": false,
         "rap": true,
         "rh": 0,
@@ -1219,19 +125,19 @@
         "y": 360,
         "wires": [
             [
-                "fd8e4179fba6b49f"
+                "44ceb748237f8e48"
             ]
         ]
     },
     {
-        "id": "2ae856da6d592db2",
+        "id": "2a61bb824870b272",
         "type": "mqtt in",
-        "z": "f6f2187d.f17ca8",
+        "z": "ff64d5752f28abe6",
         "name": "Accel z",
         "topic": "Pico/iot_med_dev_01/Physiological_Data/Accelerometer/z",
         "qos": "2",
         "datatype": "auto-detect",
-        "broker": "fb2c6620ad6b6081",
+        "broker": "f998175f7faa53f6",
         "nl": false,
         "rap": true,
         "rh": 0,
@@ -1240,14 +146,14 @@
         "y": 420,
         "wires": [
             [
-                "49e8fb2705115a72"
+                "245c0b43b909381a"
             ]
         ]
     },
     {
-        "id": "376a0e5df158fad4",
+        "id": "6c0dfcdd40ca222a",
         "type": "mqtt in",
-        "z": "f6f2187d.f17ca8",
+        "z": "ff64d5752f28abe6",
         "name": "Temperature MPU",
         "topic": "Pico/iot_med_dev_01/Internal_Device_Data/Temperature/MPU",
         "qos": "2",
@@ -1261,14 +167,14 @@
         "y": 580,
         "wires": [
             [
-                "5e295fb8d9d1555e"
+                "eeca6b46e9456a5b"
             ]
         ]
     },
     {
-        "id": "4ed2d04c9a666c87",
+        "id": "2e59e9594c0c4e35",
         "type": "ui_gauge",
-        "z": "f6f2187d.f17ca8",
+        "z": "ff64d5752f28abe6",
         "name": "",
         "group": "f3c1e6a039430860",
         "order": 20,
@@ -1293,9 +199,9 @@
         "wires": []
     },
     {
-        "id": "5e295fb8d9d1555e",
+        "id": "eeca6b46e9456a5b",
         "type": "ui_gauge",
-        "z": "f6f2187d.f17ca8",
+        "z": "ff64d5752f28abe6",
         "name": "",
         "group": "f3c1e6a039430860",
         "order": 21,
@@ -1320,9 +226,9 @@
         "wires": []
     },
     {
-        "id": "428e24b7bde1cf4e",
+        "id": "32761a0aeb54a920",
         "type": "ui_chart",
-        "z": "f6f2187d.f17ca8",
+        "z": "ff64d5752f28abe6",
         "name": "",
         "group": "f3c1e6a039430860",
         "order": 1,
@@ -1364,9 +270,9 @@
         ]
     },
     {
-        "id": "6d7ac7cad56053ea",
+        "id": "1b095437f38976c6",
         "type": "ui_gauge",
-        "z": "f6f2187d.f17ca8",
+        "z": "ff64d5752f28abe6",
         "name": "",
         "group": "f3c1e6a039430860",
         "order": 22,
@@ -1391,9 +297,9 @@
         "wires": []
     },
     {
-        "id": "cbcc72d602df39cb",
+        "id": "baa6b171520a30dc",
         "type": "ui_gauge",
-        "z": "f6f2187d.f17ca8",
+        "z": "ff64d5752f28abe6",
         "name": "",
         "group": "f3c1e6a039430860",
         "order": 2,
@@ -1418,9 +324,9 @@
         "wires": []
     },
     {
-        "id": "ac16fd44104caedc",
+        "id": "b3149a1d9244c48a",
         "type": "ui_gauge",
-        "z": "f6f2187d.f17ca8",
+        "z": "ff64d5752f28abe6",
         "name": "",
         "group": "f3c1e6a039430860",
         "order": 10,
@@ -1445,9 +351,9 @@
         "wires": []
     },
     {
-        "id": "60d7d20934975464",
+        "id": "76b10b52ede787df",
         "type": "ui_gauge",
-        "z": "f6f2187d.f17ca8",
+        "z": "ff64d5752f28abe6",
         "name": "",
         "group": "f3c1e6a039430860",
         "order": 18,
@@ -1472,9 +378,9 @@
         "wires": []
     },
     {
-        "id": "e9a1023464abed2a",
+        "id": "c2e05d515eeb1d34",
         "type": "ui_slider",
-        "z": "f6f2187d.f17ca8",
+        "z": "ff64d5752f28abe6",
         "name": "",
         "label": "X",
         "tooltip": "",
@@ -1494,14 +400,14 @@
         "y": 300,
         "wires": [
             [
-                "cbcc72d602df39cb"
+                "baa6b171520a30dc"
             ]
         ]
     },
     {
-        "id": "fd8e4179fba6b49f",
+        "id": "44ceb748237f8e48",
         "type": "ui_slider",
-        "z": "f6f2187d.f17ca8",
+        "z": "ff64d5752f28abe6",
         "name": "",
         "label": "Y",
         "tooltip": "",
@@ -1521,14 +427,14 @@
         "y": 360,
         "wires": [
             [
-                "ac16fd44104caedc"
+                "b3149a1d9244c48a"
             ]
         ]
     },
     {
-        "id": "49e8fb2705115a72",
+        "id": "245c0b43b909381a",
         "type": "ui_slider",
-        "z": "f6f2187d.f17ca8",
+        "z": "ff64d5752f28abe6",
         "name": "",
         "label": "Z",
         "tooltip": "",
@@ -1548,8 +454,3460 @@
         "y": 420,
         "wires": [
             [
-                "60d7d20934975464"
+                "76b10b52ede787df"
             ]
         ]
+    },
+    {
+        "id": "f1dbe1d0f0e302e4",
+        "type": "debug",
+        "z": "ff64d5752f28abe6",
+        "name": "Dev_02",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1280,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "195c60471f385704",
+        "type": "mqtt in",
+        "z": "ff64d5752f28abe6",
+        "name": "Temperature",
+        "topic": "Pico/iot_med_dev_02/Physiological_Data/Temperature",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "fb2c6620ad6b6081",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1090,
+        "y": 140,
+        "wires": [
+            [
+                "f1dbe1d0f0e302e4",
+                "643c94eb6bea9887"
+            ]
+        ]
+    },
+    {
+        "id": "3125d1cf16ffbb96",
+        "type": "mqtt in",
+        "z": "ff64d5752f28abe6",
+        "name": "Pulse Signal",
+        "topic": "Pico/iot_med_dev_02/Physiological_Data/Pulse_Signal",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "f998175f7faa53f6",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1090,
+        "y": 200,
+        "wires": [
+            [
+                "89dd12ba76435523"
+            ]
+        ]
+    },
+    {
+        "id": "a3df5dc7b2828bc0",
+        "type": "mqtt in",
+        "z": "ff64d5752f28abe6",
+        "name": "Temperature MCU",
+        "topic": "Pico/iot_med_dev_02/Internal_Device_Data/Temperature/MCU",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "f998175f7faa53f6",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1110,
+        "y": 520,
+        "wires": [
+            [
+                "ff1da3e986053dc9"
+            ]
+        ]
+    },
+    {
+        "id": "aca9edaee260e6d0",
+        "type": "mqtt in",
+        "z": "ff64d5752f28abe6",
+        "name": "Accel x",
+        "topic": "Pico/iot_med_dev_02/Physiological_Data/Accelerometer/x",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "f998175f7faa53f6",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1070,
+        "y": 300,
+        "wires": [
+            [
+                "17abb3182538febe"
+            ]
+        ]
+    },
+    {
+        "id": "530deeb0b392ad5d",
+        "type": "mqtt in",
+        "z": "ff64d5752f28abe6",
+        "name": "Accel y",
+        "topic": "Pico/iot_med_dev_02/Physiological_Data/Accelerometer/y",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "f998175f7faa53f6",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1070,
+        "y": 360,
+        "wires": [
+            [
+                "4ff51d2b615560d4"
+            ]
+        ]
+    },
+    {
+        "id": "a74d9170f9b797bd",
+        "type": "mqtt in",
+        "z": "ff64d5752f28abe6",
+        "name": "Accel z",
+        "topic": "Pico/iot_med_dev_02/Physiological_Data/Accelerometer/z",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "f998175f7faa53f6",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1070,
+        "y": 420,
+        "wires": [
+            [
+                "f12ca02a04329511"
+            ]
+        ]
+    },
+    {
+        "id": "f6a6cd63b917d283",
+        "type": "mqtt in",
+        "z": "ff64d5752f28abe6",
+        "name": "Temperature MPU",
+        "topic": "Pico/iot_med_dev_02/Internal_Device_Data/Temperature/MPU",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "fb2c6620ad6b6081",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1110,
+        "y": 580,
+        "wires": [
+            [
+                "4bc894adccb40369"
+            ]
+        ]
+    },
+    {
+        "id": "ff1da3e986053dc9",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "7874dfd1b72253a8",
+        "order": 20,
+        "width": 9,
+        "height": 5,
+        "gtype": "gage",
+        "title": "Temperature MCU",
+        "label": "ºC",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "70",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "40",
+        "seg2": "60",
+        "className": "temp",
+        "x": 1490,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "4bc894adccb40369",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "7874dfd1b72253a8",
+        "order": 21,
+        "width": 9,
+        "height": 5,
+        "gtype": "gage",
+        "title": "Temperature MPU",
+        "label": "ºC",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "70",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "40",
+        "seg2": "60",
+        "className": "",
+        "x": 1490,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "89dd12ba76435523",
+        "type": "ui_chart",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "7874dfd1b72253a8",
+        "order": 1,
+        "width": 23,
+        "height": 13,
+        "label": "Pulse signal",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "5",
+        "removeOlderPoints": "100",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#e31616",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1450,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "643c94eb6bea9887",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "7874dfd1b72253a8",
+        "order": 22,
+        "width": 5,
+        "height": 5,
+        "gtype": "donut",
+        "title": "Patient Temperature",
+        "label": "ºC",
+        "format": "{{value}}",
+        "min": "25",
+        "max": "45",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "36",
+        "seg2": "38",
+        "className": "",
+        "x": 1480,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "9c49f0eed5762f71",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "7874dfd1b72253a8",
+        "order": 2,
+        "width": 6,
+        "height": 5,
+        "gtype": "donut",
+        "title": "X",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-1",
+        "max": "1",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "0",
+        "seg2": "0",
+        "className": "",
+        "x": 1390,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "d80509f78e51509c",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "7874dfd1b72253a8",
+        "order": 10,
+        "width": 6,
+        "height": 5,
+        "gtype": "donut",
+        "title": "Y",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-1",
+        "max": "1",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "0",
+        "seg2": "0",
+        "className": "",
+        "x": 1390,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "195205d2d201bdf0",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "7874dfd1b72253a8",
+        "order": 18,
+        "width": 6,
+        "height": 5,
+        "gtype": "donut",
+        "title": "Z",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-1",
+        "max": "1",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "0",
+        "seg2": "0",
+        "className": "",
+        "x": 1390,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "17abb3182538febe",
+        "type": "ui_slider",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "label": "X",
+        "tooltip": "",
+        "group": "7874dfd1b72253a8",
+        "order": 8,
+        "width": 6,
+        "height": 1,
+        "passthru": true,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": "-1",
+        "max": "1",
+        "step": "0.001",
+        "className": "",
+        "x": 1230,
+        "y": 300,
+        "wires": [
+            [
+                "9c49f0eed5762f71"
+            ]
+        ]
+    },
+    {
+        "id": "4ff51d2b615560d4",
+        "type": "ui_slider",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "label": "Y",
+        "tooltip": "",
+        "group": "7874dfd1b72253a8",
+        "order": 16,
+        "width": 6,
+        "height": 1,
+        "passthru": true,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": "-1",
+        "max": "1",
+        "step": "0.001",
+        "className": "",
+        "x": 1230,
+        "y": 360,
+        "wires": [
+            [
+                "d80509f78e51509c"
+            ]
+        ]
+    },
+    {
+        "id": "f12ca02a04329511",
+        "type": "ui_slider",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "label": "Z",
+        "tooltip": "",
+        "group": "7874dfd1b72253a8",
+        "order": 27,
+        "width": 6,
+        "height": 1,
+        "passthru": true,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": "-1",
+        "max": "1",
+        "step": "0.001",
+        "className": "",
+        "x": 1230,
+        "y": 420,
+        "wires": [
+            [
+                "195205d2d201bdf0"
+            ]
+        ]
+    },
+    {
+        "id": "c7648e2c028dc6d9",
+        "type": "debug",
+        "z": "ff64d5752f28abe6",
+        "name": "Dev_03",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 420,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "548f5c84ea65a76c",
+        "type": "mqtt in",
+        "z": "ff64d5752f28abe6",
+        "name": "Temperature",
+        "topic": "Pico/iot_med_dev_03/Physiological_Data/Temperature",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "fb2c6620ad6b6081",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 230,
+        "y": 820,
+        "wires": [
+            [
+                "c7648e2c028dc6d9",
+                "2aec8ac3063dfeea"
+            ]
+        ]
+    },
+    {
+        "id": "51bdc5878e3e8632",
+        "type": "mqtt in",
+        "z": "ff64d5752f28abe6",
+        "name": "Pulse Signal",
+        "topic": "Pico/iot_med_dev_03/Physiological_Data/Pulse_Signal",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "f998175f7faa53f6",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 230,
+        "y": 880,
+        "wires": [
+            [
+                "4302509f97918a02"
+            ]
+        ]
+    },
+    {
+        "id": "51f5484669d796b1",
+        "type": "mqtt in",
+        "z": "ff64d5752f28abe6",
+        "name": "Temperature MCU",
+        "topic": "Pico/iot_med_dev_03/Internal_Device_Data/Temperature/MCU",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "f998175f7faa53f6",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 250,
+        "y": 1200,
+        "wires": [
+            [
+                "1593572feb2fa849"
+            ]
+        ]
+    },
+    {
+        "id": "1ef95dd19a546acc",
+        "type": "mqtt in",
+        "z": "ff64d5752f28abe6",
+        "name": "Accel x",
+        "topic": "Pico/iot_med_dev_03/Physiological_Data/Accelerometer/x",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "f998175f7faa53f6",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 210,
+        "y": 980,
+        "wires": [
+            [
+                "738a96aa6859bed8"
+            ]
+        ]
+    },
+    {
+        "id": "1339edc656d7d1e4",
+        "type": "mqtt in",
+        "z": "ff64d5752f28abe6",
+        "name": "Accel y",
+        "topic": "Pico/iot_med_dev_03/Physiological_Data/Accelerometer/y",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "f998175f7faa53f6",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 210,
+        "y": 1040,
+        "wires": [
+            [
+                "128104a11f857119"
+            ]
+        ]
+    },
+    {
+        "id": "7480a05057564cd6",
+        "type": "mqtt in",
+        "z": "ff64d5752f28abe6",
+        "name": "Accel z",
+        "topic": "Pico/iot_med_dev_03/Physiological_Data/Accelerometer/z",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "f998175f7faa53f6",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 210,
+        "y": 1100,
+        "wires": [
+            [
+                "1e86a8aeeeea7877"
+            ]
+        ]
+    },
+    {
+        "id": "f36bd7223f0a497a",
+        "type": "mqtt in",
+        "z": "ff64d5752f28abe6",
+        "name": "Temperature MPU",
+        "topic": "Pico/iot_med_dev_03/Internal_Device_Data/Temperature/MPU",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "fb2c6620ad6b6081",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 250,
+        "y": 1260,
+        "wires": [
+            [
+                "cb98fb62cf85bc7c"
+            ]
+        ]
+    },
+    {
+        "id": "1593572feb2fa849",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "35e8f16e89639508",
+        "order": 20,
+        "width": 9,
+        "height": 5,
+        "gtype": "gage",
+        "title": "Temperature MCU",
+        "label": "ºC",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "70",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "40",
+        "seg2": "60",
+        "className": "temp",
+        "x": 630,
+        "y": 1200,
+        "wires": []
+    },
+    {
+        "id": "cb98fb62cf85bc7c",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "35e8f16e89639508",
+        "order": 21,
+        "width": 9,
+        "height": 5,
+        "gtype": "gage",
+        "title": "Temperature MPU",
+        "label": "ºC",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "70",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "40",
+        "seg2": "60",
+        "className": "",
+        "x": 630,
+        "y": 1260,
+        "wires": []
+    },
+    {
+        "id": "4302509f97918a02",
+        "type": "ui_chart",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "35e8f16e89639508",
+        "order": 1,
+        "width": 23,
+        "height": 13,
+        "label": "Pulse signal",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "5",
+        "removeOlderPoints": "100",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#e31616",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 590,
+        "y": 880,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2aec8ac3063dfeea",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "35e8f16e89639508",
+        "order": 22,
+        "width": 5,
+        "height": 5,
+        "gtype": "donut",
+        "title": "Patient Temperature",
+        "label": "ºC",
+        "format": "{{value}}",
+        "min": "25",
+        "max": "45",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "36",
+        "seg2": "38",
+        "className": "",
+        "x": 620,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "6cb4a4d9e42f6a2b",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "35e8f16e89639508",
+        "order": 2,
+        "width": 6,
+        "height": 5,
+        "gtype": "donut",
+        "title": "X",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-1",
+        "max": "1",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "0",
+        "seg2": "0",
+        "className": "",
+        "x": 530,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "54df5e922cade561",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "35e8f16e89639508",
+        "order": 10,
+        "width": 6,
+        "height": 5,
+        "gtype": "donut",
+        "title": "Y",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-1",
+        "max": "1",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "0",
+        "seg2": "0",
+        "className": "",
+        "x": 530,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "bcbad2d788b4fab0",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "35e8f16e89639508",
+        "order": 18,
+        "width": 6,
+        "height": 5,
+        "gtype": "donut",
+        "title": "Z",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-1",
+        "max": "1",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "0",
+        "seg2": "0",
+        "className": "",
+        "x": 530,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "738a96aa6859bed8",
+        "type": "ui_slider",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "label": "X",
+        "tooltip": "",
+        "group": "35e8f16e89639508",
+        "order": 8,
+        "width": 6,
+        "height": 1,
+        "passthru": true,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": "-1",
+        "max": "1",
+        "step": "0.001",
+        "className": "",
+        "x": 370,
+        "y": 980,
+        "wires": [
+            [
+                "6cb4a4d9e42f6a2b"
+            ]
+        ]
+    },
+    {
+        "id": "128104a11f857119",
+        "type": "ui_slider",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "label": "Y",
+        "tooltip": "",
+        "group": "35e8f16e89639508",
+        "order": 16,
+        "width": 6,
+        "height": 1,
+        "passthru": true,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": "-1",
+        "max": "1",
+        "step": "0.001",
+        "className": "",
+        "x": 370,
+        "y": 1040,
+        "wires": [
+            [
+                "54df5e922cade561"
+            ]
+        ]
+    },
+    {
+        "id": "1e86a8aeeeea7877",
+        "type": "ui_slider",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "label": "Z",
+        "tooltip": "",
+        "group": "35e8f16e89639508",
+        "order": 27,
+        "width": 6,
+        "height": 1,
+        "passthru": true,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": "-1",
+        "max": "1",
+        "step": "0.001",
+        "className": "",
+        "x": 370,
+        "y": 1100,
+        "wires": [
+            [
+                "bcbad2d788b4fab0"
+            ]
+        ]
+    },
+    {
+        "id": "68a1f07bd586b20d",
+        "type": "debug",
+        "z": "ff64d5752f28abe6",
+        "name": "Dev_04",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1280,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "c03c51e37b7f183d",
+        "type": "mqtt in",
+        "z": "ff64d5752f28abe6",
+        "name": "Temperature",
+        "topic": "Pico/iot_med_dev_04/Physiological_Data/Temperature",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "fb2c6620ad6b6081",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1090,
+        "y": 820,
+        "wires": [
+            [
+                "68a1f07bd586b20d",
+                "214b72df4c1d2e9c"
+            ]
+        ]
+    },
+    {
+        "id": "9a3d6fcef68ec923",
+        "type": "mqtt in",
+        "z": "ff64d5752f28abe6",
+        "name": "Pulse Signal",
+        "topic": "Pico/iot_med_dev_04/Physiological_Data/Pulse_Signal",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "f998175f7faa53f6",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1090,
+        "y": 880,
+        "wires": [
+            [
+                "5092e22689c50bfe"
+            ]
+        ]
+    },
+    {
+        "id": "e6f5ee2cf9286845",
+        "type": "mqtt in",
+        "z": "ff64d5752f28abe6",
+        "name": "Temperature MCU",
+        "topic": "Pico/iot_med_dev_04/Internal_Device_Data/Temperature/MCU",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "f998175f7faa53f6",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1110,
+        "y": 1200,
+        "wires": [
+            [
+                "8b2db7c255c7bc23"
+            ]
+        ]
+    },
+    {
+        "id": "f64e50ca00e6b8fb",
+        "type": "mqtt in",
+        "z": "ff64d5752f28abe6",
+        "name": "Accel x",
+        "topic": "Pico/iot_med_dev_04/Physiological_Data/Accelerometer/x",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "f998175f7faa53f6",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1070,
+        "y": 980,
+        "wires": [
+            [
+                "6971b97ebfa1e176"
+            ]
+        ]
+    },
+    {
+        "id": "be429ae2a002f13f",
+        "type": "mqtt in",
+        "z": "ff64d5752f28abe6",
+        "name": "Accel y",
+        "topic": "Pico/iot_med_dev_04/Physiological_Data/Accelerometer/y",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "f998175f7faa53f6",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1070,
+        "y": 1040,
+        "wires": [
+            [
+                "6b5289bdfa523c68"
+            ]
+        ]
+    },
+    {
+        "id": "42bf59695cc61caa",
+        "type": "mqtt in",
+        "z": "ff64d5752f28abe6",
+        "name": "Accel z",
+        "topic": "Pico/iot_med_dev_04/Physiological_Data/Accelerometer/z",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "f998175f7faa53f6",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1070,
+        "y": 1100,
+        "wires": [
+            [
+                "88e2b9e6e33db3e2"
+            ]
+        ]
+    },
+    {
+        "id": "0b418780b25125a0",
+        "type": "mqtt in",
+        "z": "ff64d5752f28abe6",
+        "name": "Temperature MPU",
+        "topic": "Pico/iot_med_dev_04/Internal_Device_Data/Temperature/MPU",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "fb2c6620ad6b6081",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1110,
+        "y": 1260,
+        "wires": [
+            [
+                "5c3aa4fb17440358"
+            ]
+        ]
+    },
+    {
+        "id": "8b2db7c255c7bc23",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "d22a45b2307d6d71",
+        "order": 20,
+        "width": 9,
+        "height": 5,
+        "gtype": "gage",
+        "title": "Temperature MCU",
+        "label": "ºC",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "70",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "40",
+        "seg2": "60",
+        "className": "temp",
+        "x": 1490,
+        "y": 1200,
+        "wires": []
+    },
+    {
+        "id": "5c3aa4fb17440358",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "d22a45b2307d6d71",
+        "order": 21,
+        "width": 9,
+        "height": 5,
+        "gtype": "gage",
+        "title": "Temperature MPU",
+        "label": "ºC",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "70",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "40",
+        "seg2": "60",
+        "className": "",
+        "x": 1490,
+        "y": 1260,
+        "wires": []
+    },
+    {
+        "id": "5092e22689c50bfe",
+        "type": "ui_chart",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "d22a45b2307d6d71",
+        "order": 1,
+        "width": 23,
+        "height": 13,
+        "label": "Pulse signal",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "5",
+        "removeOlderPoints": "100",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#e31616",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1450,
+        "y": 880,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "214b72df4c1d2e9c",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "d22a45b2307d6d71",
+        "order": 22,
+        "width": 5,
+        "height": 5,
+        "gtype": "donut",
+        "title": "Patient Temperature",
+        "label": "ºC",
+        "format": "{{value}}",
+        "min": "25",
+        "max": "45",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "36",
+        "seg2": "38",
+        "className": "",
+        "x": 1480,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "40cebdd2384c5f62",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "d22a45b2307d6d71",
+        "order": 2,
+        "width": 6,
+        "height": 5,
+        "gtype": "donut",
+        "title": "X",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-1",
+        "max": "1",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "0",
+        "seg2": "0",
+        "className": "",
+        "x": 1390,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "e68f3ef5b7b085c7",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "d22a45b2307d6d71",
+        "order": 10,
+        "width": 6,
+        "height": 5,
+        "gtype": "donut",
+        "title": "Y",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-1",
+        "max": "1",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "0",
+        "seg2": "0",
+        "className": "",
+        "x": 1390,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "0ec1e522bd7698b2",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "d22a45b2307d6d71",
+        "order": 18,
+        "width": 6,
+        "height": 5,
+        "gtype": "donut",
+        "title": "Z",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-1",
+        "max": "1",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "0",
+        "seg2": "0",
+        "className": "",
+        "x": 1390,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "6971b97ebfa1e176",
+        "type": "ui_slider",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "label": "X",
+        "tooltip": "",
+        "group": "d22a45b2307d6d71",
+        "order": 8,
+        "width": 6,
+        "height": 1,
+        "passthru": true,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": "-1",
+        "max": "1",
+        "step": "0.001",
+        "className": "",
+        "x": 1230,
+        "y": 980,
+        "wires": [
+            [
+                "40cebdd2384c5f62"
+            ]
+        ]
+    },
+    {
+        "id": "6b5289bdfa523c68",
+        "type": "ui_slider",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "label": "Y",
+        "tooltip": "",
+        "group": "d22a45b2307d6d71",
+        "order": 16,
+        "width": 6,
+        "height": 1,
+        "passthru": true,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": "-1",
+        "max": "1",
+        "step": "0.001",
+        "className": "",
+        "x": 1230,
+        "y": 1040,
+        "wires": [
+            [
+                "e68f3ef5b7b085c7"
+            ]
+        ]
+    },
+    {
+        "id": "88e2b9e6e33db3e2",
+        "type": "ui_slider",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "label": "Z",
+        "tooltip": "",
+        "group": "d22a45b2307d6d71",
+        "order": 27,
+        "width": 6,
+        "height": 1,
+        "passthru": true,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": "-1",
+        "max": "1",
+        "step": "0.001",
+        "className": "",
+        "x": 1230,
+        "y": 1100,
+        "wires": [
+            [
+                "0ec1e522bd7698b2"
+            ]
+        ]
+    },
+    {
+        "id": "f62d4c7ae89ff44d",
+        "type": "debug",
+        "z": "ff64d5752f28abe6",
+        "name": "Dev_05",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 420,
+        "y": 1380,
+        "wires": []
+    },
+    {
+        "id": "4f92de5e6e9dbfb3",
+        "type": "mqtt in",
+        "z": "ff64d5752f28abe6",
+        "name": "Temperature",
+        "topic": "Pico/iot_med_dev_05/Physiological_Data/Temperature",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "fb2c6620ad6b6081",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 230,
+        "y": 1480,
+        "wires": [
+            [
+                "f62d4c7ae89ff44d",
+                "a5efaf8df9f60126"
+            ]
+        ]
+    },
+    {
+        "id": "608223963f6b2537",
+        "type": "mqtt in",
+        "z": "ff64d5752f28abe6",
+        "name": "Pulse Signal",
+        "topic": "Pico/iot_med_dev_05/Physiological_Data/Pulse_Signal",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "f998175f7faa53f6",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 230,
+        "y": 1540,
+        "wires": [
+            [
+                "50a5a5ecb4d703b9"
+            ]
+        ]
+    },
+    {
+        "id": "6f11f524ec1e5a93",
+        "type": "mqtt in",
+        "z": "ff64d5752f28abe6",
+        "name": "Temperature MCU",
+        "topic": "Pico/iot_med_dev_05/Internal_Device_Data/Temperature/MCU",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "f998175f7faa53f6",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 250,
+        "y": 1860,
+        "wires": [
+            [
+                "7ce69ef421c38022"
+            ]
+        ]
+    },
+    {
+        "id": "381edb63149cf077",
+        "type": "mqtt in",
+        "z": "ff64d5752f28abe6",
+        "name": "Accel x",
+        "topic": "Pico/iot_med_dev_05/Physiological_Data/Accelerometer/x",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "f998175f7faa53f6",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 210,
+        "y": 1640,
+        "wires": [
+            [
+                "976fe344c02598ad"
+            ]
+        ]
+    },
+    {
+        "id": "b4cb46feeedcc0b7",
+        "type": "mqtt in",
+        "z": "ff64d5752f28abe6",
+        "name": "Accel y",
+        "topic": "Pico/iot_med_dev_05/Physiological_Data/Accelerometer/y",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "f998175f7faa53f6",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 210,
+        "y": 1700,
+        "wires": [
+            [
+                "888afef17a48fab2"
+            ]
+        ]
+    },
+    {
+        "id": "9c3b4b4005188b0e",
+        "type": "mqtt in",
+        "z": "ff64d5752f28abe6",
+        "name": "Accel z",
+        "topic": "Pico/iot_med_dev_05/Physiological_Data/Accelerometer/z",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "f998175f7faa53f6",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 210,
+        "y": 1760,
+        "wires": [
+            [
+                "07e9b596b09c0fca"
+            ]
+        ]
+    },
+    {
+        "id": "6d3b5680f8b42a70",
+        "type": "mqtt in",
+        "z": "ff64d5752f28abe6",
+        "name": "Temperature MPU",
+        "topic": "Pico/iot_med_dev_05/Internal_Device_Data/Temperature/MPU",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "fb2c6620ad6b6081",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 250,
+        "y": 1920,
+        "wires": [
+            [
+                "e201e48b302ba0ac"
+            ]
+        ]
+    },
+    {
+        "id": "7ce69ef421c38022",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "25ead1c493d30de9",
+        "order": 20,
+        "width": 9,
+        "height": 5,
+        "gtype": "gage",
+        "title": "Temperature MCU",
+        "label": "ºC",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "70",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "40",
+        "seg2": "60",
+        "className": "temp",
+        "x": 630,
+        "y": 1860,
+        "wires": []
+    },
+    {
+        "id": "e201e48b302ba0ac",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "25ead1c493d30de9",
+        "order": 21,
+        "width": 9,
+        "height": 5,
+        "gtype": "gage",
+        "title": "Temperature MPU",
+        "label": "ºC",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "70",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "40",
+        "seg2": "60",
+        "className": "",
+        "x": 630,
+        "y": 1920,
+        "wires": []
+    },
+    {
+        "id": "50a5a5ecb4d703b9",
+        "type": "ui_chart",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "25ead1c493d30de9",
+        "order": 1,
+        "width": 23,
+        "height": 13,
+        "label": "Pulse signal",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "5",
+        "removeOlderPoints": "100",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#e31616",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 590,
+        "y": 1540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a5efaf8df9f60126",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "25ead1c493d30de9",
+        "order": 22,
+        "width": 5,
+        "height": 5,
+        "gtype": "donut",
+        "title": "Patient Temperature",
+        "label": "ºC",
+        "format": "{{value}}",
+        "min": "25",
+        "max": "45",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "36",
+        "seg2": "38",
+        "className": "",
+        "x": 620,
+        "y": 1480,
+        "wires": []
+    },
+    {
+        "id": "64ce781b0a5d8676",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "25ead1c493d30de9",
+        "order": 2,
+        "width": 6,
+        "height": 5,
+        "gtype": "donut",
+        "title": "X",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-1",
+        "max": "1",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "0",
+        "seg2": "0",
+        "className": "",
+        "x": 530,
+        "y": 1640,
+        "wires": []
+    },
+    {
+        "id": "d67c6c436dfa8048",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "25ead1c493d30de9",
+        "order": 10,
+        "width": 6,
+        "height": 5,
+        "gtype": "donut",
+        "title": "Y",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-1",
+        "max": "1",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "0",
+        "seg2": "0",
+        "className": "",
+        "x": 530,
+        "y": 1700,
+        "wires": []
+    },
+    {
+        "id": "a79716da73884a7a",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "25ead1c493d30de9",
+        "order": 18,
+        "width": 6,
+        "height": 5,
+        "gtype": "donut",
+        "title": "Z",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-1",
+        "max": "1",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "0",
+        "seg2": "0",
+        "className": "",
+        "x": 530,
+        "y": 1760,
+        "wires": []
+    },
+    {
+        "id": "976fe344c02598ad",
+        "type": "ui_slider",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "label": "X",
+        "tooltip": "",
+        "group": "25ead1c493d30de9",
+        "order": 8,
+        "width": 6,
+        "height": 1,
+        "passthru": true,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": "-1",
+        "max": "1",
+        "step": "0.001",
+        "className": "",
+        "x": 370,
+        "y": 1640,
+        "wires": [
+            [
+                "64ce781b0a5d8676"
+            ]
+        ]
+    },
+    {
+        "id": "888afef17a48fab2",
+        "type": "ui_slider",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "label": "Y",
+        "tooltip": "",
+        "group": "25ead1c493d30de9",
+        "order": 16,
+        "width": 6,
+        "height": 1,
+        "passthru": true,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": "-1",
+        "max": "1",
+        "step": "0.001",
+        "className": "",
+        "x": 370,
+        "y": 1700,
+        "wires": [
+            [
+                "d67c6c436dfa8048"
+            ]
+        ]
+    },
+    {
+        "id": "07e9b596b09c0fca",
+        "type": "ui_slider",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "label": "Z",
+        "tooltip": "",
+        "group": "25ead1c493d30de9",
+        "order": 27,
+        "width": 6,
+        "height": 1,
+        "passthru": true,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": "-1",
+        "max": "1",
+        "step": "0.001",
+        "className": "",
+        "x": 370,
+        "y": 1760,
+        "wires": [
+            [
+                "a79716da73884a7a"
+            ]
+        ]
+    },
+    {
+        "id": "a0c50659e377526b",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "4f29991b7a5bd322",
+        "order": 3,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "55c6a3dc64f8c3af",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "4f29991b7a5bd322",
+        "order": 6,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "7cdacb21fe6f4f7f",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "4f29991b7a5bd322",
+        "order": 8,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "153f4ed2561c5cf1",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "4f29991b7a5bd322",
+        "order": 9,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "a421abc9b73b454d",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "4f29991b7a5bd322",
+        "order": 10,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "810baf0d89971a8a",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "4f29991b7a5bd322",
+        "order": 11,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "13965dbc22070446",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "4f29991b7a5bd322",
+        "order": 12,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "dabe3b21f417b9c0",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "4f29991b7a5bd322",
+        "order": 14,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "438aafe6b4c7ab59",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "4f29991b7a5bd322",
+        "order": 15,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "2e1b4866b2b3384a",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "4f29991b7a5bd322",
+        "order": 16,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "b4292b4dba449285",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "4f29991b7a5bd322",
+        "order": 17,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "a927d7d6e53f150e",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "4f29991b7a5bd322",
+        "order": 18,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "834a772fd35bbb1d",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "4f29991b7a5bd322",
+        "order": 19,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "b9baffdfc0f21cc5",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 1,
+        "width": 33,
+        "height": 1
+    },
+    {
+        "id": "02410f9170616ee8",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 3,
+        "width": 25,
+        "height": 1
+    },
+    {
+        "id": "757bdb9dd35cae4b",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 4,
+        "width": 25,
+        "height": 1
+    },
+    {
+        "id": "50bc5d92854ad91d",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 5,
+        "width": 25,
+        "height": 1
+    },
+    {
+        "id": "60cd24d6dbfea43a",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 6,
+        "width": 25,
+        "height": 1
+    },
+    {
+        "id": "5b365fe5db1843db",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 7,
+        "width": 25,
+        "height": 1
+    },
+    {
+        "id": "aab1748d9b4b8a41",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 8,
+        "width": 25,
+        "height": 1
+    },
+    {
+        "id": "2abd7872110da914",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 9,
+        "width": 25,
+        "height": 1
+    },
+    {
+        "id": "bfb7780d9e7624cf",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 10,
+        "width": 33,
+        "height": 1
+    },
+    {
+        "id": "012e62f282fd3ad2",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 12,
+        "width": 22,
+        "height": 1
+    },
+    {
+        "id": "cf77b3ac8787599f",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 13,
+        "width": 22,
+        "height": 1
+    },
+    {
+        "id": "1fd7bbfb5df6e963",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 14,
+        "width": 22,
+        "height": 1
+    },
+    {
+        "id": "ab64738ae63bd693",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 15,
+        "width": 22,
+        "height": 1
+    },
+    {
+        "id": "0b27bc98df9e2c1f",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 16,
+        "width": 22,
+        "height": 1
+    },
+    {
+        "id": "5d84e5e18432da3d",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 17,
+        "width": 22,
+        "height": 1
+    },
+    {
+        "id": "f1fafdf83f80ba0e",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 18,
+        "width": 22,
+        "height": 1
+    },
+    {
+        "id": "cf16fc5a07396aea",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 19,
+        "width": 33,
+        "height": 1
+    },
+    {
+        "id": "7454f5f06650a283",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 20,
+        "width": 33,
+        "height": 1
+    },
+    {
+        "id": "753a47e91c7747b3",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 21,
+        "width": 33,
+        "height": 1
+    },
+    {
+        "id": "085319d2f14e5f45",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 22,
+        "width": 33,
+        "height": 1
+    },
+    {
+        "id": "30640a18ddbf586f",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 23,
+        "width": 33,
+        "height": 1
+    },
+    {
+        "id": "c5a17b845384e8c7",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 24,
+        "width": 33,
+        "height": 1
+    },
+    {
+        "id": "4dfd5156eeea7769",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 25,
+        "width": 33,
+        "height": 1
+    },
+    {
+        "id": "803b2e85296c2057",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 26,
+        "width": 33,
+        "height": 1
+    },
+    {
+        "id": "a7470a282a750542",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 27,
+        "width": 33,
+        "height": 1
+    },
+    {
+        "id": "df4e941a3ffd4626",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 28,
+        "width": 33,
+        "height": 1
+    },
+    {
+        "id": "af215de98b47a7dc",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 29,
+        "width": 33,
+        "height": 1
+    },
+    {
+        "id": "fc929dc630c3197c",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 30,
+        "width": 33,
+        "height": 1
+    },
+    {
+        "id": "afe6c01e258463f1",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 31,
+        "width": 33,
+        "height": 1
+    },
+    {
+        "id": "92b2a04432eb9e71",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 32,
+        "width": 33,
+        "height": 1
+    },
+    {
+        "id": "af5ad46007491a07",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 33,
+        "width": 33,
+        "height": 1
+    },
+    {
+        "id": "7a5b9bf938c8b452",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 34,
+        "width": 33,
+        "height": 1
+    },
+    {
+        "id": "dc08d4824a5704fc",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 35,
+        "width": 33,
+        "height": 1
+    },
+    {
+        "id": "78f4dc0e1dcba7b1",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 36,
+        "width": 33,
+        "height": 1
+    },
+    {
+        "id": "edfc17e4063e8fc8",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 37,
+        "width": 33,
+        "height": 1
+    },
+    {
+        "id": "3088117154a8a631",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 38,
+        "width": 33,
+        "height": 1
+    },
+    {
+        "id": "62c5cf4ff5f1a606",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 39,
+        "width": 33,
+        "height": 1
+    },
+    {
+        "id": "26c83c628c916bb8",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 40,
+        "width": 33,
+        "height": 1
+    },
+    {
+        "id": "37e82373507d6832",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 41,
+        "width": 33,
+        "height": 1
+    },
+    {
+        "id": "42c5c4507f9c7d19",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 42,
+        "width": 33,
+        "height": 1
+    },
+    {
+        "id": "b3e4cd8ddc8e7f2b",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 43,
+        "width": 33,
+        "height": 1
+    },
+    {
+        "id": "e36596466914c0b6",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 45,
+        "width": 19,
+        "height": 1
+    },
+    {
+        "id": "e08a4ec47fb7801d",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 46,
+        "width": 19,
+        "height": 1
+    },
+    {
+        "id": "1328284461646bd7",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 48,
+        "width": 19,
+        "height": 1
+    },
+    {
+        "id": "b20f5c546a4be15e",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 49,
+        "width": 19,
+        "height": 1
+    },
+    {
+        "id": "e8342263dad22b6c",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 50,
+        "width": 19,
+        "height": 1
+    },
+    {
+        "id": "2f6e22d4eedf2573",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 51,
+        "width": 19,
+        "height": 1
+    },
+    {
+        "id": "559006f0b2a093a3",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 52,
+        "width": 19,
+        "height": 1
+    },
+    {
+        "id": "d54d852fb0edfd11",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 53,
+        "width": 19,
+        "height": 1
+    },
+    {
+        "id": "4cac4ef06a098136",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 55,
+        "width": 27,
+        "height": 1
+    },
+    {
+        "id": "b6817ad9464575b2",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 56,
+        "width": 27,
+        "height": 1
+    },
+    {
+        "id": "4b5ae99fe5338577",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 57,
+        "width": 27,
+        "height": 1
+    },
+    {
+        "id": "80e7cabb31373df5",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 58,
+        "width": 27,
+        "height": 1
+    },
+    {
+        "id": "869ae4893e733ea3",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 59,
+        "width": 27,
+        "height": 1
+    },
+    {
+        "id": "a9d2d61447f207ae",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 62,
+        "width": 27,
+        "height": 1
+    },
+    {
+        "id": "6878bb4e33db86f0",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 63,
+        "width": 27,
+        "height": 1
+    },
+    {
+        "id": "d99c36e8bdc35ea5",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 64,
+        "width": 27,
+        "height": 1
+    },
+    {
+        "id": "eeb1d480bacc792c",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 65,
+        "width": 27,
+        "height": 1
+    },
+    {
+        "id": "e3901408e09c90b5",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 66,
+        "width": 27,
+        "height": 1
+    },
+    {
+        "id": "7dee76ad5b291b69",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 68,
+        "width": 27,
+        "height": 1
+    },
+    {
+        "id": "fa62bde34e5aec79",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 69,
+        "width": 27,
+        "height": 1
+    },
+    {
+        "id": "64480f06b2cd3214",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 70,
+        "width": 27,
+        "height": 1
+    },
+    {
+        "id": "f3370f613527db11",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 71,
+        "width": 27,
+        "height": 1
+    },
+    {
+        "id": "ebadbed4696f7df6",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "ef57d5330c6fecd8",
+        "order": 72,
+        "width": 27,
+        "height": 1
+    },
+    {
+        "id": "9d13d1e04f22c685",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "f3c1e6a039430860",
+        "order": 3,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "374cc6a081ca754d",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "f3c1e6a039430860",
+        "order": 4,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "d8fbb49170d3d065",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "f3c1e6a039430860",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "91788bb2414e82a1",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "f3c1e6a039430860",
+        "order": 6,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "292cd1dd758935fe",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "f3c1e6a039430860",
+        "order": 7,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "3429f0525b071ee1",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "f3c1e6a039430860",
+        "order": 9,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "9c59316b72855803",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "f3c1e6a039430860",
+        "order": 11,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "e3dfcca4cffaaabd",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "f3c1e6a039430860",
+        "order": 12,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "979d817b7d291937",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "f3c1e6a039430860",
+        "order": 13,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "3f7fd5153acf3d82",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "f3c1e6a039430860",
+        "order": 14,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "8564f75cb180912e",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "f3c1e6a039430860",
+        "order": 15,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "97ee19c637051779",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "f3c1e6a039430860",
+        "order": 17,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "e35dfdc21088a229",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "f3c1e6a039430860",
+        "order": 19,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "2cdc9b36354f732e",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "f3c1e6a039430860",
+        "order": 23,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "9bce7b781cdd3da7",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "f3c1e6a039430860",
+        "order": 24,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "fd584977d657b0bc",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "f3c1e6a039430860",
+        "order": 25,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "cf3411e6198bd9ab",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "f3c1e6a039430860",
+        "order": 26,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "cf1c599fdce0ba65",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "f3c1e6a039430860",
+        "order": 28,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "2af7fb91cd032ccc",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "7874dfd1b72253a8",
+        "order": 3,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "f3054a5b8b3b279a",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "7874dfd1b72253a8",
+        "order": 4,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "dff5fe20787d08df",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "7874dfd1b72253a8",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "88ec246fd7e4fbce",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "7874dfd1b72253a8",
+        "order": 6,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "fbf10431cb30d29a",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "7874dfd1b72253a8",
+        "order": 7,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "784c4c0664b6a553",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "7874dfd1b72253a8",
+        "order": 9,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "175af6c06f15f18b",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "7874dfd1b72253a8",
+        "order": 11,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "70af619c82496505",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "7874dfd1b72253a8",
+        "order": 12,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "747cb6f42a9b2a3f",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "7874dfd1b72253a8",
+        "order": 13,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "a078e2a4471ded23",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "7874dfd1b72253a8",
+        "order": 14,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "e445739d0f517bb4",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "7874dfd1b72253a8",
+        "order": 15,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "9f453c633da7542d",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "7874dfd1b72253a8",
+        "order": 17,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "40d5d4a79c668268",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "7874dfd1b72253a8",
+        "order": 19,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "ca20e17e416e4b33",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "7874dfd1b72253a8",
+        "order": 23,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "2bd58e117d84bd21",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "7874dfd1b72253a8",
+        "order": 24,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "c54cdf80d1ef0276",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "7874dfd1b72253a8",
+        "order": 25,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "f653890cb5f478c1",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "7874dfd1b72253a8",
+        "order": 26,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "0bab6308241b5f2d",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "7874dfd1b72253a8",
+        "order": 28,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "26d091fa86bd62ad",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "35e8f16e89639508",
+        "order": 3,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "11f5793eb0a398ff",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "35e8f16e89639508",
+        "order": 4,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "16c14d7ac8888a6e",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "35e8f16e89639508",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "cac1333164299c6f",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "35e8f16e89639508",
+        "order": 6,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "efe32a7588de65ca",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "35e8f16e89639508",
+        "order": 7,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "9ff3c8231083d266",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "35e8f16e89639508",
+        "order": 9,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "d4f9fdda1a368e22",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "35e8f16e89639508",
+        "order": 11,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "9acd1df99e3e8b23",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "35e8f16e89639508",
+        "order": 12,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "e2419ec8ecc8e5af",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "35e8f16e89639508",
+        "order": 13,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "2c9203f44c4d0ce6",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "35e8f16e89639508",
+        "order": 14,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "a6f686fd366a9868",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "35e8f16e89639508",
+        "order": 15,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "708a21382d2918f2",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "35e8f16e89639508",
+        "order": 17,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "e588844637d533a2",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "35e8f16e89639508",
+        "order": 19,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "84212eb3da508a17",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "35e8f16e89639508",
+        "order": 23,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "a4d8f2f16f484d6d",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "35e8f16e89639508",
+        "order": 24,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "6767d1a293e30744",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "35e8f16e89639508",
+        "order": 25,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "d8467f509aab250f",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "35e8f16e89639508",
+        "order": 26,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "71e1725f14f2164f",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "35e8f16e89639508",
+        "order": 28,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "e53466e6b16a55e8",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "25ead1c493d30de9",
+        "order": 3,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "77ed464df611ab63",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "25ead1c493d30de9",
+        "order": 4,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "fe5ea8066c962c23",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "25ead1c493d30de9",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "14450672bb54ec20",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "25ead1c493d30de9",
+        "order": 6,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "99f81f618d370c0e",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "25ead1c493d30de9",
+        "order": 7,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "45b9239b96b32a16",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "25ead1c493d30de9",
+        "order": 9,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "eb52f5a2a58b2345",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "25ead1c493d30de9",
+        "order": 11,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "5914520d2d60c608",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "25ead1c493d30de9",
+        "order": 12,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "608b3f62d8eac124",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "25ead1c493d30de9",
+        "order": 13,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "82b3204a26eb1260",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "25ead1c493d30de9",
+        "order": 14,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "80f34eedb2600a8f",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "25ead1c493d30de9",
+        "order": 15,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "ed5263ebfef13dfd",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "25ead1c493d30de9",
+        "order": 17,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "bc356a9183a60167",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "25ead1c493d30de9",
+        "order": 19,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "2b31d42afcf6f697",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "25ead1c493d30de9",
+        "order": 23,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "75295d71dbfdcd4d",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "25ead1c493d30de9",
+        "order": 24,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "f0e9d6c89767b234",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "25ead1c493d30de9",
+        "order": 25,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "612c099d2e1aeb4d",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "25ead1c493d30de9",
+        "order": 26,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "b770bfaae656f0ae",
+        "type": "ui_spacer",
+        "z": "ff64d5752f28abe6",
+        "name": "spacer",
+        "group": "25ead1c493d30de9",
+        "order": 28,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "fb2c6620ad6b6081",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "emqx@172.20.0.20",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "f998175f7faa53f6",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "emqx@172.20.0.20",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "f3c1e6a039430860",
+        "type": "ui_group",
+        "name": "Pico 1",
+        "tab": "02f9fb6dffadec5c",
+        "order": 1,
+        "disp": true,
+        "width": "30",
+        "collapse": false,
+        "className": ".intro {   background-color: yellow; }"
+    },
+    {
+        "id": "7874dfd1b72253a8",
+        "type": "ui_group",
+        "name": "Pico 2",
+        "tab": "b4c058af73135193",
+        "order": 2,
+        "disp": true,
+        "width": 30,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "35e8f16e89639508",
+        "type": "ui_group",
+        "name": "Pico 3",
+        "tab": "d1711b3260642844",
+        "order": 1,
+        "disp": true,
+        "width": 30,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "d22a45b2307d6d71",
+        "type": "ui_group",
+        "name": "Pico 4",
+        "tab": "0c3bf6af30cb3477",
+        "order": 1,
+        "disp": true,
+        "width": 30,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "25ead1c493d30de9",
+        "type": "ui_group",
+        "name": "Pico 5",
+        "tab": "6d243ad340705718",
+        "order": 1,
+        "disp": true,
+        "width": 30,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "02f9fb6dffadec5c",
+        "type": "ui_tab",
+        "name": "Raspberry 1",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "b4c058af73135193",
+        "type": "ui_tab",
+        "name": "Raspberry 2",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "d1711b3260642844",
+        "type": "ui_tab",
+        "name": "Raspberry 3",
+        "icon": "dashboard",
+        "order": 3,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "0c3bf6af30cb3477",
+        "type": "ui_tab",
+        "name": "Raspberry 4",
+        "icon": "dashboard",
+        "order": 4,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "6d243ad340705718",
+        "type": "ui_tab",
+        "name": "Raspberry 5",
+        "icon": "dashboard",
+        "order": 5,
+        "disabled": false,
+        "hidden": false
     }
 ]
