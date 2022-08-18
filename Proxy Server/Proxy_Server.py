@@ -16,18 +16,20 @@ except socket.error as e:
     print(str(e))
 
 print('Waitiing for a Connection..')
-ServerSocket.listen(5)
+ServerSocket.listen(10)
 
-def deploy_new_AesPythonServerToMQTT(port_number):
-    while True:
-            with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-                if s.connect_ex(('localhost', port_number)) == 0:
-                    s.close() 
-                    print("[Multiserver Says:]"+" Port: "+ str(port_number)+" used, trying the next port.")
-                    port_number=port_number+1
-                else:
-                    s.close() 
-                    break
+def free_port_looking():
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    server_address = ('localhost', 0)
+    sock.bind(server_address)
+    port=sock.getsockname()[1]
+    sock.close()
+    return port
+
+
+def deploy_new_AesPythonServerToMQTT():
+    print("Entro en deploy_new_AesPythonServerToMQTT con el intento de puerto "+str())
+    port_number=free_port_looking()
     subprocess.Popen(['python3', 'AesPythonServerToMQTT.py', str(port_number)])
     #xterm -e "python3 pseudo_pico_client.py 2" &
     #command= "python3 AesPythonServerToMQTT.py "+str(port_number)
@@ -37,7 +39,8 @@ def deploy_new_AesPythonServerToMQTT(port_number):
 
 
 def threaded_client(connection):
-    server_deployed_port_number=deploy_new_AesPythonServerToMQTT(10700)
+    print("entro en thread client")
+    server_deployed_port_number=deploy_new_AesPythonServerToMQTT()
     time.sleep(1)
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_address = ('localhost', server_deployed_port_number)
