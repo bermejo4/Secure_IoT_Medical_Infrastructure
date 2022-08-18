@@ -29,6 +29,9 @@ def deploy_new_AesPythonServerToMQTT(port_number):
                     s.close() 
                     break
     subprocess.Popen(['python3', 'AesPythonServerToMQTT.py', str(port_number)])
+    #xterm -e "python3 pseudo_pico_client.py 2" &
+    #command= "python3 AesPythonServerToMQTT.py "+str(port_number)
+    #subprocess.Popen(['xterm','-e','python3', 'AesPythonServerToMQTT.py', str(port_number),'&'])
     return port_number 
 
 
