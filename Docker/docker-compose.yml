@@ -1,0 +1,38 @@
+version: "3.8"
+services:
+  nodered:
+    container_name: Node-red
+    image: noderedbermejo:1
+    restart: always
+    ports:
+      - 1880:1880
+    links:
+      - emqx1
+    volumes:
+      - node-red-data:/data
+    networks:
+      internal_net:
+        ipv4_address: 172.20.0.25
+
+
+  emqx1:
+    image: emqx/emqx:latest
+    ports:
+      - 18083:18083
+      - 1883:1883
+    networks:
+      internal_net:
+        ipv4_address: 172.20.0.20
+        aliases:
+        - node1.emqx.io
+
+volumes:
+  node-red-data:
+
+networks:
+  internal_net:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 172.20.0.0/16
+         gateway: 172.20.0.1
