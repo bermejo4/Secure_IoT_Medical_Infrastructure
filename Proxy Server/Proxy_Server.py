@@ -11,6 +11,7 @@ port = 9998
 ThreadCount = 0
 try:
     ServerSocket.bind((host, port))
+    print('Proxy Server in '+str(socket.gethostbyname(socket.gethostname()))+' listens in port '+str(port))
 except socket.error as e:
     print(str(e))
 
@@ -54,7 +55,7 @@ def threaded_client(connection):
 
 while True:
     Client, address = ServerSocket.accept()
-    print('Connected to: ' + address[0] + ':' + str(address[1]))
+    print('Connected to: ' + address[0] + ' : ' + str(address[1]))
     start_new_thread(threaded_client, (Client, ))
     ThreadCount += 1
     print('Thread Number: ' + str(ThreadCount))
