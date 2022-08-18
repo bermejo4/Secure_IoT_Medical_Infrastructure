@@ -72,15 +72,15 @@ def autentication_and_ID_assignation(ciphertext):
         else:
             device=json.loads(linea)
             json_dict[device["id"]]=[device["key"], device["iv"]]
-    print(json_dict)
+    #print(json_dict)
     for a in json_dict:
-        print("a:"+a)
+        #print("a:"+a)
         key=json_dict[a][0]
         iv=json_dict[a][1]
-        print("Key used:"+str(key)+"// Iv used:"+str(iv)+"|")
-        print("Data from pico desencripted:"+str(data_from_pico_desencrypter(ciphertext, key, iv)))
+        #print("Key used:"+str(key)+"// Iv used:"+str(iv)+"|")
+        #print("Data from pico desencripted:"+str(data_from_pico_desencrypter(ciphertext, key, iv)))
         if check_words_in_decrypted_string(data_from_pico_desencrypter(ciphertext, key, iv)):
-            print("Founded: "+ a)
+            print("Server in port ["+str(server.PORT_ADDRESS)+"] says: "+"Founded: "+ a)
             device_searched=a
             break
 
@@ -93,9 +93,9 @@ def autentication_and_ID_assignation(ciphertext):
 def connect_mqtt(client_id, broker, port):
     def on_connect(client, userdata, flags, rc):
         if rc == 0:
-            print("Connected to MQTT Broker!")
+            print("Server in port ["+str(server.PORT_ADDRESS)+"] says: "+"Connected to MQTT Broker!")
         else:
-            print("Failed to connect, return code %d\n", rc)
+            print("Server in port ["+str(server.PORT_ADDRESS)+"] says: "+"Failed to connect, return code %d\n", rc)
 
     client = mqtt_client.Client(client_id)
     #client.username_pw_set(username, password)
@@ -109,9 +109,11 @@ def publish(client, topic, msg):
     # result: [0, 1]
     status = result[0]
     if status == 0:
-        print(f"Send `{msg}` to topic `{topic}`")
+        pass
+        #print(f"Send `{msg}` to topic `{topic}`")
     else:
-        print(f"Failed to send message to topic {topic}")
+        pass
+        #print(f"Failed to send message to topic {topic}")
 
 
 class Servidor:
@@ -174,12 +176,12 @@ while True:
     while True:
             solicitud = ''
             solicitud = conexion.recv(263)
-            print("Server in port ["+str(server.PORT_ADDRESS)+"] says: "+ "solicitud:" + str(solicitud))
+            #print("Server in port ["+str(server.PORT_ADDRESS)+"] says: "+ "solicitud:" + str(solicitud))
             data_from_pico = solicitud.decode()
-            print("\n")
-            print(data_from_pico)
+            #print("\n")
+            #print(data_from_pico)
             # data_json=json.loads(data_from_pico)
-            print("Server in port ["+str(server.PORT_ADDRESS)+"] says: "+'RECIBO:'+str(data_from_pico))
+            #print("Server in port ["+str(server.PORT_ADDRESS)+"] says: "+'RECIBO:'+str(data_from_pico))
             ###----------------checkear si esto funciona:
             if '+' in data_from_pico:
                 if not atentication_check:
@@ -192,9 +194,9 @@ while True:
                     print(device_id, KEY, IV)
                     atentication_check=True
 
-                print("Server in port ["+str(server.PORT_ADDRESS)+"] says: "+'RECIBOO:' + str(data_from_pico))
+                #print("Server in port ["+str(server.PORT_ADDRESS)+"] says: "+'RECIBOO:' + str(data_from_pico))
                 data_string=data_from_pico_desencrypter(data_from_pico, KEY, IV)
-                print("Data String:"+str(data_string))
+                #print("Data String:"+str(data_string))
                 pico=json.loads(data_string)
                 publish(client_mqtt_publisher,mqtt_publisher.topic[0] , str(pico["Temp"]))
                 publish(client_mqtt_publisher,mqtt_publisher.topic[1] , str(pico["PulseSig"]))
