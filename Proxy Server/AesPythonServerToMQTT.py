@@ -72,8 +72,9 @@ def autentication_and_ID_assignation(ciphertext):
         else:
             device=json.loads(linea)
             json_dict[device["id"]]=[device["key"], device["iv"]]
-    #print(json_dict)
+    print(json_dict)
     for a in json_dict:
+        print("a:"+a)
         key=json_dict[a][0]
         iv=json_dict[a][1]
         print("Key used:"+str(key)+"// Iv used:"+str(iv)+"|")
@@ -82,8 +83,10 @@ def autentication_and_ID_assignation(ciphertext):
             print("Founded: "+ a)
             device_searched=a
             break
-        else:
-            return "Not_found_dev",0,0
+
+    if device_searched=="":
+        return "Not_found_dev",0,0
+
     return device_searched, json_dict[device_searched][0], json_dict[device_searched][1]
 
 
@@ -151,7 +154,7 @@ class Mqtt_publisher:
 
 if sys.argv[len(sys.argv)-1]==sys.argv[0]:
     #print("No hay:"+str(sys.argv))
-    server=Servidor(9998)
+    server=Servidor(10700)
 else:
     #print("Hay:"+str(sys.argv))
     server=Servidor(sys.argv[1])
@@ -203,4 +206,6 @@ while True:
             else:
                 print("Server in port ["+str(server.PORT_ADDRESS)+"] says:"+"Something strange received, CLOSING CONNECTION")
                 conexion.close()
+                print("Server in port ["+str(server.PORT_ADDRESS)+"] says:"+"SERVER CLOSED")
+                sys.exit()
                 break
