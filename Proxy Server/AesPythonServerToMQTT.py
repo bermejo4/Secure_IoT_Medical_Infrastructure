@@ -145,7 +145,12 @@ class Mqtt_publisher:
             "Pico/"+device_id+"/Physiological_Data/Accelerometer/y", #3
             "Pico/"+device_id+"/Physiological_Data/Accelerometer/z", #4
             "Pico/"+device_id+"/Internal_Device_Data/Temperature/MCU", #5
-            "Pico/"+device_id+"/Internal_Device_Data/Temperature/MPU" #6
+            "Pico/"+device_id+"/Internal_Device_Data/Temperature/MPU", #6
+            "Pico/"+device_id+"/Ip_address", #7
+            "Pico/"+device_id+"/Port_address", #8
+            "Pico/"+device_id+"/Internal_Server/Ip_address", #9
+            "Pico/"+device_id+"/Internal_Server/Port_address" #10
+
         ]
         self.client_id = device_id
         # username = 'emqx'
@@ -167,6 +172,7 @@ socketTCP.bind(server.SERVER_ADDRESS)
 socketTCP.listen(1)
 solicitud = ''
 print("Server in port ["+str(server.PORT_ADDRESS)+"] says: "+'Server listening in the port: ' + str(server.PORT_ADDRESS))
+extra_info=49
 while True:
     conexion, CLIENT_ADDRESS = socketTCP.accept()
 
@@ -205,6 +211,14 @@ while True:
                 publish(client_mqtt_publisher,mqtt_publisher.topic[4] , str(pico["Acel_z"]))
                 publish(client_mqtt_publisher,mqtt_publisher.topic[5] , str(pico["TempMcu"]))
                 publish(client_mqtt_publisher,mqtt_publisher.topic[6] , str(pico["TempMpu"]))
+                extra_info=extra_info+1
+                if extra_info==50:
+                    extra_info=0
+                    publish(client_mqtt_publisher,mqtt_publisher.topic[7] , str("1.1.1.1"))
+                    publish(client_mqtt_publisher,mqtt_publisher.topic[8] , str(0000))
+                    publish(client_mqtt_publisher,mqtt_publisher.topic[9] , str(socketTCP.getsockname()[0]))
+                    publish(client_mqtt_publisher,mqtt_publisher.topic[10] , str(socketTCP.getsockname()[1]))
+
             else:
                 print("Server in port ["+str(server.PORT_ADDRESS)+"] says:"+"Something strange received, CLOSING CONNECTION")
                 conexion.close()
