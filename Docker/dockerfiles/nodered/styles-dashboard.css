@@ -1,0 +1,35 @@
+<style>
+
+body{
+background: rgb(0,0,0);
+background: linear-gradient(202deg, rgba(0,0,0,1) 0%, rgba(92,3,145,1) 25%, rgba(68,15,196,1) 51%, rgba(12,0,167,1) 75%,
+rgba(78,158,162,1) 100%);
+}
+
+body.nr-dashboard-theme md-toolbar {
+background-color: black;
+color: black;
+}
+
+.nr-dashboard-theme ui-card-panel{
+border-radius: 10px;
+}
+
+body.nr-dashboard-theme md-sidenav {
+color: #71dfe4;
+background-color: rgb(69 69 69);
+}
+
+ng-md-icon{
+color: black;
+}
+
+.md-toolbar-tools h1{
+color: black;
+}
+
+#equis{
+background-color: white;
+}
+
+</style>
