@@ -177,7 +177,7 @@
         "z": "ff64d5752f28abe6",
         "name": "",
         "group": "f3c1e6a039430860",
-        "order": 20,
+        "order": 8,
         "width": 9,
         "height": 5,
         "gtype": "gage",
@@ -187,7 +187,7 @@
         "min": 0,
         "max": "70",
         "colors": [
-            "#00b500",
+            "#00f500",
             "#e6e600",
             "#ca3838"
         ],
@@ -204,7 +204,7 @@
         "z": "ff64d5752f28abe6",
         "name": "",
         "group": "f3c1e6a039430860",
-        "order": 21,
+        "order": 7,
         "width": 9,
         "height": 5,
         "gtype": "gage",
@@ -214,7 +214,7 @@
         "min": 0,
         "max": "70",
         "colors": [
-            "#00b500",
+            "#00f500",
             "#e6e600",
             "#ca3838"
         ],
@@ -250,7 +250,7 @@
         "useOneColor": false,
         "useUTC": true,
         "colors": [
-            "#1f77b4",
+            "#71def4",
             "#aec7e8",
             "#ff7f0e",
             "#2ca02c",
@@ -275,7 +275,7 @@
         "z": "ff64d5752f28abe6",
         "name": "",
         "group": "f3c1e6a039430860",
-        "order": 22,
+        "order": 9,
         "width": 5,
         "height": 5,
         "gtype": "donut",
@@ -285,11 +285,11 @@
         "min": "25",
         "max": "45",
         "colors": [
-            "#00b500",
-            "#e6e600",
+            "#00f500",
+            "#e6ff00",
             "#ca3838"
         ],
-        "seg1": "36",
+        "seg1": "37",
         "seg2": "38",
         "className": "",
         "x": 620,
@@ -312,69 +312,15 @@
         "min": "-1",
         "max": "1",
         "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
+            "#a11df0",
+            "#a4e5f2",
+            "#71def4"
         ],
         "seg1": "0",
         "seg2": "0",
         "className": "",
         "x": 530,
         "y": 260,
-        "wires": []
-    },
-    {
-        "id": "b3149a1d9244c48a",
-        "type": "ui_gauge",
-        "z": "ff64d5752f28abe6",
-        "name": "",
-        "group": "f3c1e6a039430860",
-        "order": 10,
-        "width": 6,
-        "height": 5,
-        "gtype": "donut",
-        "title": "Y",
-        "label": "units",
-        "format": "{{value}}",
-        "min": "-1",
-        "max": "1",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "0",
-        "seg2": "0",
-        "className": "",
-        "x": 530,
-        "y": 320,
-        "wires": []
-    },
-    {
-        "id": "76b10b52ede787df",
-        "type": "ui_gauge",
-        "z": "ff64d5752f28abe6",
-        "name": "",
-        "group": "f3c1e6a039430860",
-        "order": 18,
-        "width": 6,
-        "height": 5,
-        "gtype": "donut",
-        "title": "Z",
-        "label": "units",
-        "format": "{{value}}",
-        "min": "-1",
-        "max": "1",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "0",
-        "seg2": "0",
-        "className": "",
-        "x": 530,
-        "y": 380,
         "wires": []
     },
     {
@@ -385,7 +331,7 @@
         "label": "X",
         "tooltip": "",
         "group": "f3c1e6a039430860",
-        "order": 8,
+        "order": 3,
         "width": 6,
         "height": 1,
         "passthru": true,
@@ -412,7 +358,7 @@
         "label": "Y",
         "tooltip": "",
         "group": "f3c1e6a039430860",
-        "order": 16,
+        "order": 5,
         "width": 6,
         "height": 1,
         "passthru": true,
@@ -427,7 +373,7 @@
         "y": 320,
         "wires": [
             [
-                "b3149a1d9244c48a"
+                "29e8308b5e15e955"
             ]
         ]
     },
@@ -439,7 +385,7 @@
         "label": "Z",
         "tooltip": "",
         "group": "f3c1e6a039430860",
-        "order": 27,
+        "order": 10,
         "width": 6,
         "height": 1,
         "passthru": true,
@@ -454,7 +400,7 @@
         "y": 380,
         "wires": [
             [
-                "76b10b52ede787df"
+                "9680774a876af058"
             ]
         ]
     },
@@ -532,7 +478,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 1110,
-        "y": 520,
+        "y": 440,
         "wires": [
             [
                 "ff1da3e986053dc9"
@@ -553,7 +499,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 1070,
-        "y": 300,
+        "y": 260,
         "wires": [
             [
                 "17abb3182538febe"
@@ -574,7 +520,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 1070,
-        "y": 360,
+        "y": 320,
         "wires": [
             [
                 "4ff51d2b615560d4"
@@ -595,7 +541,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 1070,
-        "y": 420,
+        "y": 380,
         "wires": [
             [
                 "f12ca02a04329511"
@@ -616,7 +562,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 1110,
-        "y": 580,
+        "y": 500,
         "wires": [
             [
                 "4bc894adccb40369"
@@ -647,7 +593,7 @@
         "seg2": "60",
         "className": "temp",
         "x": 1490,
-        "y": 520,
+        "y": 440,
         "wires": []
     },
     {
@@ -674,7 +620,7 @@
         "seg2": "60",
         "className": "",
         "x": 1490,
-        "y": 580,
+        "y": 500,
         "wires": []
     },
     {
@@ -702,7 +648,7 @@
         "useOneColor": false,
         "useUTC": true,
         "colors": [
-            "#1f77b4",
+            "#71def4",
             "#aec7e8",
             "#ff7f0e",
             "#2ca02c",
@@ -772,7 +718,7 @@
         "seg2": "0",
         "className": "",
         "x": 1390,
-        "y": 300,
+        "y": 260,
         "wires": []
     },
     {
@@ -799,7 +745,7 @@
         "seg2": "0",
         "className": "",
         "x": 1390,
-        "y": 360,
+        "y": 320,
         "wires": []
     },
     {
@@ -826,7 +772,7 @@
         "seg2": "0",
         "className": "",
         "x": 1390,
-        "y": 420,
+        "y": 380,
         "wires": []
     },
     {
@@ -849,7 +795,7 @@
         "step": "0.001",
         "className": "",
         "x": 1230,
-        "y": 300,
+        "y": 260,
         "wires": [
             [
                 "9c49f0eed5762f71"
@@ -876,7 +822,7 @@
         "step": "0.001",
         "className": "",
         "x": 1230,
-        "y": 360,
+        "y": 320,
         "wires": [
             [
                 "d80509f78e51509c"
@@ -903,7 +849,7 @@
         "step": "0.001",
         "className": "",
         "x": 1230,
-        "y": 420,
+        "y": 380,
         "wires": [
             [
                 "195205d2d201bdf0"
@@ -924,7 +870,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 420,
-        "y": 720,
+        "y": 780,
         "wires": []
     },
     {
@@ -984,7 +930,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 250,
-        "y": 1200,
+        "y": 1120,
         "wires": [
             [
                 "1593572feb2fa849"
@@ -1005,7 +951,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 210,
-        "y": 980,
+        "y": 940,
         "wires": [
             [
                 "738a96aa6859bed8"
@@ -1026,7 +972,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 210,
-        "y": 1040,
+        "y": 1000,
         "wires": [
             [
                 "128104a11f857119"
@@ -1047,7 +993,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 210,
-        "y": 1100,
+        "y": 1060,
         "wires": [
             [
                 "1e86a8aeeeea7877"
@@ -1068,7 +1014,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 250,
-        "y": 1260,
+        "y": 1180,
         "wires": [
             [
                 "cb98fb62cf85bc7c"
@@ -1099,7 +1045,7 @@
         "seg2": "60",
         "className": "temp",
         "x": 630,
-        "y": 1200,
+        "y": 1120,
         "wires": []
     },
     {
@@ -1126,7 +1072,7 @@
         "seg2": "60",
         "className": "",
         "x": 630,
-        "y": 1260,
+        "y": 1180,
         "wires": []
     },
     {
@@ -1154,7 +1100,7 @@
         "useOneColor": false,
         "useUTC": true,
         "colors": [
-            "#1f77b4",
+            "#71dfe4",
             "#aec7e8",
             "#ff7f0e",
             "#2ca02c",
@@ -1201,87 +1147,6 @@
         "wires": []
     },
     {
-        "id": "6cb4a4d9e42f6a2b",
-        "type": "ui_gauge",
-        "z": "ff64d5752f28abe6",
-        "name": "",
-        "group": "35e8f16e89639508",
-        "order": 2,
-        "width": 6,
-        "height": 5,
-        "gtype": "donut",
-        "title": "X",
-        "label": "units",
-        "format": "{{value}}",
-        "min": "-1",
-        "max": "1",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "0",
-        "seg2": "0",
-        "className": "",
-        "x": 530,
-        "y": 980,
-        "wires": []
-    },
-    {
-        "id": "54df5e922cade561",
-        "type": "ui_gauge",
-        "z": "ff64d5752f28abe6",
-        "name": "",
-        "group": "35e8f16e89639508",
-        "order": 10,
-        "width": 6,
-        "height": 5,
-        "gtype": "donut",
-        "title": "Y",
-        "label": "units",
-        "format": "{{value}}",
-        "min": "-1",
-        "max": "1",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "0",
-        "seg2": "0",
-        "className": "",
-        "x": 530,
-        "y": 1040,
-        "wires": []
-    },
-    {
-        "id": "bcbad2d788b4fab0",
-        "type": "ui_gauge",
-        "z": "ff64d5752f28abe6",
-        "name": "",
-        "group": "35e8f16e89639508",
-        "order": 18,
-        "width": 6,
-        "height": 5,
-        "gtype": "donut",
-        "title": "Z",
-        "label": "units",
-        "format": "{{value}}",
-        "min": "-1",
-        "max": "1",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "0",
-        "seg2": "0",
-        "className": "",
-        "x": 530,
-        "y": 1100,
-        "wires": []
-    },
-    {
         "id": "738a96aa6859bed8",
         "type": "ui_slider",
         "z": "ff64d5752f28abe6",
@@ -1301,10 +1166,10 @@
         "step": "0.001",
         "className": "",
         "x": 370,
-        "y": 980,
+        "y": 940,
         "wires": [
             [
-                "6cb4a4d9e42f6a2b"
+                "387a1752889dfc6b"
             ]
         ]
     },
@@ -1328,10 +1193,10 @@
         "step": "0.001",
         "className": "",
         "x": 370,
-        "y": 1040,
+        "y": 1000,
         "wires": [
             [
-                "54df5e922cade561"
+                "d86cf376143e4288"
             ]
         ]
     },
@@ -1355,10 +1220,10 @@
         "step": "0.001",
         "className": "",
         "x": 370,
-        "y": 1100,
+        "y": 1060,
         "wires": [
             [
-                "bcbad2d788b4fab0"
+                "fb4d8fbda2a76f6c"
             ]
         ]
     },
@@ -1376,7 +1241,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 1280,
-        "y": 720,
+        "y": 780,
         "wires": []
     },
     {
@@ -1436,7 +1301,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 1110,
-        "y": 1200,
+        "y": 1120,
         "wires": [
             [
                 "8b2db7c255c7bc23"
@@ -1457,7 +1322,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 1070,
-        "y": 980,
+        "y": 940,
         "wires": [
             [
                 "6971b97ebfa1e176"
@@ -1478,7 +1343,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 1070,
-        "y": 1040,
+        "y": 1000,
         "wires": [
             [
                 "6b5289bdfa523c68"
@@ -1499,7 +1364,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 1070,
-        "y": 1100,
+        "y": 1060,
         "wires": [
             [
                 "88e2b9e6e33db3e2"
@@ -1520,7 +1385,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 1110,
-        "y": 1260,
+        "y": 1180,
         "wires": [
             [
                 "5c3aa4fb17440358"
@@ -1551,7 +1416,7 @@
         "seg2": "60",
         "className": "temp",
         "x": 1490,
-        "y": 1200,
+        "y": 1120,
         "wires": []
     },
     {
@@ -1578,7 +1443,7 @@
         "seg2": "60",
         "className": "",
         "x": 1490,
-        "y": 1260,
+        "y": 1180,
         "wires": []
     },
     {
@@ -1606,7 +1471,7 @@
         "useOneColor": false,
         "useUTC": true,
         "colors": [
-            "#1f77b4",
+            "#71def4",
             "#aec7e8",
             "#ff7f0e",
             "#2ca02c",
@@ -1676,7 +1541,7 @@
         "seg2": "0",
         "className": "",
         "x": 1390,
-        "y": 980,
+        "y": 940,
         "wires": []
     },
     {
@@ -1703,7 +1568,7 @@
         "seg2": "0",
         "className": "",
         "x": 1390,
-        "y": 1040,
+        "y": 1000,
         "wires": []
     },
     {
@@ -1730,7 +1595,7 @@
         "seg2": "0",
         "className": "",
         "x": 1390,
-        "y": 1100,
+        "y": 1060,
         "wires": []
     },
     {
@@ -1753,7 +1618,7 @@
         "step": "0.001",
         "className": "",
         "x": 1230,
-        "y": 980,
+        "y": 940,
         "wires": [
             [
                 "40cebdd2384c5f62"
@@ -1780,7 +1645,7 @@
         "step": "0.001",
         "className": "",
         "x": 1230,
-        "y": 1040,
+        "y": 1000,
         "wires": [
             [
                 "e68f3ef5b7b085c7"
@@ -1807,7 +1672,7 @@
         "step": "0.001",
         "className": "",
         "x": 1230,
-        "y": 1100,
+        "y": 1060,
         "wires": [
             [
                 "0ec1e522bd7698b2"
@@ -1828,7 +1693,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 420,
-        "y": 1380,
+        "y": 1440,
         "wires": []
     },
     {
@@ -1888,7 +1753,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 250,
-        "y": 1860,
+        "y": 1780,
         "wires": [
             [
                 "7ce69ef421c38022"
@@ -1909,7 +1774,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 210,
-        "y": 1640,
+        "y": 1600,
         "wires": [
             [
                 "976fe344c02598ad"
@@ -1930,7 +1795,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 210,
-        "y": 1700,
+        "y": 1660,
         "wires": [
             [
                 "888afef17a48fab2"
@@ -1951,7 +1816,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 210,
-        "y": 1760,
+        "y": 1720,
         "wires": [
             [
                 "07e9b596b09c0fca"
@@ -1972,7 +1837,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 250,
-        "y": 1920,
+        "y": 1840,
         "wires": [
             [
                 "e201e48b302ba0ac"
@@ -2003,7 +1868,7 @@
         "seg2": "60",
         "className": "temp",
         "x": 630,
-        "y": 1860,
+        "y": 1780,
         "wires": []
     },
     {
@@ -2030,7 +1895,7 @@
         "seg2": "60",
         "className": "",
         "x": 630,
-        "y": 1920,
+        "y": 1840,
         "wires": []
     },
     {
@@ -2058,7 +1923,7 @@
         "useOneColor": false,
         "useUTC": true,
         "colors": [
-            "#1f77b4",
+            "#71def4",
             "#aec7e8",
             "#ff7f0e",
             "#2ca02c",
@@ -2128,7 +1993,7 @@
         "seg2": "0",
         "className": "",
         "x": 530,
-        "y": 1640,
+        "y": 1600,
         "wires": []
     },
     {
@@ -2155,7 +2020,7 @@
         "seg2": "0",
         "className": "",
         "x": 530,
-        "y": 1700,
+        "y": 1660,
         "wires": []
     },
     {
@@ -2182,7 +2047,7 @@
         "seg2": "0",
         "className": "",
         "x": 530,
-        "y": 1760,
+        "y": 1720,
         "wires": []
     },
     {
@@ -2205,7 +2070,7 @@
         "step": "0.001",
         "className": "",
         "x": 370,
-        "y": 1640,
+        "y": 1600,
         "wires": [
             [
                 "64ce781b0a5d8676"
@@ -2232,7 +2097,7 @@
         "step": "0.001",
         "className": "",
         "x": 370,
-        "y": 1700,
+        "y": 1660,
         "wires": [
             [
                 "d67c6c436dfa8048"
@@ -2259,7 +2124,7 @@
         "step": "0.001",
         "className": "",
         "x": 370,
-        "y": 1760,
+        "y": 1720,
         "wires": [
             [
                 "a79716da73884a7a"
@@ -2280,7 +2145,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 260,
-        "y": 580,
+        "y": 560,
         "wires": [
             [
                 "07b481c23de619ea"
@@ -2301,7 +2166,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 270,
-        "y": 620,
+        "y": 600,
         "wires": [
             [
                 "73292ce037ae2331"
@@ -2313,8 +2178,8 @@
         "type": "ui_text",
         "z": "ff64d5752f28abe6",
         "group": "f3c1e6a039430860",
-        "order": 29,
-        "width": 11,
+        "order": 11,
+        "width": 8,
         "height": 2,
         "name": "",
         "label": "Server Ip",
@@ -2322,7 +2187,7 @@
         "layout": "col-center",
         "className": "",
         "x": 560,
-        "y": 580,
+        "y": 560,
         "wires": []
     },
     {
@@ -2330,8 +2195,8 @@
         "type": "ui_text",
         "z": "ff64d5752f28abe6",
         "group": "f3c1e6a039430860",
-        "order": 30,
-        "width": 11,
+        "order": 12,
+        "width": 7,
         "height": 2,
         "name": "",
         "label": "Server Port",
@@ -2339,7 +2204,847 @@
         "layout": "col-center",
         "className": "",
         "x": 570,
-        "y": 620,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "3a1e82e39646b610",
+        "type": "mqtt in",
+        "z": "ff64d5752f28abe6",
+        "name": "Device Ip Address",
+        "topic": "Pico/iot_med_dev_01/Ip_address",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "fb2c6620ad6b6081",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 250,
+        "y": 640,
+        "wires": [
+            [
+                "afb23f0d3bc6e863"
+            ]
+        ]
+    },
+    {
+        "id": "e92f5decf7c702aa",
+        "type": "mqtt in",
+        "z": "ff64d5752f28abe6",
+        "name": "Intern Serv Port Address",
+        "topic": "Pico/iot_med_dev_01/Port_address",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "fb2c6620ad6b6081",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 270,
+        "y": 680,
+        "wires": [
+            [
+                "7a2dbafc36e0158d"
+            ]
+        ]
+    },
+    {
+        "id": "afb23f0d3bc6e863",
+        "type": "ui_text",
+        "z": "ff64d5752f28abe6",
+        "group": "f3c1e6a039430860",
+        "order": 13,
+        "width": 7,
+        "height": 2,
+        "name": "",
+        "label": "Device Ip",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 560,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "7a2dbafc36e0158d",
+        "type": "ui_text",
+        "z": "ff64d5752f28abe6",
+        "group": "f3c1e6a039430860",
+        "order": 14,
+        "width": 7,
+        "height": 2,
+        "name": "",
+        "label": "Device Port",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 570,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "5fb57911061e32a7",
+        "type": "mqtt in",
+        "z": "ff64d5752f28abe6",
+        "name": "Inter Serv Ip Address",
+        "topic": "Pico/iot_med_dev_02/Internal_Server/Ip_address",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "fb2c6620ad6b6081",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1120,
+        "y": 560,
+        "wires": [
+            [
+                "566ebce451eca5ca"
+            ]
+        ]
+    },
+    {
+        "id": "7112a906028a21ca",
+        "type": "mqtt in",
+        "z": "ff64d5752f28abe6",
+        "name": "Intern Serv Port Address",
+        "topic": "Pico/iot_med_dev_02/Internal_Server/Port_address",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "fb2c6620ad6b6081",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1130,
+        "y": 600,
+        "wires": [
+            [
+                "2ea3de59c10f0acb"
+            ]
+        ]
+    },
+    {
+        "id": "566ebce451eca5ca",
+        "type": "ui_text",
+        "z": "ff64d5752f28abe6",
+        "group": "7874dfd1b72253a8",
+        "order": 29,
+        "width": 8,
+        "height": 2,
+        "name": "",
+        "label": "Server Ip",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 1420,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "2ea3de59c10f0acb",
+        "type": "ui_text",
+        "z": "ff64d5752f28abe6",
+        "group": "7874dfd1b72253a8",
+        "order": 30,
+        "width": 7,
+        "height": 2,
+        "name": "",
+        "label": "Server Port",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 1430,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "ab5789772778f543",
+        "type": "mqtt in",
+        "z": "ff64d5752f28abe6",
+        "name": "Device Ip Address",
+        "topic": "Pico/iot_med_dev_02/Ip_address",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "fb2c6620ad6b6081",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1110,
+        "y": 640,
+        "wires": [
+            [
+                "07d9584603c71720"
+            ]
+        ]
+    },
+    {
+        "id": "4c47d542b483a8cd",
+        "type": "mqtt in",
+        "z": "ff64d5752f28abe6",
+        "name": "Intern Serv Port Address",
+        "topic": "Pico/iot_med_dev_02/Port_address",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "fb2c6620ad6b6081",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1130,
+        "y": 680,
+        "wires": [
+            [
+                "552aaaab27a0a41f"
+            ]
+        ]
+    },
+    {
+        "id": "07d9584603c71720",
+        "type": "ui_text",
+        "z": "ff64d5752f28abe6",
+        "group": "7874dfd1b72253a8",
+        "order": 31,
+        "width": 7,
+        "height": 2,
+        "name": "",
+        "label": "Device Ip",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 1420,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "552aaaab27a0a41f",
+        "type": "ui_text",
+        "z": "ff64d5752f28abe6",
+        "group": "7874dfd1b72253a8",
+        "order": 32,
+        "width": 7,
+        "height": 2,
+        "name": "",
+        "label": "Device Port",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 1430,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "2d45da4653d52d75",
+        "type": "mqtt in",
+        "z": "ff64d5752f28abe6",
+        "name": "Inter Serv Ip Address",
+        "topic": "Pico/iot_med_dev_03/Internal_Server/Ip_address",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "fb2c6620ad6b6081",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 260,
+        "y": 1240,
+        "wires": [
+            [
+                "d3f7481aaf5a8a5b"
+            ]
+        ]
+    },
+    {
+        "id": "ae0824bb3beb4daa",
+        "type": "mqtt in",
+        "z": "ff64d5752f28abe6",
+        "name": "Intern Serv Port Address",
+        "topic": "Pico/iot_med_dev_03/Internal_Server/Port_address",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "fb2c6620ad6b6081",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 270,
+        "y": 1280,
+        "wires": [
+            [
+                "9e108320e62bf250"
+            ]
+        ]
+    },
+    {
+        "id": "d3f7481aaf5a8a5b",
+        "type": "ui_text",
+        "z": "ff64d5752f28abe6",
+        "group": "35e8f16e89639508",
+        "order": 29,
+        "width": 8,
+        "height": 2,
+        "name": "",
+        "label": "Server Ip",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 560,
+        "y": 1240,
+        "wires": []
+    },
+    {
+        "id": "9e108320e62bf250",
+        "type": "ui_text",
+        "z": "ff64d5752f28abe6",
+        "group": "35e8f16e89639508",
+        "order": 30,
+        "width": 7,
+        "height": 2,
+        "name": "",
+        "label": "Server Port",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 570,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "0defa1b17549b238",
+        "type": "mqtt in",
+        "z": "ff64d5752f28abe6",
+        "name": "Device Ip Address",
+        "topic": "Pico/iot_med_dev_03/Ip_address",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "fb2c6620ad6b6081",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 250,
+        "y": 1320,
+        "wires": [
+            [
+                "475ae632d45c32d8"
+            ]
+        ]
+    },
+    {
+        "id": "94a90f9f5535cfa3",
+        "type": "mqtt in",
+        "z": "ff64d5752f28abe6",
+        "name": "Intern Serv Port Address",
+        "topic": "Pico/iot_med_dev_03/Port_address",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "fb2c6620ad6b6081",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 270,
+        "y": 1360,
+        "wires": [
+            [
+                "b806a3ee02bd25a0"
+            ]
+        ]
+    },
+    {
+        "id": "475ae632d45c32d8",
+        "type": "ui_text",
+        "z": "ff64d5752f28abe6",
+        "group": "35e8f16e89639508",
+        "order": 31,
+        "width": 7,
+        "height": 2,
+        "name": "",
+        "label": "Device Ip",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 560,
+        "y": 1320,
+        "wires": []
+    },
+    {
+        "id": "b806a3ee02bd25a0",
+        "type": "ui_text",
+        "z": "ff64d5752f28abe6",
+        "group": "35e8f16e89639508",
+        "order": 32,
+        "width": 7,
+        "height": 2,
+        "name": "",
+        "label": "Device Port",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 570,
+        "y": 1360,
+        "wires": []
+    },
+    {
+        "id": "a6faefd1597bfcb8",
+        "type": "mqtt in",
+        "z": "ff64d5752f28abe6",
+        "name": "Inter Serv Ip Address",
+        "topic": "Pico/iot_med_dev_04/Internal_Server/Ip_address",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "fb2c6620ad6b6081",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1120,
+        "y": 1240,
+        "wires": [
+            [
+                "bd8175aeba8e83d3"
+            ]
+        ]
+    },
+    {
+        "id": "d4e8beab58d84c10",
+        "type": "mqtt in",
+        "z": "ff64d5752f28abe6",
+        "name": "Intern Serv Port Address",
+        "topic": "Pico/iot_med_dev_04/Internal_Server/Port_address",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "fb2c6620ad6b6081",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1130,
+        "y": 1280,
+        "wires": [
+            [
+                "7359422e73e5717b"
+            ]
+        ]
+    },
+    {
+        "id": "bd8175aeba8e83d3",
+        "type": "ui_text",
+        "z": "ff64d5752f28abe6",
+        "group": "d22a45b2307d6d71",
+        "order": 29,
+        "width": 8,
+        "height": 2,
+        "name": "",
+        "label": "Server Ip",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 1420,
+        "y": 1240,
+        "wires": []
+    },
+    {
+        "id": "7359422e73e5717b",
+        "type": "ui_text",
+        "z": "ff64d5752f28abe6",
+        "group": "d22a45b2307d6d71",
+        "order": 30,
+        "width": 7,
+        "height": 2,
+        "name": "",
+        "label": "Server Port",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 1430,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "09d0887d208dc4fb",
+        "type": "mqtt in",
+        "z": "ff64d5752f28abe6",
+        "name": "Device Ip Address",
+        "topic": "Pico/iot_med_dev_04/Ip_address",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "fb2c6620ad6b6081",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1110,
+        "y": 1320,
+        "wires": [
+            [
+                "42bbab1484a51b62"
+            ]
+        ]
+    },
+    {
+        "id": "6671be6a8df2ee64",
+        "type": "mqtt in",
+        "z": "ff64d5752f28abe6",
+        "name": "Intern Serv Port Address",
+        "topic": "Pico/iot_med_dev_04/Port_address",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "fb2c6620ad6b6081",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1130,
+        "y": 1360,
+        "wires": [
+            [
+                "e9376d6e5cd75060"
+            ]
+        ]
+    },
+    {
+        "id": "42bbab1484a51b62",
+        "type": "ui_text",
+        "z": "ff64d5752f28abe6",
+        "group": "d22a45b2307d6d71",
+        "order": 31,
+        "width": 7,
+        "height": 2,
+        "name": "",
+        "label": "Device Ip",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 1420,
+        "y": 1320,
+        "wires": []
+    },
+    {
+        "id": "e9376d6e5cd75060",
+        "type": "ui_text",
+        "z": "ff64d5752f28abe6",
+        "group": "d22a45b2307d6d71",
+        "order": 32,
+        "width": 7,
+        "height": 2,
+        "name": "",
+        "label": "Device Port",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 1430,
+        "y": 1360,
+        "wires": []
+    },
+    {
+        "id": "e89852d16548090d",
+        "type": "mqtt in",
+        "z": "ff64d5752f28abe6",
+        "name": "Inter Serv Ip Address",
+        "topic": "Pico/iot_med_dev_05/Internal_Server/Ip_address",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "fb2c6620ad6b6081",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 260,
+        "y": 1900,
+        "wires": [
+            [
+                "83ae8b09d68b9849"
+            ]
+        ]
+    },
+    {
+        "id": "794a38ad850728f9",
+        "type": "mqtt in",
+        "z": "ff64d5752f28abe6",
+        "name": "Intern Serv Port Address",
+        "topic": "Pico/iot_med_dev_05/Internal_Server/Port_address",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "fb2c6620ad6b6081",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 270,
+        "y": 1940,
+        "wires": [
+            [
+                "edbc311893add2c2"
+            ]
+        ]
+    },
+    {
+        "id": "83ae8b09d68b9849",
+        "type": "ui_text",
+        "z": "ff64d5752f28abe6",
+        "group": "25ead1c493d30de9",
+        "order": 29,
+        "width": 8,
+        "height": 2,
+        "name": "",
+        "label": "Server Ip",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 560,
+        "y": 1900,
+        "wires": []
+    },
+    {
+        "id": "edbc311893add2c2",
+        "type": "ui_text",
+        "z": "ff64d5752f28abe6",
+        "group": "25ead1c493d30de9",
+        "order": 30,
+        "width": 7,
+        "height": 2,
+        "name": "",
+        "label": "Server Port",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 570,
+        "y": 1940,
+        "wires": []
+    },
+    {
+        "id": "66dac47cb09fd126",
+        "type": "mqtt in",
+        "z": "ff64d5752f28abe6",
+        "name": "Device Ip Address",
+        "topic": "Pico/iot_med_dev_05/Ip_address",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "fb2c6620ad6b6081",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 250,
+        "y": 1980,
+        "wires": [
+            [
+                "83a2b58890324fab"
+            ]
+        ]
+    },
+    {
+        "id": "5d86873a53244c56",
+        "type": "mqtt in",
+        "z": "ff64d5752f28abe6",
+        "name": "Intern Serv Port Address",
+        "topic": "Pico/iot_med_dev_05/Port_address",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "fb2c6620ad6b6081",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 270,
+        "y": 2020,
+        "wires": [
+            [
+                "2738e65d33a27f2b"
+            ]
+        ]
+    },
+    {
+        "id": "83a2b58890324fab",
+        "type": "ui_text",
+        "z": "ff64d5752f28abe6",
+        "group": "25ead1c493d30de9",
+        "order": 31,
+        "width": 7,
+        "height": 2,
+        "name": "",
+        "label": "Device Ip",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 560,
+        "y": 1980,
+        "wires": []
+    },
+    {
+        "id": "2738e65d33a27f2b",
+        "type": "ui_text",
+        "z": "ff64d5752f28abe6",
+        "group": "25ead1c493d30de9",
+        "order": 32,
+        "width": 7,
+        "height": 2,
+        "name": "",
+        "label": "Device Port",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 570,
+        "y": 2020,
+        "wires": []
+    },
+    {
+        "id": "c1f138edb55ae7fc",
+        "type": "ui_template",
+        "z": "ff64d5752f28abe6",
+        "group": "f3c1e6a039430860",
+        "name": "Dashboard theme",
+        "order": 15,
+        "width": 29,
+        "height": 1,
+        "format": "<style>\n\nbody{\nbackground: rgb(0,0,0);\nbackground: linear-gradient(202deg, rgba(0,0,0,1) 0%, rgba(92,3,145,1) 25%, rgba(68,15,196,1) 51%, rgba(12,0,167,1) 75%,\nrgba(78,158,162,1) 100%);\n}\n\nbody.nr-dashboard-theme md-toolbar {\nbackground-color: black;\ncolor: black;\n}\n\n.nr-dashboard-theme ui-card-panel{\nborder-radius: 10px;\n}\n\nbody.nr-dashboard-theme md-sidenav {\ncolor: #71dfe4;\nbackground-color: rgb(69 69 69);\n}\n\nng-md-icon{\ncolor: black;\n}\n\n.md-toolbar-tools h1{\ncolor: black;\n}\n\n#equis{\nbackground-color: white;\n}\n\n</style>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "global",
+        "className": "",
+        "x": 1210,
+        "y": 1520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "387a1752889dfc6b",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "35e8f16e89639508",
+        "order": 2,
+        "width": 6,
+        "height": 5,
+        "gtype": "donut",
+        "title": "X",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-1",
+        "max": "1",
+        "colors": [
+            "#a11df0",
+            "#a4e5f2",
+            "#71def4"
+        ],
+        "seg1": "0",
+        "seg2": "0",
+        "className": "",
+        "x": 530,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "d86cf376143e4288",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "35e8f16e89639508",
+        "order": 2,
+        "width": 6,
+        "height": 5,
+        "gtype": "donut",
+        "title": "Y",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-1",
+        "max": "1",
+        "colors": [
+            "#a11df0",
+            "#a4e5f2",
+            "#71def4"
+        ],
+        "seg1": "0",
+        "seg2": "0",
+        "className": "",
+        "x": 530,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "fb4d8fbda2a76f6c",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "35e8f16e89639508",
+        "order": 2,
+        "width": 6,
+        "height": 5,
+        "gtype": "donut",
+        "title": "Y",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-1",
+        "max": "1",
+        "colors": [
+            "#a11df0",
+            "#a4e5f2",
+            "#71def4"
+        ],
+        "seg1": "0",
+        "seg2": "0",
+        "className": "",
+        "x": 530,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "29e8308b5e15e955",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "f3c1e6a039430860",
+        "order": 4,
+        "width": 6,
+        "height": 5,
+        "gtype": "donut",
+        "title": "Y",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-1",
+        "max": "1",
+        "colors": [
+            "#a11df0",
+            "#a4e5f2",
+            "#71def4"
+        ],
+        "seg1": "0",
+        "seg2": "0",
+        "className": "",
+        "x": 530,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "9680774a876af058",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "f3c1e6a039430860",
+        "order": 6,
+        "width": 6,
+        "height": 5,
+        "gtype": "donut",
+        "title": "Z",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-1",
+        "max": "1",
+        "colors": [
+            "#a11df0",
+            "#a4e5f2",
+            "#71def4"
+        ],
+        "seg1": "0",
+        "seg2": "0",
+        "className": "",
+        "x": 530,
+        "y": 380,
         "wires": []
     },
     {
@@ -3653,206 +4358,6 @@
         "height": 1
     },
     {
-        "id": "fcba332f3c539619",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "f3c1e6a039430860",
-        "order": 3,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "83b3d119d7f1dd2b",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "f3c1e6a039430860",
-        "order": 4,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "30d7f60da0f453f5",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "f3c1e6a039430860",
-        "order": 5,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "407b500b83da5f3f",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "f3c1e6a039430860",
-        "order": 6,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "a68b8c3efcf6d978",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "f3c1e6a039430860",
-        "order": 7,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "72b424699f5d703e",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "f3c1e6a039430860",
-        "order": 9,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "25e248cf9269af8d",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "f3c1e6a039430860",
-        "order": 11,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "f643cfa829ab9d45",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "f3c1e6a039430860",
-        "order": 12,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "2b1d7afc4ccad0ef",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "f3c1e6a039430860",
-        "order": 13,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "cc63b96643cd935e",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "f3c1e6a039430860",
-        "order": 14,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "57c0ad74aaeb3a95",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "f3c1e6a039430860",
-        "order": 15,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "9b47e26f686c61f9",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "f3c1e6a039430860",
-        "order": 17,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "0a0caae5fbbe7462",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "f3c1e6a039430860",
-        "order": 19,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "b2675d6b910a150f",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "f3c1e6a039430860",
-        "order": 23,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "eb2c43bce3d697ba",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "f3c1e6a039430860",
-        "order": 24,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "252f520ebeba654c",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "f3c1e6a039430860",
-        "order": 25,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "e68aea89417718c8",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "f3c1e6a039430860",
-        "order": 26,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "6637edb566c6ec62",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "f3c1e6a039430860",
-        "order": 28,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "119a25dd348a4194",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "f3c1e6a039430860",
-        "order": 31,
-        "width": 8,
-        "height": 1
-    },
-    {
-        "id": "69832dc34976bd38",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "f3c1e6a039430860",
-        "order": 32,
-        "width": 8,
-        "height": 1
-    },
-    {
         "id": "fb2c6620ad6b6081",
         "type": "mqtt-broker",
         "name": "",
@@ -3913,7 +4418,7 @@
         "tab": "02f9fb6dffadec5c",
         "order": 1,
         "disp": true,
-        "width": "30",
+        "width": 29,
         "collapse": false,
         "className": ".intro {   background-color: yellow; }"
     },
