@@ -172,7 +172,13 @@ socketTCP.bind(server.SERVER_ADDRESS)
 socketTCP.listen(1)
 solicitud = ''
 print("Server in port ["+str(server.PORT_ADDRESS)+"] says: "+'Server listening in the port: ' + str(server.PORT_ADDRESS))
+
 extra_info=49
+device_ip_address="none"
+device_port_address="none"
+
+first_package=True
+
 while True:
     conexion, CLIENT_ADDRESS = socketTCP.accept()
 
@@ -181,7 +187,11 @@ while True:
 
     while True:
             solicitud = ''
-            solicitud = conexion.recv(263)
+            if first_package:
+                solicitud = conexion.recv(21)
+                first_package=False
+            else:   
+                solicitud = conexion.recv(263)
             #print("Server in port ["+str(server.PORT_ADDRESS)+"] says: "+ "solicitud:" + str(solicitud))
             data_from_pico = solicitud.decode()
             #print("\n")
@@ -189,7 +199,14 @@ while True:
             # data_json=json.loads(data_from_pico)
             #print("Server in port ["+str(server.PORT_ADDRESS)+"] says: "+'RECIBO:'+str(data_from_pico))
             ###----------------checkear si esto funciona:
-            if '+' in data_from_pico:
+            if '&' in data_from_pico:
+                data_from_pico=data_from_pico.replace('@','')
+                dev_ip_and_port=data_from_pico.split("&")
+                device_ip_address=dev_ip_and_port[0]
+                device_port_address=dev_ip_and_port[1]
+                #data_from_pico=dev_ip_and_port[2]
+                print("Server in port ["+str(server.PORT_ADDRESS)+"] says: "+'Origin: '+str(data_from_pico))
+            elif '+' in data_from_pico:
                 if not atentication_check:
                     device_id, KEY, IV = autentication_and_ID_assignation(str(data_from_pico))
                     if device_id=="Not_found_dev":
@@ -214,12 +231,13 @@ while True:
                 extra_info=extra_info+1
                 if extra_info==50:
                     extra_info=0
-                    publish(client_mqtt_publisher,mqtt_publisher.topic[7] , str("1.1.1.1"))
-                    publish(client_mqtt_publisher,mqtt_publisher.topic[8] , str(0000))
-                    publish(client_mqtt_publisher,mqtt_publisher.topic[9] , str(socketTCP.getsockname()[0]))
+                    publish(client_mqtt_publisher,mqtt_publisher.topic[7] , str(device_ip_address))
+                    publish(client_mqtt_publisher,mqtt_publisher.topic[8] , str(device_port_address))
+                    publish(client_mqtt_publisher,mqtt_publisher.topic[9] , str(socket.gethostbyname(socket.gethostname())))
                     publish(client_mqtt_publisher,mqtt_publisher.topic[10] , str(socketTCP.getsockname()[1]))
 
             else:
+                print("Server in port ["+str(server.PORT_ADDRESS)+"] says: "+'Received: '+str(data_from_pico))
                 print("Server in port ["+str(server.PORT_ADDRESS)+"] says:"+"Something strange received, CLOSING CONNECTION")
                 conexion.close()
                 print("Server in port ["+str(server.PORT_ADDRESS)+"] says:"+"SERVER CLOSED")
