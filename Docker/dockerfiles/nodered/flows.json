@@ -19,8 +19,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 420,
-        "y": 40,
+        "x": 440,
+        "y": 100,
         "wires": []
     },
     {
@@ -41,7 +41,7 @@
         "wires": [
             [
                 "a63e92e18d711f00",
-                "1b095437f38976c6"
+                "2ab0683f8b7ee75b"
             ]
         ]
     },
@@ -167,7 +167,7 @@
         "y": 500,
         "wires": [
             [
-                "eeca6b46e9456a5b"
+                "a65dabe531d983ba"
             ]
         ]
     },
@@ -177,7 +177,7 @@
         "z": "ff64d5752f28abe6",
         "name": "",
         "group": "f3c1e6a039430860",
-        "order": 8,
+        "order": 7,
         "width": 9,
         "height": 5,
         "gtype": "gage",
@@ -188,41 +188,14 @@
         "max": "70",
         "colors": [
             "#00f500",
-            "#e6e600",
-            "#ca3838"
+            "#fbff29",
+            "#ff0000"
         ],
         "seg1": "40",
         "seg2": "60",
         "className": "temp",
-        "x": 630,
+        "x": 490,
         "y": 440,
-        "wires": []
-    },
-    {
-        "id": "eeca6b46e9456a5b",
-        "type": "ui_gauge",
-        "z": "ff64d5752f28abe6",
-        "name": "",
-        "group": "f3c1e6a039430860",
-        "order": 7,
-        "width": 9,
-        "height": 5,
-        "gtype": "gage",
-        "title": "Temperature MPU",
-        "label": "ºC",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "70",
-        "colors": [
-            "#00f500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "40",
-        "seg2": "60",
-        "className": "",
-        "x": 630,
-        "y": 500,
         "wires": []
     },
     {
@@ -263,65 +236,11 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 590,
+        "x": 510,
         "y": 200,
         "wires": [
             []
         ]
-    },
-    {
-        "id": "1b095437f38976c6",
-        "type": "ui_gauge",
-        "z": "ff64d5752f28abe6",
-        "name": "",
-        "group": "f3c1e6a039430860",
-        "order": 9,
-        "width": 5,
-        "height": 5,
-        "gtype": "donut",
-        "title": "Patient Temperature",
-        "label": "ºC",
-        "format": "{{value}}",
-        "min": "25",
-        "max": "45",
-        "colors": [
-            "#00f500",
-            "#e6ff00",
-            "#ca3838"
-        ],
-        "seg1": "37",
-        "seg2": "38",
-        "className": "",
-        "x": 620,
-        "y": 140,
-        "wires": []
-    },
-    {
-        "id": "baa6b171520a30dc",
-        "type": "ui_gauge",
-        "z": "ff64d5752f28abe6",
-        "name": "",
-        "group": "f3c1e6a039430860",
-        "order": 2,
-        "width": 6,
-        "height": 5,
-        "gtype": "donut",
-        "title": "X",
-        "label": "units",
-        "format": "{{value}}",
-        "min": "-1",
-        "max": "1",
-        "colors": [
-            "#a11df0",
-            "#a4e5f2",
-            "#71def4"
-        ],
-        "seg1": "0",
-        "seg2": "0",
-        "className": "",
-        "x": 530,
-        "y": 260,
-        "wires": []
     },
     {
         "id": "c2e05d515eeb1d34",
@@ -346,7 +265,7 @@
         "y": 260,
         "wires": [
             [
-                "baa6b171520a30dc"
+                "3c2cca13756d5238"
             ]
         ]
     },
@@ -373,7 +292,7 @@
         "y": 320,
         "wires": [
             [
-                "29e8308b5e15e955"
+                "1d9397f5332d961a"
             ]
         ]
     },
@@ -400,7 +319,7 @@
         "y": 380,
         "wires": [
             [
-                "9680774a876af058"
+                "ffb7e0d2a2472039"
             ]
         ]
     },
@@ -417,8 +336,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1280,
-        "y": 40,
+        "x": 940,
+        "y": 100,
         "wires": []
     },
     {
@@ -434,12 +353,12 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 1090,
+        "x": 730,
         "y": 140,
         "wires": [
             [
                 "f1dbe1d0f0e302e4",
-                "643c94eb6bea9887"
+                "4814ebc06515fa82"
             ]
         ]
     },
@@ -456,7 +375,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 1090,
+        "x": 730,
         "y": 200,
         "wires": [
             [
@@ -477,11 +396,11 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 1110,
+        "x": 750,
         "y": 440,
         "wires": [
             [
-                "ff1da3e986053dc9"
+                "f00cd91c191e4585"
             ]
         ]
     },
@@ -498,7 +417,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 1070,
+        "x": 710,
         "y": 260,
         "wires": [
             [
@@ -519,7 +438,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 1070,
+        "x": 710,
         "y": 320,
         "wires": [
             [
@@ -540,7 +459,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 1070,
+        "x": 710,
         "y": 380,
         "wires": [
             [
@@ -561,67 +480,13 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 1110,
+        "x": 750,
         "y": 500,
         "wires": [
             [
-                "4bc894adccb40369"
+                "0cd42a4b8a8572c5"
             ]
         ]
-    },
-    {
-        "id": "ff1da3e986053dc9",
-        "type": "ui_gauge",
-        "z": "ff64d5752f28abe6",
-        "name": "",
-        "group": "7874dfd1b72253a8",
-        "order": 20,
-        "width": 9,
-        "height": 5,
-        "gtype": "gage",
-        "title": "Temperature MCU",
-        "label": "ºC",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "70",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "40",
-        "seg2": "60",
-        "className": "temp",
-        "x": 1490,
-        "y": 440,
-        "wires": []
-    },
-    {
-        "id": "4bc894adccb40369",
-        "type": "ui_gauge",
-        "z": "ff64d5752f28abe6",
-        "name": "",
-        "group": "7874dfd1b72253a8",
-        "order": 21,
-        "width": 9,
-        "height": 5,
-        "gtype": "gage",
-        "title": "Temperature MPU",
-        "label": "ºC",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "70",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "40",
-        "seg2": "60",
-        "className": "",
-        "x": 1490,
-        "y": 500,
-        "wires": []
     },
     {
         "id": "89dd12ba76435523",
@@ -661,119 +526,11 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 1450,
+        "x": 1010,
         "y": 200,
         "wires": [
             []
         ]
-    },
-    {
-        "id": "643c94eb6bea9887",
-        "type": "ui_gauge",
-        "z": "ff64d5752f28abe6",
-        "name": "",
-        "group": "7874dfd1b72253a8",
-        "order": 22,
-        "width": 5,
-        "height": 5,
-        "gtype": "donut",
-        "title": "Patient Temperature",
-        "label": "ºC",
-        "format": "{{value}}",
-        "min": "25",
-        "max": "45",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "36",
-        "seg2": "38",
-        "className": "",
-        "x": 1480,
-        "y": 140,
-        "wires": []
-    },
-    {
-        "id": "9c49f0eed5762f71",
-        "type": "ui_gauge",
-        "z": "ff64d5752f28abe6",
-        "name": "",
-        "group": "7874dfd1b72253a8",
-        "order": 2,
-        "width": 6,
-        "height": 5,
-        "gtype": "donut",
-        "title": "X",
-        "label": "units",
-        "format": "{{value}}",
-        "min": "-1",
-        "max": "1",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "0",
-        "seg2": "0",
-        "className": "",
-        "x": 1390,
-        "y": 260,
-        "wires": []
-    },
-    {
-        "id": "d80509f78e51509c",
-        "type": "ui_gauge",
-        "z": "ff64d5752f28abe6",
-        "name": "",
-        "group": "7874dfd1b72253a8",
-        "order": 10,
-        "width": 6,
-        "height": 5,
-        "gtype": "donut",
-        "title": "Y",
-        "label": "units",
-        "format": "{{value}}",
-        "min": "-1",
-        "max": "1",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "0",
-        "seg2": "0",
-        "className": "",
-        "x": 1390,
-        "y": 320,
-        "wires": []
-    },
-    {
-        "id": "195205d2d201bdf0",
-        "type": "ui_gauge",
-        "z": "ff64d5752f28abe6",
-        "name": "",
-        "group": "7874dfd1b72253a8",
-        "order": 18,
-        "width": 6,
-        "height": 5,
-        "gtype": "donut",
-        "title": "Z",
-        "label": "units",
-        "format": "{{value}}",
-        "min": "-1",
-        "max": "1",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "0",
-        "seg2": "0",
-        "className": "",
-        "x": 1390,
-        "y": 380,
-        "wires": []
     },
     {
         "id": "17abb3182538febe",
@@ -783,7 +540,7 @@
         "label": "X",
         "tooltip": "",
         "group": "7874dfd1b72253a8",
-        "order": 8,
+        "order": 3,
         "width": 6,
         "height": 1,
         "passthru": true,
@@ -794,11 +551,11 @@
         "max": "1",
         "step": "0.001",
         "className": "",
-        "x": 1230,
+        "x": 870,
         "y": 260,
         "wires": [
             [
-                "9c49f0eed5762f71"
+                "569e29997108c06d"
             ]
         ]
     },
@@ -810,7 +567,7 @@
         "label": "Y",
         "tooltip": "",
         "group": "7874dfd1b72253a8",
-        "order": 16,
+        "order": 5,
         "width": 6,
         "height": 1,
         "passthru": true,
@@ -821,11 +578,11 @@
         "max": "1",
         "step": "0.001",
         "className": "",
-        "x": 1230,
+        "x": 870,
         "y": 320,
         "wires": [
             [
-                "d80509f78e51509c"
+                "caad9b4ef69df56c"
             ]
         ]
     },
@@ -837,7 +594,7 @@
         "label": "Z",
         "tooltip": "",
         "group": "7874dfd1b72253a8",
-        "order": 27,
+        "order": 10,
         "width": 6,
         "height": 1,
         "passthru": true,
@@ -848,11 +605,11 @@
         "max": "1",
         "step": "0.001",
         "className": "",
-        "x": 1230,
+        "x": 870,
         "y": 380,
         "wires": [
             [
-                "195205d2d201bdf0"
+                "5529ea3bda557412"
             ]
         ]
     },
@@ -869,7 +626,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 420,
+        "x": 440,
         "y": 780,
         "wires": []
     },
@@ -891,7 +648,7 @@
         "wires": [
             [
                 "c7648e2c028dc6d9",
-                "2aec8ac3063dfeea"
+                "cc26b8050e6b5153"
             ]
         ]
     },
@@ -933,7 +690,7 @@
         "y": 1120,
         "wires": [
             [
-                "1593572feb2fa849"
+                "849482a0fb81d2b9"
             ]
         ]
     },
@@ -1017,63 +774,9 @@
         "y": 1180,
         "wires": [
             [
-                "cb98fb62cf85bc7c"
+                "b260212c918ff7f4"
             ]
         ]
-    },
-    {
-        "id": "1593572feb2fa849",
-        "type": "ui_gauge",
-        "z": "ff64d5752f28abe6",
-        "name": "",
-        "group": "35e8f16e89639508",
-        "order": 20,
-        "width": 9,
-        "height": 5,
-        "gtype": "gage",
-        "title": "Temperature MCU",
-        "label": "ºC",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "70",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "40",
-        "seg2": "60",
-        "className": "temp",
-        "x": 630,
-        "y": 1120,
-        "wires": []
-    },
-    {
-        "id": "cb98fb62cf85bc7c",
-        "type": "ui_gauge",
-        "z": "ff64d5752f28abe6",
-        "name": "",
-        "group": "35e8f16e89639508",
-        "order": 21,
-        "width": 9,
-        "height": 5,
-        "gtype": "gage",
-        "title": "Temperature MPU",
-        "label": "ºC",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "70",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "40",
-        "seg2": "60",
-        "className": "",
-        "x": 630,
-        "y": 1180,
-        "wires": []
     },
     {
         "id": "4302509f97918a02",
@@ -1113,38 +816,11 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 590,
+        "x": 510,
         "y": 880,
         "wires": [
             []
         ]
-    },
-    {
-        "id": "2aec8ac3063dfeea",
-        "type": "ui_gauge",
-        "z": "ff64d5752f28abe6",
-        "name": "",
-        "group": "35e8f16e89639508",
-        "order": 22,
-        "width": 5,
-        "height": 5,
-        "gtype": "donut",
-        "title": "Patient Temperature",
-        "label": "ºC",
-        "format": "{{value}}",
-        "min": "25",
-        "max": "45",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "36",
-        "seg2": "38",
-        "className": "",
-        "x": 620,
-        "y": 820,
-        "wires": []
     },
     {
         "id": "738a96aa6859bed8",
@@ -1154,7 +830,7 @@
         "label": "X",
         "tooltip": "",
         "group": "35e8f16e89639508",
-        "order": 8,
+        "order": 3,
         "width": 6,
         "height": 1,
         "passthru": true,
@@ -1169,7 +845,7 @@
         "y": 940,
         "wires": [
             [
-                "387a1752889dfc6b"
+                "e0f748e52cae3a70"
             ]
         ]
     },
@@ -1181,7 +857,7 @@
         "label": "Y",
         "tooltip": "",
         "group": "35e8f16e89639508",
-        "order": 16,
+        "order": 5,
         "width": 6,
         "height": 1,
         "passthru": true,
@@ -1196,7 +872,7 @@
         "y": 1000,
         "wires": [
             [
-                "d86cf376143e4288"
+                "24737727f128c9ae"
             ]
         ]
     },
@@ -1208,7 +884,7 @@
         "label": "Z",
         "tooltip": "",
         "group": "35e8f16e89639508",
-        "order": 27,
+        "order": 10,
         "width": 6,
         "height": 1,
         "passthru": true,
@@ -1223,7 +899,7 @@
         "y": 1060,
         "wires": [
             [
-                "fb4d8fbda2a76f6c"
+                "5a57bee46f5394f8"
             ]
         ]
     },
@@ -1240,7 +916,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1280,
+        "x": 920,
         "y": 780,
         "wires": []
     },
@@ -1257,12 +933,12 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 1090,
+        "x": 710,
         "y": 820,
         "wires": [
             [
                 "68a1f07bd586b20d",
-                "214b72df4c1d2e9c"
+                "abda18f6daceccc4"
             ]
         ]
     },
@@ -1279,7 +955,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 1090,
+        "x": 710,
         "y": 880,
         "wires": [
             [
@@ -1300,11 +976,11 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 1110,
+        "x": 730,
         "y": 1120,
         "wires": [
             [
-                "8b2db7c255c7bc23"
+                "e0b988349091e548"
             ]
         ]
     },
@@ -1321,7 +997,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 1070,
+        "x": 690,
         "y": 940,
         "wires": [
             [
@@ -1342,7 +1018,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 1070,
+        "x": 690,
         "y": 1000,
         "wires": [
             [
@@ -1363,7 +1039,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 1070,
+        "x": 690,
         "y": 1060,
         "wires": [
             [
@@ -1384,67 +1060,13 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 1110,
+        "x": 730,
         "y": 1180,
         "wires": [
             [
-                "5c3aa4fb17440358"
+                "2f5aaf6d8b56164c"
             ]
         ]
-    },
-    {
-        "id": "8b2db7c255c7bc23",
-        "type": "ui_gauge",
-        "z": "ff64d5752f28abe6",
-        "name": "",
-        "group": "d22a45b2307d6d71",
-        "order": 20,
-        "width": 9,
-        "height": 5,
-        "gtype": "gage",
-        "title": "Temperature MCU",
-        "label": "ºC",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "70",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "40",
-        "seg2": "60",
-        "className": "temp",
-        "x": 1490,
-        "y": 1120,
-        "wires": []
-    },
-    {
-        "id": "5c3aa4fb17440358",
-        "type": "ui_gauge",
-        "z": "ff64d5752f28abe6",
-        "name": "",
-        "group": "d22a45b2307d6d71",
-        "order": 21,
-        "width": 9,
-        "height": 5,
-        "gtype": "gage",
-        "title": "Temperature MPU",
-        "label": "ºC",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "70",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "40",
-        "seg2": "60",
-        "className": "",
-        "x": 1490,
-        "y": 1180,
-        "wires": []
     },
     {
         "id": "5092e22689c50bfe",
@@ -1484,119 +1106,11 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 1450,
+        "x": 990,
         "y": 880,
         "wires": [
             []
         ]
-    },
-    {
-        "id": "214b72df4c1d2e9c",
-        "type": "ui_gauge",
-        "z": "ff64d5752f28abe6",
-        "name": "",
-        "group": "d22a45b2307d6d71",
-        "order": 22,
-        "width": 5,
-        "height": 5,
-        "gtype": "donut",
-        "title": "Patient Temperature",
-        "label": "ºC",
-        "format": "{{value}}",
-        "min": "25",
-        "max": "45",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "36",
-        "seg2": "38",
-        "className": "",
-        "x": 1480,
-        "y": 820,
-        "wires": []
-    },
-    {
-        "id": "40cebdd2384c5f62",
-        "type": "ui_gauge",
-        "z": "ff64d5752f28abe6",
-        "name": "",
-        "group": "d22a45b2307d6d71",
-        "order": 2,
-        "width": 6,
-        "height": 5,
-        "gtype": "donut",
-        "title": "X",
-        "label": "units",
-        "format": "{{value}}",
-        "min": "-1",
-        "max": "1",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "0",
-        "seg2": "0",
-        "className": "",
-        "x": 1390,
-        "y": 940,
-        "wires": []
-    },
-    {
-        "id": "e68f3ef5b7b085c7",
-        "type": "ui_gauge",
-        "z": "ff64d5752f28abe6",
-        "name": "",
-        "group": "d22a45b2307d6d71",
-        "order": 10,
-        "width": 6,
-        "height": 5,
-        "gtype": "donut",
-        "title": "Y",
-        "label": "units",
-        "format": "{{value}}",
-        "min": "-1",
-        "max": "1",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "0",
-        "seg2": "0",
-        "className": "",
-        "x": 1390,
-        "y": 1000,
-        "wires": []
-    },
-    {
-        "id": "0ec1e522bd7698b2",
-        "type": "ui_gauge",
-        "z": "ff64d5752f28abe6",
-        "name": "",
-        "group": "d22a45b2307d6d71",
-        "order": 18,
-        "width": 6,
-        "height": 5,
-        "gtype": "donut",
-        "title": "Z",
-        "label": "units",
-        "format": "{{value}}",
-        "min": "-1",
-        "max": "1",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "0",
-        "seg2": "0",
-        "className": "",
-        "x": 1390,
-        "y": 1060,
-        "wires": []
     },
     {
         "id": "6971b97ebfa1e176",
@@ -1606,7 +1120,7 @@
         "label": "X",
         "tooltip": "",
         "group": "d22a45b2307d6d71",
-        "order": 8,
+        "order": 3,
         "width": 6,
         "height": 1,
         "passthru": true,
@@ -1617,11 +1131,11 @@
         "max": "1",
         "step": "0.001",
         "className": "",
-        "x": 1230,
+        "x": 850,
         "y": 940,
         "wires": [
             [
-                "40cebdd2384c5f62"
+                "a5fb363b152adbfc"
             ]
         ]
     },
@@ -1633,7 +1147,7 @@
         "label": "Y",
         "tooltip": "",
         "group": "d22a45b2307d6d71",
-        "order": 16,
+        "order": 5,
         "width": 6,
         "height": 1,
         "passthru": true,
@@ -1644,11 +1158,11 @@
         "max": "1",
         "step": "0.001",
         "className": "",
-        "x": 1230,
+        "x": 850,
         "y": 1000,
         "wires": [
             [
-                "e68f3ef5b7b085c7"
+                "168debbf5c98cafb"
             ]
         ]
     },
@@ -1660,7 +1174,7 @@
         "label": "Z",
         "tooltip": "",
         "group": "d22a45b2307d6d71",
-        "order": 27,
+        "order": 10,
         "width": 6,
         "height": 1,
         "passthru": true,
@@ -1671,11 +1185,11 @@
         "max": "1",
         "step": "0.001",
         "className": "",
-        "x": 1230,
+        "x": 850,
         "y": 1060,
         "wires": [
             [
-                "0ec1e522bd7698b2"
+                "84577cfbef92b2c6"
             ]
         ]
     },
@@ -1692,7 +1206,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 420,
+        "x": 440,
         "y": 1440,
         "wires": []
     },
@@ -1714,7 +1228,7 @@
         "wires": [
             [
                 "f62d4c7ae89ff44d",
-                "a5efaf8df9f60126"
+                "cd0d908af0721c40"
             ]
         ]
     },
@@ -1756,7 +1270,7 @@
         "y": 1780,
         "wires": [
             [
-                "7ce69ef421c38022"
+                "22cf59f343b62aa3"
             ]
         ]
     },
@@ -1840,63 +1354,9 @@
         "y": 1840,
         "wires": [
             [
-                "e201e48b302ba0ac"
+                "704cc0338198b1a3"
             ]
         ]
-    },
-    {
-        "id": "7ce69ef421c38022",
-        "type": "ui_gauge",
-        "z": "ff64d5752f28abe6",
-        "name": "",
-        "group": "25ead1c493d30de9",
-        "order": 20,
-        "width": 9,
-        "height": 5,
-        "gtype": "gage",
-        "title": "Temperature MCU",
-        "label": "ºC",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "70",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "40",
-        "seg2": "60",
-        "className": "temp",
-        "x": 630,
-        "y": 1780,
-        "wires": []
-    },
-    {
-        "id": "e201e48b302ba0ac",
-        "type": "ui_gauge",
-        "z": "ff64d5752f28abe6",
-        "name": "",
-        "group": "25ead1c493d30de9",
-        "order": 21,
-        "width": 9,
-        "height": 5,
-        "gtype": "gage",
-        "title": "Temperature MPU",
-        "label": "ºC",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "70",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "40",
-        "seg2": "60",
-        "className": "",
-        "x": 630,
-        "y": 1840,
-        "wires": []
     },
     {
         "id": "50a5a5ecb4d703b9",
@@ -1936,119 +1396,11 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 590,
+        "x": 510,
         "y": 1540,
         "wires": [
             []
         ]
-    },
-    {
-        "id": "a5efaf8df9f60126",
-        "type": "ui_gauge",
-        "z": "ff64d5752f28abe6",
-        "name": "",
-        "group": "25ead1c493d30de9",
-        "order": 22,
-        "width": 5,
-        "height": 5,
-        "gtype": "donut",
-        "title": "Patient Temperature",
-        "label": "ºC",
-        "format": "{{value}}",
-        "min": "25",
-        "max": "45",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "36",
-        "seg2": "38",
-        "className": "",
-        "x": 620,
-        "y": 1480,
-        "wires": []
-    },
-    {
-        "id": "64ce781b0a5d8676",
-        "type": "ui_gauge",
-        "z": "ff64d5752f28abe6",
-        "name": "",
-        "group": "25ead1c493d30de9",
-        "order": 2,
-        "width": 6,
-        "height": 5,
-        "gtype": "donut",
-        "title": "X",
-        "label": "units",
-        "format": "{{value}}",
-        "min": "-1",
-        "max": "1",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "0",
-        "seg2": "0",
-        "className": "",
-        "x": 530,
-        "y": 1600,
-        "wires": []
-    },
-    {
-        "id": "d67c6c436dfa8048",
-        "type": "ui_gauge",
-        "z": "ff64d5752f28abe6",
-        "name": "",
-        "group": "25ead1c493d30de9",
-        "order": 10,
-        "width": 6,
-        "height": 5,
-        "gtype": "donut",
-        "title": "Y",
-        "label": "units",
-        "format": "{{value}}",
-        "min": "-1",
-        "max": "1",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "0",
-        "seg2": "0",
-        "className": "",
-        "x": 530,
-        "y": 1660,
-        "wires": []
-    },
-    {
-        "id": "a79716da73884a7a",
-        "type": "ui_gauge",
-        "z": "ff64d5752f28abe6",
-        "name": "",
-        "group": "25ead1c493d30de9",
-        "order": 18,
-        "width": 6,
-        "height": 5,
-        "gtype": "donut",
-        "title": "Z",
-        "label": "units",
-        "format": "{{value}}",
-        "min": "-1",
-        "max": "1",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "0",
-        "seg2": "0",
-        "className": "",
-        "x": 530,
-        "y": 1720,
-        "wires": []
     },
     {
         "id": "976fe344c02598ad",
@@ -2058,7 +1410,7 @@
         "label": "X",
         "tooltip": "",
         "group": "25ead1c493d30de9",
-        "order": 8,
+        "order": 3,
         "width": 6,
         "height": 1,
         "passthru": true,
@@ -2073,7 +1425,7 @@
         "y": 1600,
         "wires": [
             [
-                "64ce781b0a5d8676"
+                "2f42976a668249dc"
             ]
         ]
     },
@@ -2085,7 +1437,7 @@
         "label": "Y",
         "tooltip": "",
         "group": "25ead1c493d30de9",
-        "order": 16,
+        "order": 5,
         "width": 6,
         "height": 1,
         "passthru": true,
@@ -2100,7 +1452,7 @@
         "y": 1660,
         "wires": [
             [
-                "d67c6c436dfa8048"
+                "060baa5841855b21"
             ]
         ]
     },
@@ -2112,7 +1464,7 @@
         "label": "Z",
         "tooltip": "",
         "group": "25ead1c493d30de9",
-        "order": 27,
+        "order": 10,
         "width": 6,
         "height": 1,
         "passthru": true,
@@ -2127,7 +1479,7 @@
         "y": 1720,
         "wires": [
             [
-                "a79716da73884a7a"
+                "93a2acc1e35aeeb7"
             ]
         ]
     },
@@ -2186,7 +1538,7 @@
         "format": "{{msg.payload}}",
         "layout": "col-center",
         "className": "",
-        "x": 560,
+        "x": 520,
         "y": 560,
         "wires": []
     },
@@ -2203,7 +1555,7 @@
         "format": "{{msg.payload}}",
         "layout": "col-center",
         "className": "",
-        "x": 570,
+        "x": 510,
         "y": 600,
         "wires": []
     },
@@ -2262,7 +1614,7 @@
         "format": "{{msg.payload}}",
         "layout": "col-center",
         "className": "",
-        "x": 560,
+        "x": 520,
         "y": 640,
         "wires": []
     },
@@ -2279,7 +1631,7 @@
         "format": "{{msg.payload}}",
         "layout": "col-center",
         "className": "",
-        "x": 570,
+        "x": 510,
         "y": 680,
         "wires": []
     },
@@ -2296,7 +1648,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 1120,
+        "x": 760,
         "y": 560,
         "wires": [
             [
@@ -2317,7 +1669,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 1130,
+        "x": 770,
         "y": 600,
         "wires": [
             [
@@ -2330,7 +1682,7 @@
         "type": "ui_text",
         "z": "ff64d5752f28abe6",
         "group": "7874dfd1b72253a8",
-        "order": 29,
+        "order": 11,
         "width": 8,
         "height": 2,
         "name": "",
@@ -2338,7 +1690,7 @@
         "format": "{{msg.payload}}",
         "layout": "col-center",
         "className": "",
-        "x": 1420,
+        "x": 1020,
         "y": 560,
         "wires": []
     },
@@ -2347,7 +1699,7 @@
         "type": "ui_text",
         "z": "ff64d5752f28abe6",
         "group": "7874dfd1b72253a8",
-        "order": 30,
+        "order": 12,
         "width": 7,
         "height": 2,
         "name": "",
@@ -2355,7 +1707,7 @@
         "format": "{{msg.payload}}",
         "layout": "col-center",
         "className": "",
-        "x": 1430,
+        "x": 1010,
         "y": 600,
         "wires": []
     },
@@ -2372,7 +1724,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 1110,
+        "x": 750,
         "y": 640,
         "wires": [
             [
@@ -2393,7 +1745,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 1130,
+        "x": 770,
         "y": 680,
         "wires": [
             [
@@ -2406,7 +1758,7 @@
         "type": "ui_text",
         "z": "ff64d5752f28abe6",
         "group": "7874dfd1b72253a8",
-        "order": 31,
+        "order": 13,
         "width": 7,
         "height": 2,
         "name": "",
@@ -2414,7 +1766,7 @@
         "format": "{{msg.payload}}",
         "layout": "col-center",
         "className": "",
-        "x": 1420,
+        "x": 1020,
         "y": 640,
         "wires": []
     },
@@ -2423,7 +1775,7 @@
         "type": "ui_text",
         "z": "ff64d5752f28abe6",
         "group": "7874dfd1b72253a8",
-        "order": 32,
+        "order": 14,
         "width": 7,
         "height": 2,
         "name": "",
@@ -2431,7 +1783,7 @@
         "format": "{{msg.payload}}",
         "layout": "col-center",
         "className": "",
-        "x": 1430,
+        "x": 1010,
         "y": 680,
         "wires": []
     },
@@ -2482,7 +1834,7 @@
         "type": "ui_text",
         "z": "ff64d5752f28abe6",
         "group": "35e8f16e89639508",
-        "order": 29,
+        "order": 11,
         "width": 8,
         "height": 2,
         "name": "",
@@ -2490,7 +1842,7 @@
         "format": "{{msg.payload}}",
         "layout": "col-center",
         "className": "",
-        "x": 560,
+        "x": 520,
         "y": 1240,
         "wires": []
     },
@@ -2499,7 +1851,7 @@
         "type": "ui_text",
         "z": "ff64d5752f28abe6",
         "group": "35e8f16e89639508",
-        "order": 30,
+        "order": 12,
         "width": 7,
         "height": 2,
         "name": "",
@@ -2507,7 +1859,7 @@
         "format": "{{msg.payload}}",
         "layout": "col-center",
         "className": "",
-        "x": 570,
+        "x": 510,
         "y": 1280,
         "wires": []
     },
@@ -2558,7 +1910,7 @@
         "type": "ui_text",
         "z": "ff64d5752f28abe6",
         "group": "35e8f16e89639508",
-        "order": 31,
+        "order": 13,
         "width": 7,
         "height": 2,
         "name": "",
@@ -2566,7 +1918,7 @@
         "format": "{{msg.payload}}",
         "layout": "col-center",
         "className": "",
-        "x": 560,
+        "x": 520,
         "y": 1320,
         "wires": []
     },
@@ -2575,7 +1927,7 @@
         "type": "ui_text",
         "z": "ff64d5752f28abe6",
         "group": "35e8f16e89639508",
-        "order": 32,
+        "order": 14,
         "width": 7,
         "height": 2,
         "name": "",
@@ -2583,7 +1935,7 @@
         "format": "{{msg.payload}}",
         "layout": "col-center",
         "className": "",
-        "x": 570,
+        "x": 510,
         "y": 1360,
         "wires": []
     },
@@ -2600,7 +1952,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 1120,
+        "x": 740,
         "y": 1240,
         "wires": [
             [
@@ -2621,7 +1973,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 1130,
+        "x": 750,
         "y": 1280,
         "wires": [
             [
@@ -2634,7 +1986,7 @@
         "type": "ui_text",
         "z": "ff64d5752f28abe6",
         "group": "d22a45b2307d6d71",
-        "order": 29,
+        "order": 11,
         "width": 8,
         "height": 2,
         "name": "",
@@ -2642,7 +1994,7 @@
         "format": "{{msg.payload}}",
         "layout": "col-center",
         "className": "",
-        "x": 1420,
+        "x": 1000,
         "y": 1240,
         "wires": []
     },
@@ -2651,7 +2003,7 @@
         "type": "ui_text",
         "z": "ff64d5752f28abe6",
         "group": "d22a45b2307d6d71",
-        "order": 30,
+        "order": 12,
         "width": 7,
         "height": 2,
         "name": "",
@@ -2659,7 +2011,7 @@
         "format": "{{msg.payload}}",
         "layout": "col-center",
         "className": "",
-        "x": 1430,
+        "x": 990,
         "y": 1280,
         "wires": []
     },
@@ -2676,7 +2028,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 1110,
+        "x": 730,
         "y": 1320,
         "wires": [
             [
@@ -2697,7 +2049,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 1130,
+        "x": 750,
         "y": 1360,
         "wires": [
             [
@@ -2710,7 +2062,7 @@
         "type": "ui_text",
         "z": "ff64d5752f28abe6",
         "group": "d22a45b2307d6d71",
-        "order": 31,
+        "order": 13,
         "width": 7,
         "height": 2,
         "name": "",
@@ -2718,7 +2070,7 @@
         "format": "{{msg.payload}}",
         "layout": "col-center",
         "className": "",
-        "x": 1420,
+        "x": 1000,
         "y": 1320,
         "wires": []
     },
@@ -2727,7 +2079,7 @@
         "type": "ui_text",
         "z": "ff64d5752f28abe6",
         "group": "d22a45b2307d6d71",
-        "order": 32,
+        "order": 14,
         "width": 7,
         "height": 2,
         "name": "",
@@ -2735,7 +2087,7 @@
         "format": "{{msg.payload}}",
         "layout": "col-center",
         "className": "",
-        "x": 1430,
+        "x": 990,
         "y": 1360,
         "wires": []
     },
@@ -2786,7 +2138,7 @@
         "type": "ui_text",
         "z": "ff64d5752f28abe6",
         "group": "25ead1c493d30de9",
-        "order": 29,
+        "order": 11,
         "width": 8,
         "height": 2,
         "name": "",
@@ -2794,7 +2146,7 @@
         "format": "{{msg.payload}}",
         "layout": "col-center",
         "className": "",
-        "x": 560,
+        "x": 520,
         "y": 1900,
         "wires": []
     },
@@ -2803,7 +2155,7 @@
         "type": "ui_text",
         "z": "ff64d5752f28abe6",
         "group": "25ead1c493d30de9",
-        "order": 30,
+        "order": 12,
         "width": 7,
         "height": 2,
         "name": "",
@@ -2811,7 +2163,7 @@
         "format": "{{msg.payload}}",
         "layout": "col-center",
         "className": "",
-        "x": 570,
+        "x": 510,
         "y": 1940,
         "wires": []
     },
@@ -2862,7 +2214,7 @@
         "type": "ui_text",
         "z": "ff64d5752f28abe6",
         "group": "25ead1c493d30de9",
-        "order": 31,
+        "order": 13,
         "width": 7,
         "height": 2,
         "name": "",
@@ -2870,7 +2222,7 @@
         "format": "{{msg.payload}}",
         "layout": "col-center",
         "className": "",
-        "x": 560,
+        "x": 520,
         "y": 1980,
         "wires": []
     },
@@ -2879,7 +2231,7 @@
         "type": "ui_text",
         "z": "ff64d5752f28abe6",
         "group": "25ead1c493d30de9",
-        "order": 32,
+        "order": 14,
         "width": 7,
         "height": 2,
         "name": "",
@@ -2887,7 +2239,7 @@
         "format": "{{msg.payload}}",
         "layout": "col-center",
         "className": "",
-        "x": 570,
+        "x": 510,
         "y": 2020,
         "wires": []
     },
@@ -2900,24 +2252,24 @@
         "order": 15,
         "width": 29,
         "height": 1,
-        "format": "<style>\n\nbody{\nbackground: rgb(0,0,0);\nbackground: linear-gradient(202deg, rgba(0,0,0,1) 0%, rgba(92,3,145,1) 25%, rgba(68,15,196,1) 51%, rgba(12,0,167,1) 75%,\nrgba(78,158,162,1) 100%);\n}\n\nbody.nr-dashboard-theme md-toolbar {\nbackground-color: black;\ncolor: black;\n}\n\n.nr-dashboard-theme ui-card-panel{\nborder-radius: 10px;\n}\n\nbody.nr-dashboard-theme md-sidenav {\ncolor: #71dfe4;\nbackground-color: rgb(69 69 69);\n}\n\nng-md-icon{\ncolor: black;\n}\n\n.md-toolbar-tools h1{\ncolor: black;\n}\n\n#equis{\nbackground-color: white;\n}\n\n</style>",
+        "format": "<style>\n\nbody{\nbackground: rgb(0,42,200);\nbackground: radial-gradient(circle, rgba(0,42,200,1) 0%, rgba(0,45,143,1) 25%, rgba(0,25,82,1) 56%, rgba(0,0,0,1) 100%);\n}\n\nbody.nr-dashboard-theme md-toolbar {\nbackground-color: black;\ncolor: black;\n}\n\n.nr-dashboard-theme ui-card-panel{\nborder-radius: 10px;\n}\n\nbody.nr-dashboard-theme md-sidenav {\ncolor: #71dfe4;\nbackground-color: rgb(69 69 69);\n}\n\nng-md-icon{\ncolor: black;\n}\n\n.md-toolbar-tools h1{\ncolor: black;\n}\n\n#equis{\nbackground-color: white;\n}\n\n</style>",
         "storeOutMessages": true,
         "fwdInMessages": true,
         "resendOnRefresh": true,
         "templateScope": "global",
         "className": "",
-        "x": 1210,
-        "y": 1520,
+        "x": 950,
+        "y": 1480,
         "wires": [
             []
         ]
     },
     {
-        "id": "387a1752889dfc6b",
+        "id": "569e29997108c06d",
         "type": "ui_gauge",
         "z": "ff64d5752f28abe6",
         "name": "",
-        "group": "35e8f16e89639508",
+        "group": "7874dfd1b72253a8",
         "order": 2,
         "width": 6,
         "height": 5,
@@ -2928,24 +2280,24 @@
         "min": "-1",
         "max": "1",
         "colors": [
-            "#a11df0",
-            "#a4e5f2",
+            "#004cff",
+            "#00affa",
             "#71def4"
         ],
-        "seg1": "0",
-        "seg2": "0",
+        "seg1": "-0.33",
+        "seg2": "0.33",
         "className": "",
-        "x": 530,
-        "y": 940,
+        "x": 1030,
+        "y": 260,
         "wires": []
     },
     {
-        "id": "d86cf376143e4288",
+        "id": "caad9b4ef69df56c",
         "type": "ui_gauge",
         "z": "ff64d5752f28abe6",
         "name": "",
-        "group": "35e8f16e89639508",
-        "order": 2,
+        "group": "7874dfd1b72253a8",
+        "order": 4,
         "width": 6,
         "height": 5,
         "gtype": "donut",
@@ -2955,46 +2307,73 @@
         "min": "-1",
         "max": "1",
         "colors": [
-            "#a11df0",
-            "#a4e5f2",
+            "#004cff",
+            "#00affa",
             "#71def4"
         ],
-        "seg1": "0",
-        "seg2": "0",
+        "seg1": "-0.33",
+        "seg2": "0.33",
         "className": "",
-        "x": 530,
-        "y": 1000,
+        "x": 1030,
+        "y": 320,
         "wires": []
     },
     {
-        "id": "fb4d8fbda2a76f6c",
+        "id": "5529ea3bda557412",
         "type": "ui_gauge",
         "z": "ff64d5752f28abe6",
         "name": "",
-        "group": "35e8f16e89639508",
-        "order": 2,
+        "group": "7874dfd1b72253a8",
+        "order": 6,
         "width": 6,
         "height": 5,
         "gtype": "donut",
-        "title": "Y",
+        "title": "Z",
         "label": "units",
         "format": "{{value}}",
         "min": "-1",
         "max": "1",
         "colors": [
-            "#a11df0",
-            "#a4e5f2",
+            "#004cff",
+            "#00affa",
             "#71def4"
         ],
-        "seg1": "0",
-        "seg2": "0",
+        "seg1": "-0.33",
+        "seg2": "0.33",
         "className": "",
-        "x": 530,
-        "y": 1060,
+        "x": 1030,
+        "y": 380,
         "wires": []
     },
     {
-        "id": "29e8308b5e15e955",
+        "id": "3c2cca13756d5238",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "f3c1e6a039430860",
+        "order": 2,
+        "width": 6,
+        "height": 5,
+        "gtype": "donut",
+        "title": "X",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-1",
+        "max": "1",
+        "colors": [
+            "#004cff",
+            "#00affa",
+            "#71def4"
+        ],
+        "seg1": "-0.33",
+        "seg2": "0.33",
+        "className": "",
+        "x": 530,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "1d9397f5332d961a",
         "type": "ui_gauge",
         "z": "ff64d5752f28abe6",
         "name": "",
@@ -3009,19 +2388,19 @@
         "min": "-1",
         "max": "1",
         "colors": [
-            "#a11df0",
-            "#a4e5f2",
+            "#004cff",
+            "#00affa",
             "#71def4"
         ],
-        "seg1": "0",
-        "seg2": "0",
+        "seg1": "-0.33",
+        "seg2": "0.33",
         "className": "",
         "x": 530,
         "y": 320,
         "wires": []
     },
     {
-        "id": "9680774a876af058",
+        "id": "ffb7e0d2a2472039",
         "type": "ui_gauge",
         "z": "ff64d5752f28abe6",
         "name": "",
@@ -3036,26 +2415,637 @@
         "min": "-1",
         "max": "1",
         "colors": [
-            "#a11df0",
-            "#a4e5f2",
+            "#004cff",
+            "#00affa",
             "#71def4"
         ],
-        "seg1": "0",
-        "seg2": "0",
+        "seg1": "-0.33",
+        "seg2": "0.33",
         "className": "",
         "x": 530,
         "y": 380,
         "wires": []
     },
     {
-        "id": "a0c50659e377526b",
-        "type": "ui_spacer",
+        "id": "a65dabe531d983ba",
+        "type": "ui_gauge",
         "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "4f29991b7a5bd322",
-        "order": 3,
-        "width": 2,
-        "height": 1
+        "name": "",
+        "group": "f3c1e6a039430860",
+        "order": 8,
+        "width": 9,
+        "height": 5,
+        "gtype": "gage",
+        "title": "Temperature MPU",
+        "label": "ºC",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "70",
+        "colors": [
+            "#00f500",
+            "#fbff29",
+            "#ff0000"
+        ],
+        "seg1": "40",
+        "seg2": "60",
+        "className": "temp",
+        "x": 490,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "2ab0683f8b7ee75b",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "f3c1e6a039430860",
+        "order": 9,
+        "width": 5,
+        "height": 5,
+        "gtype": "donut",
+        "title": "Patient Temperature",
+        "label": "ºC",
+        "format": "{{value}}",
+        "min": "30",
+        "max": "50",
+        "colors": [
+            "#00f500",
+            "#fbff29",
+            "#ff0000"
+        ],
+        "seg1": "37",
+        "seg2": "38",
+        "className": "temp",
+        "x": 480,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "4814ebc06515fa82",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "7874dfd1b72253a8",
+        "order": 9,
+        "width": 5,
+        "height": 5,
+        "gtype": "donut",
+        "title": "Patient Temperature",
+        "label": "ºC",
+        "format": "{{value}}",
+        "min": "30",
+        "max": "45",
+        "colors": [
+            "#00f500",
+            "#fbff29",
+            "#ff0000"
+        ],
+        "seg1": "37",
+        "seg2": "38",
+        "className": "temp",
+        "x": 980,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "f00cd91c191e4585",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "7874dfd1b72253a8",
+        "order": 7,
+        "width": 9,
+        "height": 5,
+        "gtype": "gage",
+        "title": "Temperature MCU",
+        "label": "ºC",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "70",
+        "colors": [
+            "#00f500",
+            "#fbff29",
+            "#ff0000"
+        ],
+        "seg1": "40",
+        "seg2": "60",
+        "className": "temp",
+        "x": 990,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "0cd42a4b8a8572c5",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "7874dfd1b72253a8",
+        "order": 8,
+        "width": 9,
+        "height": 5,
+        "gtype": "gage",
+        "title": "Temperature MPU",
+        "label": "ºC",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "70",
+        "colors": [
+            "#00f500",
+            "#fbff29",
+            "#ff0000"
+        ],
+        "seg1": "40",
+        "seg2": "60",
+        "className": "temp",
+        "x": 990,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "cc26b8050e6b5153",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "35e8f16e89639508",
+        "order": 9,
+        "width": 5,
+        "height": 5,
+        "gtype": "donut",
+        "title": "Patient Temperature",
+        "label": "ºC",
+        "format": "{{value}}",
+        "min": "30",
+        "max": "45",
+        "colors": [
+            "#00f500",
+            "#fbff29",
+            "#ff0000"
+        ],
+        "seg1": "37",
+        "seg2": "38",
+        "className": "temp",
+        "x": 480,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "e0f748e52cae3a70",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "35e8f16e89639508",
+        "order": 2,
+        "width": 6,
+        "height": 5,
+        "gtype": "donut",
+        "title": "X",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-1",
+        "max": "1",
+        "colors": [
+            "#004cff",
+            "#00affa",
+            "#71def4"
+        ],
+        "seg1": "-0.33",
+        "seg2": "0.33",
+        "className": "",
+        "x": 530,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "24737727f128c9ae",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "35e8f16e89639508",
+        "order": 4,
+        "width": 6,
+        "height": 5,
+        "gtype": "donut",
+        "title": "Y",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-1",
+        "max": "1",
+        "colors": [
+            "#004cff",
+            "#00affa",
+            "#71def4"
+        ],
+        "seg1": "-0.33",
+        "seg2": "0.33",
+        "className": "",
+        "x": 530,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "5a57bee46f5394f8",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "35e8f16e89639508",
+        "order": 6,
+        "width": 6,
+        "height": 5,
+        "gtype": "donut",
+        "title": "Z",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-1",
+        "max": "1",
+        "colors": [
+            "#004cff",
+            "#00affa",
+            "#71def4"
+        ],
+        "seg1": "-0.33",
+        "seg2": "0.33",
+        "className": "",
+        "x": 530,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "849482a0fb81d2b9",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "35e8f16e89639508",
+        "order": 7,
+        "width": 9,
+        "height": 5,
+        "gtype": "gage",
+        "title": "Temperature MCU",
+        "label": "ºC",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "70",
+        "colors": [
+            "#00f500",
+            "#fbff29",
+            "#ff0000"
+        ],
+        "seg1": "40",
+        "seg2": "60",
+        "className": "temp",
+        "x": 490,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "b260212c918ff7f4",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "35e8f16e89639508",
+        "order": 8,
+        "width": 9,
+        "height": 5,
+        "gtype": "gage",
+        "title": "Temperature MPU",
+        "label": "ºC",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "70",
+        "colors": [
+            "#00f500",
+            "#fbff29",
+            "#ff0000"
+        ],
+        "seg1": "40",
+        "seg2": "60",
+        "className": "temp",
+        "x": 490,
+        "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "e0b988349091e548",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "d22a45b2307d6d71",
+        "order": 7,
+        "width": 9,
+        "height": 5,
+        "gtype": "gage",
+        "title": "Temperature MCU",
+        "label": "ºC",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "70",
+        "colors": [
+            "#00f500",
+            "#fbff29",
+            "#ff0000"
+        ],
+        "seg1": "40",
+        "seg2": "60",
+        "className": "temp",
+        "x": 970,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "2f5aaf6d8b56164c",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "d22a45b2307d6d71",
+        "order": 8,
+        "width": 9,
+        "height": 5,
+        "gtype": "gage",
+        "title": "Temperature MPU",
+        "label": "ºC",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "70",
+        "colors": [
+            "#00f500",
+            "#fbff29",
+            "#ff0000"
+        ],
+        "seg1": "40",
+        "seg2": "60",
+        "className": "temp",
+        "x": 970,
+        "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "abda18f6daceccc4",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "d22a45b2307d6d71",
+        "order": 9,
+        "width": 5,
+        "height": 5,
+        "gtype": "donut",
+        "title": "Patient Temperature",
+        "label": "ºC",
+        "format": "{{value}}",
+        "min": "30",
+        "max": "45",
+        "colors": [
+            "#00f500",
+            "#fbff29",
+            "#ff0000"
+        ],
+        "seg1": "37",
+        "seg2": "38",
+        "className": "temp",
+        "x": 960,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "a5fb363b152adbfc",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "d22a45b2307d6d71",
+        "order": 2,
+        "width": 6,
+        "height": 5,
+        "gtype": "donut",
+        "title": "X",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-1",
+        "max": "1",
+        "colors": [
+            "#004cff",
+            "#00affa",
+            "#71def4"
+        ],
+        "seg1": "-0.33",
+        "seg2": "0.33",
+        "className": "",
+        "x": 1010,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "168debbf5c98cafb",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "d22a45b2307d6d71",
+        "order": 4,
+        "width": 6,
+        "height": 5,
+        "gtype": "donut",
+        "title": "Y",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-1",
+        "max": "1",
+        "colors": [
+            "#004cff",
+            "#00affa",
+            "#71def4"
+        ],
+        "seg1": "-0.33",
+        "seg2": "0.33",
+        "className": "",
+        "x": 1010,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "84577cfbef92b2c6",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "d22a45b2307d6d71",
+        "order": 6,
+        "width": 6,
+        "height": 5,
+        "gtype": "donut",
+        "title": "Z",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-1",
+        "max": "1",
+        "colors": [
+            "#004cff",
+            "#00affa",
+            "#71def4"
+        ],
+        "seg1": "-0.33",
+        "seg2": "0.33",
+        "className": "",
+        "x": 1010,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "cd0d908af0721c40",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "25ead1c493d30de9",
+        "order": 9,
+        "width": 5,
+        "height": 5,
+        "gtype": "donut",
+        "title": "Patient Temperature",
+        "label": "ºC",
+        "format": "{{value}}",
+        "min": "30",
+        "max": "45",
+        "colors": [
+            "#00f500",
+            "#fbff29",
+            "#ff0000"
+        ],
+        "seg1": "37",
+        "seg2": "38",
+        "className": "temp",
+        "x": 480,
+        "y": 1480,
+        "wires": []
+    },
+    {
+        "id": "2f42976a668249dc",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "25ead1c493d30de9",
+        "order": 2,
+        "width": 6,
+        "height": 5,
+        "gtype": "donut",
+        "title": "X",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-1",
+        "max": "1",
+        "colors": [
+            "#004cff",
+            "#00affa",
+            "#71def4"
+        ],
+        "seg1": "-0.33",
+        "seg2": "0.33",
+        "className": "",
+        "x": 530,
+        "y": 1600,
+        "wires": []
+    },
+    {
+        "id": "060baa5841855b21",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "25ead1c493d30de9",
+        "order": 4,
+        "width": 6,
+        "height": 5,
+        "gtype": "donut",
+        "title": "Y",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-1",
+        "max": "1",
+        "colors": [
+            "#004cff",
+            "#00affa",
+            "#71def4"
+        ],
+        "seg1": "-0.33",
+        "seg2": "0.33",
+        "className": "",
+        "x": 530,
+        "y": 1660,
+        "wires": []
+    },
+    {
+        "id": "93a2acc1e35aeeb7",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "25ead1c493d30de9",
+        "order": 6,
+        "width": 6,
+        "height": 5,
+        "gtype": "donut",
+        "title": "Z",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-1",
+        "max": "1",
+        "colors": [
+            "#004cff",
+            "#00affa",
+            "#71def4"
+        ],
+        "seg1": "-0.33",
+        "seg2": "0.33",
+        "className": "",
+        "x": 530,
+        "y": 1720,
+        "wires": []
+    },
+    {
+        "id": "22cf59f343b62aa3",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "25ead1c493d30de9",
+        "order": 7,
+        "width": 9,
+        "height": 5,
+        "gtype": "gage",
+        "title": "Temperature MCU",
+        "label": "ºC",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "70",
+        "colors": [
+            "#00f500",
+            "#fbff29",
+            "#ff0000"
+        ],
+        "seg1": "40",
+        "seg2": "60",
+        "className": "temp",
+        "x": 490,
+        "y": 1780,
+        "wires": []
+    },
+    {
+        "id": "704cc0338198b1a3",
+        "type": "ui_gauge",
+        "z": "ff64d5752f28abe6",
+        "name": "",
+        "group": "25ead1c493d30de9",
+        "order": 8,
+        "width": 9,
+        "height": 5,
+        "gtype": "gage",
+        "title": "Temperature MPU",
+        "label": "ºC",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "70",
+        "colors": [
+            "#00f500",
+            "#fbff29",
+            "#ff0000"
+        ],
+        "seg1": "40",
+        "seg2": "60",
+        "className": "temp",
+        "x": 490,
+        "y": 1840,
+        "wires": []
     },
     {
         "id": "55c6a3dc64f8c3af",
@@ -3818,546 +3808,6 @@
         "height": 1
     },
     {
-        "id": "2af7fb91cd032ccc",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "7874dfd1b72253a8",
-        "order": 3,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "f3054a5b8b3b279a",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "7874dfd1b72253a8",
-        "order": 4,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "dff5fe20787d08df",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "7874dfd1b72253a8",
-        "order": 5,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "88ec246fd7e4fbce",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "7874dfd1b72253a8",
-        "order": 6,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "fbf10431cb30d29a",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "7874dfd1b72253a8",
-        "order": 7,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "784c4c0664b6a553",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "7874dfd1b72253a8",
-        "order": 9,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "175af6c06f15f18b",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "7874dfd1b72253a8",
-        "order": 11,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "70af619c82496505",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "7874dfd1b72253a8",
-        "order": 12,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "747cb6f42a9b2a3f",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "7874dfd1b72253a8",
-        "order": 13,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "a078e2a4471ded23",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "7874dfd1b72253a8",
-        "order": 14,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "e445739d0f517bb4",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "7874dfd1b72253a8",
-        "order": 15,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "9f453c633da7542d",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "7874dfd1b72253a8",
-        "order": 17,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "40d5d4a79c668268",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "7874dfd1b72253a8",
-        "order": 19,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "ca20e17e416e4b33",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "7874dfd1b72253a8",
-        "order": 23,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "2bd58e117d84bd21",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "7874dfd1b72253a8",
-        "order": 24,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "c54cdf80d1ef0276",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "7874dfd1b72253a8",
-        "order": 25,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "f653890cb5f478c1",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "7874dfd1b72253a8",
-        "order": 26,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "0bab6308241b5f2d",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "7874dfd1b72253a8",
-        "order": 28,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "26d091fa86bd62ad",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "35e8f16e89639508",
-        "order": 3,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "11f5793eb0a398ff",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "35e8f16e89639508",
-        "order": 4,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "16c14d7ac8888a6e",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "35e8f16e89639508",
-        "order": 5,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "cac1333164299c6f",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "35e8f16e89639508",
-        "order": 6,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "efe32a7588de65ca",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "35e8f16e89639508",
-        "order": 7,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "9ff3c8231083d266",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "35e8f16e89639508",
-        "order": 9,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "d4f9fdda1a368e22",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "35e8f16e89639508",
-        "order": 11,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "9acd1df99e3e8b23",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "35e8f16e89639508",
-        "order": 12,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "e2419ec8ecc8e5af",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "35e8f16e89639508",
-        "order": 13,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "2c9203f44c4d0ce6",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "35e8f16e89639508",
-        "order": 14,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "a6f686fd366a9868",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "35e8f16e89639508",
-        "order": 15,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "708a21382d2918f2",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "35e8f16e89639508",
-        "order": 17,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "e588844637d533a2",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "35e8f16e89639508",
-        "order": 19,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "84212eb3da508a17",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "35e8f16e89639508",
-        "order": 23,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "a4d8f2f16f484d6d",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "35e8f16e89639508",
-        "order": 24,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "6767d1a293e30744",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "35e8f16e89639508",
-        "order": 25,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "d8467f509aab250f",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "35e8f16e89639508",
-        "order": 26,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "71e1725f14f2164f",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "35e8f16e89639508",
-        "order": 28,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "e53466e6b16a55e8",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "25ead1c493d30de9",
-        "order": 3,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "77ed464df611ab63",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "25ead1c493d30de9",
-        "order": 4,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "fe5ea8066c962c23",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "25ead1c493d30de9",
-        "order": 5,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "14450672bb54ec20",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "25ead1c493d30de9",
-        "order": 6,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "99f81f618d370c0e",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "25ead1c493d30de9",
-        "order": 7,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "45b9239b96b32a16",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "25ead1c493d30de9",
-        "order": 9,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "eb52f5a2a58b2345",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "25ead1c493d30de9",
-        "order": 11,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "5914520d2d60c608",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "25ead1c493d30de9",
-        "order": 12,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "608b3f62d8eac124",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "25ead1c493d30de9",
-        "order": 13,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "82b3204a26eb1260",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "25ead1c493d30de9",
-        "order": 14,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "80f34eedb2600a8f",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "25ead1c493d30de9",
-        "order": 15,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "ed5263ebfef13dfd",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "25ead1c493d30de9",
-        "order": 17,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "bc356a9183a60167",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "25ead1c493d30de9",
-        "order": 19,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "2b31d42afcf6f697",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "25ead1c493d30de9",
-        "order": 23,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "75295d71dbfdcd4d",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "25ead1c493d30de9",
-        "order": 24,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "f0e9d6c89767b234",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "25ead1c493d30de9",
-        "order": 25,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "612c099d2e1aeb4d",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "25ead1c493d30de9",
-        "order": 26,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "b770bfaae656f0ae",
-        "type": "ui_spacer",
-        "z": "ff64d5752f28abe6",
-        "name": "spacer",
-        "group": "25ead1c493d30de9",
-        "order": 28,
-        "width": 1,
-        "height": 1
-    },
-    {
         "id": "fb2c6620ad6b6081",
         "type": "mqtt-broker",
         "name": "",
@@ -4429,7 +3879,7 @@
         "tab": "b4c058af73135193",
         "order": 2,
         "disp": true,
-        "width": 30,
+        "width": 29,
         "collapse": false,
         "className": ""
     },
@@ -4440,7 +3890,7 @@
         "tab": "d1711b3260642844",
         "order": 1,
         "disp": true,
-        "width": 30,
+        "width": 29,
         "collapse": false,
         "className": ""
     },
@@ -4451,7 +3901,7 @@
         "tab": "0c3bf6af30cb3477",
         "order": 1,
         "disp": true,
-        "width": 30,
+        "width": 29,
         "collapse": false,
         "className": ""
     },
@@ -4462,7 +3912,7 @@
         "tab": "6d243ad340705718",
         "order": 1,
         "disp": true,
-        "width": 30,
+        "width": 29,
         "collapse": false,
         "className": ""
     },

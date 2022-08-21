@@ -1,9 +1,8 @@
 <style>
 
 body{
-background: rgb(0,0,0);
-background: linear-gradient(202deg, rgba(0,0,0,1) 0%, rgba(92,3,145,1) 25%, rgba(68,15,196,1) 51%, rgba(12,0,167,1) 75%,
-rgba(78,158,162,1) 100%);
+background: rgb(0,42,200);
+background: radial-gradient(circle, rgba(0,42,200,1) 0%, rgba(0,45,143,1) 25%, rgba(0,25,82,1) 56%, rgba(0,0,0,1) 100%);
 }
 
 body.nr-dashboard-theme md-toolbar {
