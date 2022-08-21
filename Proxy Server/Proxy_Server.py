@@ -1,6 +1,4 @@
-from lib2to3.pygram import python_grammar_no_print_statement
 import socket
-import os
 from _thread import *
 import subprocess
 import time
