@@ -26,6 +26,17 @@ services:
         aliases:
         - node1.emqx.io
 
+
+  python:
+    image: pythonserversbermejo:1
+    ports: 
+      - 9998:9998
+    networks:
+      internal_net:
+        ipv4_address: 172.20.0.10
+
+        
+
 volumes:
   node-red-data:
 
