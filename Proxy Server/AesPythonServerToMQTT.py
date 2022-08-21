@@ -26,20 +26,33 @@ def clean_string_binary_remains(binary_string):
     tmp=tmp.replace('b','',1)
     return tmp
 
-def data_from_pico_desencrypter(text, key, iv):
+def data_from_pseudo_pico_desencrypter(text, key, iv):
     segundo=text
     data_decrypted = ''
-    obj2 = AES.new(key.encode("utf8"), AES.MODE_CBC, iv.encode("utf8"))
+    obj2 = AES.new(key.encode("utf-8"), AES.MODE_CBC, iv.encode("utf-8"))
     for i in range(segundo.count('+') + 1):
         primer, segundo = segmentate_in_ciphered_strings(segundo)
-        cifrado = primer.encode("utf_8")
-        obj2 = AES.new(key.encode("utf8"), AES.MODE_CBC, iv.encode("utf8"))
+        cifrado = primer.encode("utf-8")
+        obj2 = AES.new(key.encode("utf-8"), AES.MODE_CBC, iv.encode("utf-8"))
         cifra = binascii.unhexlify(cifrado)
         data_decrypted += clean_string_binary_remains(str(obj2.decrypt(cifra)))
         primer=''
     data_decrypted=data_decrypted.replace('&','')
     return data_decrypted
 
+def data_from_pico_desencrypter(text, key, iv):
+    segundo=text
+    data_decrypted = ''
+    obj2 = AES.new(key.encode("utf-8"), AES.MODE_CBC, iv.encode("utf-8"))
+    for i in range(segundo.count('+') + 1):
+        primer, segundo = segmentate_in_ciphered_strings(segundo)
+        cifrado = primer.encode("utf-8")
+        #obj2 = AES.new(key.encode("utf-8"), AES.MODE_CBC, iv.encode("utf-8"))
+        cifra = binascii.unhexlify(cifrado)
+        data_decrypted += clean_string_binary_remains(str(obj2.decrypt(cifra)))
+        primer=''
+    data_decrypted=data_decrypted.replace('&','')
+    return data_decrypted
 
 def check_words_in_decrypted_string(text):
     if "\"Temp\"" in text:
@@ -79,15 +92,21 @@ def autentication_and_ID_assignation(ciphertext):
         iv=json_dict[a][1]
         #print("Key used:"+str(key)+"// Iv used:"+str(iv)+"|")
         #print("Data from pico desencripted:"+str(data_from_pico_desencrypter(ciphertext, key, iv)))
+        if check_words_in_decrypted_string(data_from_pseudo_pico_desencrypter(ciphertext, key, iv)):
+            print("Server in port ["+str(server.PORT_ADDRESS)+"] says: "+"Founded: "+ a)
+            device_searched=a
+            simulator_mode=True
+            break
         if check_words_in_decrypted_string(data_from_pico_desencrypter(ciphertext, key, iv)):
             print("Server in port ["+str(server.PORT_ADDRESS)+"] says: "+"Founded: "+ a)
             device_searched=a
+            simulator_mode=False
             break
 
     if device_searched=="":
         return "Not_found_dev",0,0
 
-    return device_searched, json_dict[device_searched][0], json_dict[device_searched][1]
+    return device_searched, json_dict[device_searched][0], json_dict[device_searched][1], simulator_mode
 
 
 def connect_mqtt(client_id, broker, port):
@@ -179,6 +198,8 @@ device_port_address="none"
 
 first_package=True
 
+#simulator_mode=False
+
 while True:
     conexion, CLIENT_ADDRESS = socketTCP.accept()
 
@@ -208,7 +229,7 @@ while True:
                 print("Server in port ["+str(server.PORT_ADDRESS)+"] says: "+'Origin: '+str(data_from_pico))
             elif '+' in data_from_pico:
                 if not atentication_check:
-                    device_id, KEY, IV = autentication_and_ID_assignation(str(data_from_pico))
+                    device_id, KEY, IV, simulator_mode = autentication_and_ID_assignation(str(data_from_pico))
                     if device_id=="Not_found_dev":
                         print("Server in port ["+str(server.PORT_ADDRESS)+"] says: "+"POSSIBLE HACKING ATTACK DETECTED!!! SERVER DOWN")
                         sys.exit()
@@ -218,7 +239,10 @@ while True:
                     atentication_check=True
 
                 #print("Server in port ["+str(server.PORT_ADDRESS)+"] says: "+'RECIBOO:' + str(data_from_pico))
-                data_string=data_from_pico_desencrypter(data_from_pico, KEY, IV)
+                if simulator_mode:
+                    data_string=data_from_pseudo_pico_desencrypter(data_from_pico, KEY, IV)
+                else:
+                    data_string=data_from_pico_desencrypter(data_from_pico, KEY, IV)
                 #print("Data String:"+str(data_string))
                 pico=json.loads(data_string)
                 publish(client_mqtt_publisher,mqtt_publisher.topic[0] , str(pico["Temp"]))
