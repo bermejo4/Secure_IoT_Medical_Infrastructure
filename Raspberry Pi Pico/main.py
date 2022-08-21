@@ -23,20 +23,20 @@ def Rx_ESP_Data():
         recv+=uart0.read(1)
     res=recv.decode('utf-8')
     return res
-def Connect_WiFi(cmd, uart=uart0, timeout=300):
+def Connect_WiFi(cmd, uart=uart0, timeout=50):
     print("CMD: " + cmd)
     uart.write(cmd)
     utime.sleep(7.0)
     Wait_ESP_Rsp(uart, timeout)
     print()
 
-def Send_AT_Cmd(cmd, uart=uart0, timeout=300):
+def Send_AT_Cmd(cmd, uart=uart0, timeout=50):
     print("CMD: " + cmd)
     uart.write(cmd)
     Wait_ESP_Rsp(uart, timeout)
     print()
     
-def Wait_ESP_Rsp(uart=uart0, timeout=300):
+def Wait_ESP_Rsp(uart=uart0, timeout=50):
     prvMills = utime.ticks_ms()
     resp = b""
     while (utime.ticks_ms()-prvMills)<timeout:
@@ -221,12 +221,12 @@ if __name__ == "__main__":
                  '",' +
                  str(SERVER_PORT) +
                  '\r\n')
-    espSend()
+    #espSend()
     
     while True:
         string_to_send=""
         #string_to_send=str(data_collector())
-        string_to_send=maes_encrypter.encrypt_data(KEY.encode('ascii'), IV.encode('ascii'), DataExterCollector.data_collector().encode('ascii'))
+        string_to_send=maes_encrypter.encrypt_data(KEY.encode('utf-8'), IV.encode('utf-8'), DataExterCollector.data_collector().encode('utf-8'))
         Send_AT_Cmd('AT+CIPSTART="TCP","' +
                      SERVER_IP +
                      '",' +
