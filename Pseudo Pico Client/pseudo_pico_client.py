@@ -205,9 +205,9 @@ def cipher_data_chain_builder(device_id, data):
 
 
 def encrypt_data_by_16_block(text, key, iv):
-    obj = AES.new(key.encode("utf8"), AES.MODE_CBC, iv.encode("utf8"))
+    obj = AES.new(key.encode("utf-8"), AES.MODE_CBC, iv.encode("utf-8"))
     message = text
-    ciphertext = obj.encrypt(message.encode("utf8"))
+    ciphertext = obj.encrypt(message.encode("utf-8"))
     return ciphertext
 
 pico=Pseudo_Pico()
