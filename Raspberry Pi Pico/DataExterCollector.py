@@ -52,7 +52,7 @@ def data_collector():
         pico.cord_x="{:.3f}".format(g.Gx)
         pico.cord_y="{:.3f}".format(g.Gy)
         pico.cord_z="{:.3f}".format(g.Gz)
-        pico.temp_mpu=g.Temperature
+        pico.temp_mpu="{:.3f}".format(g.Temperature)
         #print("X:{:.2f}  Y:{:.2f}  Z:{:.2f}  Temp:{:.2f}".format(g.Gx,g.Gy,g.Gz,g.Temperature))
         break
     #----------------------------------------------------
@@ -62,14 +62,14 @@ def data_collector():
     conversion_factor = 3.3 / (65535)
     signal_value = pulse_sensor.read_u16()*conversion_factor
     print(signal_value)
-    pico.pulse_sig=signal_value
+    pico.pulse_sig="{:.3f}".format(signal_value)
     #--------------------------------------------------
     #MCU TEMPERATURE
     sensortemp = machine.ADC(4)
     factorconversion = 3.3 / 65365
     rawValue = sensortemp.read_u16() * factorconversion
     temperatura_mcu = 27 - (rawValue - 0.706) / 0.001721
-    pico.temp_mcu=temperatura_mcu
+    pico.temp_mcu="{:.3f}".format(temperatura_mcu)
     #--------------------------------------------------
     #SENSOR TEMPERATURE
     ow = onewire.OneWire(Pin(16)) #Prepara GPIO4 para usar con OneWire
@@ -85,9 +85,10 @@ def data_collector():
         #sleep (1)
     temperatura = sensor.read_temp (id)
         #print (temperatura)
-    pico.temp=temperatura
+    pico.temp="{:.3f}".format(temperatura)
     #--------------------------------------------------
     #Returnind data in JSON Format:
+    print(pico.JSON_transform())
     return pico.JSON_transform()
 
     
