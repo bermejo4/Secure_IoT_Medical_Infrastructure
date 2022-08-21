@@ -1,0 +1,5 @@
+{ "id":"iot_med_dev_01", "key":"1234567890123456", "iv":"AAAAAAAAAAAAAAAA"}
+{ "id":"iot_med_dev_02", "key":"AAAAAAAAAAAAAAAA", "iv":"AAAAAAAAAAAAAAAA"}
+{ "id":"iot_med_dev_03", "key":"BBBBBBBBBBBBBBBB", "iv":"AAAAAAAAAAAAAAAA"}
+{ "id":"iot_med_dev_04", "key":"CCCCCCCCCCCCCCCC", "iv":"AAAAAAAAAAAAAAAA"}
+{ "id":"iot_med_dev_05", "key":"DDDDDDDDDDDDDDDD", "iv":"AAAAAAAAAAAAAAAA"}
