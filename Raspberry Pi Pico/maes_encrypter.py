@@ -9,7 +9,7 @@ def add_until_16(word):
 
 def clean_string_binary_remains(binary_string):
     tmp=binary_string.replace('\'','')
-    tmp=tmp.replace('b','')
+    tmp=tmp.replace('b','',1)
     return tmp
         
 
