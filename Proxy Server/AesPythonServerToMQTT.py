@@ -243,7 +243,7 @@ while True:
                     data_string=data_from_pseudo_pico_desencrypter(data_from_pico, KEY, IV)
                 else:
                     data_string=data_from_pico_desencrypter(data_from_pico, KEY, IV)
-                #print("Data String:"+str(data_string))
+                print("Data String:"+str(data_string))
                 pico=json.loads(data_string)
                 publish(client_mqtt_publisher,mqtt_publisher.topic[0] , str(pico["Temp"]))
                 publish(client_mqtt_publisher,mqtt_publisher.topic[1] , str(pico["PulseSig"]))
