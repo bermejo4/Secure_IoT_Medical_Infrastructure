@@ -5,7 +5,7 @@ import time
 
 ServerSocket = socket.socket()
 host = '0.0.0.0'
-port = 9998
+port = 9999
 ThreadCount = 0
 try:
     ServerSocket.bind((host, port))
