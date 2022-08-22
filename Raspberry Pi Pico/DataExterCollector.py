@@ -49,9 +49,18 @@ def data_collector():
         else:
             g=mpu.readData()
             #utime.sleep_ms(25)
-        pico.cord_x="{:.3f}".format(g.Gx)
-        pico.cord_y="{:.3f}".format(g.Gy)
-        pico.cord_z="{:.3f}".format(g.Gz)
+        if g.Gx < 0:
+            pico.cord_x="{:.2f}".format(g.Gx)
+        else:
+            pico.cord_x="{:.3f}".format(g.Gx)
+        if g.Gy < 0:
+            pico.cord_y="{:.2f}".format(g.Gy)
+        else:
+            pico.cord_y="{:.3f}".format(g.Gy)
+        if g.Gz < 0:
+            pico.cord_z="{:.2f}".format(g.Gz)
+        else:
+            pico.cord_z="{:.3f}".format(g.Gz)
         pico.temp_mpu="{:.3f}".format(g.Temperature)
         #print("X:{:.2f}  Y:{:.2f}  Z:{:.2f}  Temp:{:.2f}".format(g.Gx,g.Gy,g.Gz,g.Temperature))
         break
