@@ -541,9 +541,9 @@ function myFunction() {
         var wifi_pass = document.getElementById("wifi_pass").value;
 
         var key1 = document.getElementById("key1").value;
-        var randNum = Math.floor(Math.random() * 10).toString();
-        var key2 = Math.floor(Math.random() * 10000000000000000).toString().padEnd(16, randNum);
-
+        //var randNum = Math.floor(Math.random() * 10).toString();
+        //var key2 = Math.floor(Math.random() * 10000000000000000).toString().padEnd(16, randNum);
+        var key2="BBBBBBBBBBBBBBBB"
         if (check_ip(server_ip)) {
           if (check_port(server_port)) {
             var ip_ciphered = encrypt(server_ip, key1, key2);
@@ -628,7 +628,7 @@ function myFunction() {
     padding: 1% 10%;
     border-radius: 30px;
     box-shadow: 2px 2px 9px;">
-        <label for="key1" style="font-weight: bold;font-style: italic;">Key 1: </label>
+        <label for="key1" style="font-weight: bold;font-style: italic;">Key: </label>
         <input type="text" id="key1" style="width: 100%;" name="key1" value="AAAAAAAAAAAAAAAA" /> (16
         character word)<br /><br />
         <p>
