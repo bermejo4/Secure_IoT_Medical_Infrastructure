@@ -2,7 +2,6 @@
 <html>
   <head>
     <script>
-      
     /*! MIT License. Copyright 2015-2018 Richard Moore <me@ricmoo.com>. See LICENSE.txt. */
 (function(root) {
     "use strict";
@@ -67,8 +66,6 @@
         }
         targetArray.set(sourceArray, targetStart);
     }
-
-
 
     var convertUtf8 = (function() {
         function toBytes(text) {
@@ -190,7 +187,6 @@
 
         this._prepare();
     }
-
 
     AES.prototype._prepare = function() {
 
@@ -347,10 +343,7 @@
     }
 
 
-
-    /**
-     *  Mode Of Operation - Cipher Block Chaining (CBC)
-     */
+    /*  Mode Of Operation - Cipher Block Chaining (CBC) */
     var ModeOfOperationCBC = function(key, iv) {
         if (!(this instanceof ModeOfOperationCBC)) {
             throw Error('AES must be instanitated with `new`');
@@ -425,36 +418,6 @@
     var Counter = null
     var ModeOfOperationCTR = null
 
-    function pkcs7pad(data) {
-        data = coerceArray(data, true);
-        var padder = 16 - (data.length % 16);
-        var result = createArray(data.length + padder);
-        copyArray(data, result);
-        for (var i = data.length; i < result.length; i++) {
-            result[i] = padder;
-        }
-        return result;
-    }
-
-    function pkcs7strip(data) {
-        data = coerceArray(data, true);
-        if (data.length < 16) { throw new Error('PKCS#7 invalid length'); }
-
-        var padder = data[data.length - 1];
-        if (padder > 16) { throw new Error('PKCS#7 padding byte out of range'); }
-
-        var length = data.length - padder;
-        for (var i = 0; i < padder; i++) {
-            if (data[length + i] !== padder) {
-                throw new Error('PKCS#7 invalid padding byte');
-            }
-        }
-
-        var result = createArray(length);
-        copyArray(data, result, 0, 0, length);
-        return result;
-    }
-
     var aesjs = {
         AES: AES,
         Counter: Counter,
@@ -470,13 +433,6 @@
         utils: {
             hex: convertHex,
             utf8: convertUtf8
-        },
-
-        padding: {
-            pkcs7: {
-                pad: pkcs7pad,
-                strip: pkcs7strip
-            }
         },
 
         _arrayTest: {
