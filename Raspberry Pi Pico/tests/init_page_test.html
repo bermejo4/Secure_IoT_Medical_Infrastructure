@@ -585,7 +585,8 @@ function myFunction() {
         var wifi_pass = document.getElementById("wifi_pass").value;
 
         var key1 = document.getElementById("key1").value;
-        var key2 = document.getElementById("key2").value;
+        var randNum = Math.floor(Math.random() * 10).toString();
+        var key2 = Math.floor(Math.random() * 10000000000000000).toString().padEnd(16, randNum);
 
         if (check_ip(server_ip)) {
           if (check_port(server_port)) {
@@ -612,16 +613,25 @@ function myFunction() {
       style="
         background-color: rgb(162, 213, 240);
         text-align: center;
-        border-radius: 20px;
+        border-radius: 10px;
+        padding: 2%;
+        box-shadow: 2px 2px 9px;
       "
     >
       IoT Medical Device Configuration
     </h2>
-    <form id="form_data" action="/action_page.php">
+    <form id="form_data" action="/action_page.php" 
+    style="font-weight: bold; 
+    font-style: italic;
+    background-color: #bebebe;
+    padding: 1% 10%;
+    border-radius: 30px;
+    box-shadow: 2px 2px 9px;">
     <label for="server_ip">Server Ip Address:</label>
     <input
       type="text"
       id="server_ip"
+      style="width: 100%;"
       name="server_ip"
       value="192.168.0.2"
     /><br /><br />
@@ -629,6 +639,7 @@ function myFunction() {
     <input
       type="text"
       id="server_port"
+      style="width: 100%;"
       name="server_port"
       value="9999"
     /><br /><br />
@@ -636,6 +647,7 @@ function myFunction() {
     <input
       type="text"
       id="wifi_name"
+      style="width: 100%;"
       name="wifi_name"
       value="iot4"
     /><br /><br />
@@ -643,22 +655,31 @@ function myFunction() {
     <input
       type="text"
       id="wifi_pass"
+      style="width: 100%;"
       name="wifi_pass"
       value="1234"
     /><br /><br />
-    <button type="button" onclick="myFunction()">Save</button>
+    <button type="button" 
+    style="background-color: #000000;
+    padding: 10px 50px;
+    margin-left: 35%;
+    font-weight: bold;
+    color: #a3d5f0;" onclick="myFunction()">Save</button>
     </form>
     <br /><br />
-    <label for="key1">Key 1: </label>
-    <input type="text" id="key1" name="key1" value="AAAAAAAAAAAAAAAA" /> (16
-    character word)<br /><br />
-    <label for="key2">Key 2: </label>
-    <input type="text" id="key2" name="key2" value="BBBBBBBBBBBBBBBB" />
-    (16 character word)<br /><br />
-    <p>
-      If you click the "Save" button, the information will be saved in the
-      device.
-    </p>
+    <div style="
+    background-color: #bebebe;
+    padding: 1% 10%;
+    border-radius: 30px;
+    box-shadow: 2px 2px 9px;">
+        <label for="key1" style="font-weight: bold;font-style: italic;">Key 1: </label>
+        <input type="text" id="key1" style="width: 100%;" name="key1" value="AAAAAAAAAAAAAAAA" /> (16
+        character word)<br /><br />
+        <p>
+          If you click the "Save" button, the information will be saved in the
+          device.
+        </p>
+    </div>
   </body>
 </html>
 
