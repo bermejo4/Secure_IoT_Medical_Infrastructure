@@ -7,7 +7,7 @@ services:
     ports:
       - 1880:1880
     links:
-      - emqx1
+      - emqx
     volumes:
       - node-red-data:/data
     networks:
@@ -15,7 +15,8 @@ services:
         ipv4_address: 172.20.0.25
 
 
-  emqx1:
+  emqx:
+    container_name: EMQX
     image: emqx/emqx:latest
     ports:
       - 18083:18083
@@ -28,6 +29,7 @@ services:
 
 
   python:
+    container_name: PythonServer
     image: pythonserversbermejo:1
     ports: 
       - 9998:9998
@@ -35,7 +37,25 @@ services:
       internal_net:
         ipv4_address: 172.20.0.10
 
-        
+  tcpdumpPythonServer:
+    container_name: Sniffer-PythonServer
+    image: nicolaka/netshoot
+    depends_on:
+      - python
+    command: tcpdump -i eth0 -w /data/pythonserver.pcap
+    network_mode: service:python
+    volumes:
+      - $PWD/data:/data
+
+  tcpdumpEMQX:
+    container_name: Sniffer-EMQX
+    image: nicolaka/netshoot
+    depends_on:
+      - emqx
+    command: tcpdump -i eth0 -w /data/emqx.pcap
+    network_mode: service:emqx
+    volumes:
+      - $PWD/data:/data
 
 volumes:
   node-red-data:
