@@ -118,7 +118,7 @@ from Crypto.Cipher import AES
 
 - #### Proxy Server: 
 
-The [Proxy Server](/Proxy%20Server/Server_multi.py) is a server that listens on port 9998 (the port can be changed) and receives TCP connections to that port from an external device. Once it receives a connection, this connection is managed by a thread, that deploys an [Internal Server](/Proxy%20Server/AesPythonServerToMQTT.py) with a specific port listen (random free port), and then establishes a TCP connection with it. Everything that the proxy server receives from this first external connection it sends to the new internal server deployed, is like a bypass as can be observed in the previous figure. 
+The [Proxy Server](/Proxy%20Server/Proxy_Server.py) is a server that listens on port 9998 (the port can be changed) and receives TCP connections to that port from an external device. Once it receives a connection, this connection is managed by a thread, that deploys an [Internal Server](/Proxy%20Server/AesPythonServerToMQTT.py) with a specific port listen (random free port), and then establishes a TCP connection with it. Everything that the proxy server receives from this first external connection it sends to the new internal server deployed, is like a bypass as can be observed in the previous figure. 
 When another connection arrives from another device to port 9998, another thread is created and, as previously have been described, a new internal server (different from the other, in another free port) is deployed and is connected to it, sending to it everything that it receives. If it receives another connection, the same process is repeated, and so on. 
 At the moment it can only manage 5 connections simultaneously, but that can be changed in the code.
 
