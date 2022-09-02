@@ -10,8 +10,20 @@ This project is based on a previous one called [IoT_Medical_Device](https://gith
     - Modes:
         - [Configuration Mode](#configuration-mode)
         - [Working Mode](#working-mode)
+    - [Cybersecurity](#cybersecurity)
+    - [Pseudo Pico Client](#pseudo-pico-client)
 - [Server](#server)
+    - [Proxy Server](#proxy-server)
+    - [Internal Server](#internal-server)
+    - [MQTT Broker](#mqtt-broker-emqx)
+    - [Docker](#docker)
+    - [Node-Red](#node-red)
+- [Other useful information](#other-useful-information)
+    - [Keys and Password advice](#keys-and-password-advice)
+    - [Some useful tricks to monitoring the project](#some-useful-tricks-to-monitoring-the-project)
+- [Paper]()
 
+-------
 -------
 -------
 ## IoT Medical Device:
