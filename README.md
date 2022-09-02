@@ -193,6 +193,11 @@ The flows in NodeRed look like in the following image:
 ![](/Documentation/Images/nodered_flows_example.png)
 Each device has its group of flows. All the flow configuration is in [flows.json](/Docker/dockerfiles/nodered/flows.json).
 
+The Dashboard looks like the following snapshot:
+![](/Documentation/Images/dashboard_complete.png)
+The dashboard has been customized using CSS. The CSS style used is in [styles-dashboard.css](/Docker/dockerfiles/nodered/styles-dashboard.css), and it must be introduced into the "template" node in the flow diagram.
+
+
 -----------------
 ## Other useful information:
 -----------------
