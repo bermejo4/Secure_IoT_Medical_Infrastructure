@@ -1,9 +1,18 @@
-# Medical IoT Infrastructure: 
+# Development of a Secure Medical IoT Infrastructure: 
 ------
 ## General information:
 
 This project is based on a previous one called [IoT_Medical_Device](https://github.com/bermejo4/IoT_Medical_Device) which you can also find in this GitHub account or by clicking on the link.
 
+## Index:
+- [IoT Medical Device](#iot-medical-device)
+    - [Raspberry Pi Pico and ESP8266](#raspberry-pi-pico-and-esp8266)
+    - Modes:
+        - [Configuration Mode](#configuration-mode)
+        - [Working Mode](#working-mode)
+- [Server](#server)
+
+-------
 -------
 ## IoT Medical Device:
 - ### Raspberry Pi Pico and ESP8266:
