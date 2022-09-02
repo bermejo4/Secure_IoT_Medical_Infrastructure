@@ -114,7 +114,7 @@ The broker works as an API, where services request a directory (topic) and it se
 
 ## 4.5. Docker.
 
-Docker offers standardization, being portable anywhere; lightweight, it only installs and uses resources that it will need; and security, isolating the programs and services running from the host machine. First, a dockerfile is used to configure specific dependencies that the containers need, like libraries, but based in an image. Then a docker-compose is used to run the containers. There are 3 containers running with different ports opened depending on the service:
+Docker offers standardization, being portable anywhere; lightweight, it only installs and uses resources that it will need; and security, isolating the programs and services running from the host machine. First, a dockerfile is used to configure specific dependencies that containers employed need, like libraries, but based on an image. Then a docker-compose is used to run the containers. Three containers are running with different ports opened depending on the service offered:
 - Python: 9998
 - EMQX: 18083 and 1883
 - NodeRed: 1880
