@@ -21,7 +21,7 @@ This project is based on a previous one called [IoT_Medical_Device](https://gith
 - [Other useful information](#other-useful-information)
     - [Keys and Password advice](#keys-and-password-advice)
     - [Some useful tricks to monitoring the project](#some-useful-tricks-to-monitoring-the-project)
-- [Paper]()
+- [Paper](#paper)
 
 -------
 -------
@@ -185,10 +185,13 @@ An internal network is deployed to connect EMQX, Python Server and NodeRed conta
 The Sniffers capture all the traffic and save it in two files (with .pcap extension) that can be accessed when the infrastructure is working to watch what is happening inside the docker network.
 The files are located in the Docker directory in the data folder. It can be read using Wireshark and then each packet can be filtered using the tools that offer this program. 
 
------------------
-## Node Red:
+#### Node-Red:
 
+Node-Red is employed to test that the MQTT publications from the MQTT Broker work properly and also, due to Node-Red gives an easy framework to make graphical user interfaces (GUIs), it is used as a dashboard to show clearly all the parameters that the system can offer.
 
+The flows in NodeRed look like in the following image:
+![](/Documentation/Images/nodered_flows_example.png)
+Each device has its group of flows. All the flow configuration is in [flows.json](/Docker/dockerfiles/nodered/flows.json).
 
 -----------------
 ## Other useful information:
@@ -217,3 +220,8 @@ If you want to close some process you have to find the process ID in this table 
 ```
 kill -15 [Process_ID]
 ``` 
+
+----------
+----------
+
+## Paper:
