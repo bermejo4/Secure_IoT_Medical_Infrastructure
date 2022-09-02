@@ -2,7 +2,7 @@
 ------
 ## General information:
 
-This project is based on a previous one called [IoT_Medical_Device](https://github.com/bermejo4/IoT_Medical_Device) which you can also find in this Github account or by clicking on the link.
+This project is based on a previous one called [IoT_Medical_Device](https://github.com/bermejo4/IoT_Medical_Device) which you can also find in this GitHub account or by clicking on the link.
 
 -------
 ## IoT Medical Device:
@@ -22,7 +22,7 @@ The pinout diagram is the following:
 
 3. A configuration page (whose code is [init_page.html](/Raspberry%20Pi%20Pico/init_page.html)) is shown, maybe it takes 10 seconds to load, wait for it to finish, please. The page looks like this: 
 
-![](/Documentation/Images/Conf_page.png)
+![](/Documentation/Images/conf_page_mobile.png)
 
 This webpage has been developed using HTML and JavaScript. The HTML for the structure of the page and JS for the functionality. It is important to say that the reason why the time loading average is about 10 seconds is that we are working with a device that hasn't got access to the Internet in this mode, so the JS library used for the AES encryption is fully injected in the webpage without using script URL reference, so all this information have to be sent by the device, about 61772 bytes of library code (all the HTML file is 65.3 KB), in packets of 2000 bytes (esp8266 maximum limit is 2048 bytes buffer to send), in a period of 300 ms each packet; it's about 9 additional seconds of loading without taking account the delay time of the browser and the wifi card of your computer or smartphone. The rest of the page without the library is only 3.6KB that is sent in 500 ms more or less. By becoming a better and more secure system the price to pay is in time.
 
@@ -52,7 +52,7 @@ Both modes (Configuration Mode and Working Mode) communications are ciphered wit
 ![](/Documentation/Images/cbc_aes.jpeg)
 The keys and initialization vectors are saved in configuration files. Please read the advice: [Keys Advice](#keys-and-password-advice)
 
-The library used for the AES encryption and decryption inside the pico is the maes from [maes Github](https://github.com/piaca/micropython-aes).
+The library used for the AES encryption and decryption inside the pico is the Maes from [Maes Github](https://github.com/piaca/micropython-aes).
 
 
 - ### Pseudo Pico Client:
@@ -84,7 +84,7 @@ The ECG cardiogram is provided by [Scipy.misc.electrocardiogram](https://docs.sc
 from scipy.misc import electrocardiogram
 ```
 
-The data is also encrypted with the AES 128-bit key using the CBC mode. But the library used is different. In the Pico, maes is employed but here, in the pseudo pico, the Cryptodome library is used. 
+The data is also encrypted with the AES 128-bit key using the CBC mode. But the library used is different. In the Pico, Maes is employed but here, in the pseudo pico, the Cryptodome library is used. 
 ```
 from Crypto.Cipher import AES
 ``` 
@@ -93,18 +93,18 @@ from Crypto.Cipher import AES
 
 ## Server:
 
-![](/Documentation/Images/Diagram_Server.png)
+![](/Documentation/Images/Diagram_Server_light.png)
 
 - #### Proxy Server: 
 
-The [Proxy Server](/Proxy%20Server/Server_multi.py) is a server that listens on port 9998 (the port can be changed) and receives TCP connections to that port from an external device. Once it receives a connection, this connection is managed by a thread, that deploys an [Internal Server](/Proxy%20Server/AesPythonServerToMQTT.py) with a specific port listen (from port 10700 upwards), and then establishes a TCP connection with it. Everything that the proxy server receives from this first external connection it sends to the new internal server deployed, is like a bypass as can be observed in the previous figure. 
-When another connection arrives from another device to port 9998, another thread is created and, as previously have been described, a new internal server (different from the other, in another port, maybe 10701) is deployed and is connected to it, sending to it everything that it receives. If it receives another connection, the same process is repeated, and so on. 
+The [Proxy Server](/Proxy%20Server/Server_multi.py) is a server that listens on port 9998 (the port can be changed) and receives TCP connections to that port from an external device. Once it receives a connection, this connection is managed by a thread, that deploys an [Internal Server](/Proxy%20Server/AesPythonServerToMQTT.py) with a specific port listen (random free port), and then establishes a TCP connection with it. Everything that the proxy server receives from this first external connection it sends to the new internal server deployed, is like a bypass as can be observed in the previous figure. 
+When another connection arrives from another device to port 9998, another thread is created and, as previously have been described, a new internal server (different from the other, in another free port) is deployed and is connected to it, sending to it everything that it receives. If it receives another connection, the same process is repeated, and so on. 
 At the moment it can only manage 5 connections simultaneously, but that can be changed in the code.
 
 - #### Internal Server:
 
 The [Internal Server](/Proxy%20Server/AesPythonServerToMQTT.py) is the brain of the whole server. As has been described previously, it is deployed by the [Proxy Server](/Proxy%20Server/Server_multi.py) and it listens from port 10700 upwards. It develops many functions:
-1. Authentication: When data flow arrives at the server, it is ciphered and is unreadable, so the internal server must identify to whom it belongs to load the respective keys. For that, it has a file with all the keys and initialization vectors for each device, and it tries to decrypt the message with each one, when it finds something that it expects with a determined format, it assumes that it has identified the user, so it loads the key and the initialization vector.
+1. Authentication: When data flow arrives at the server, it is ciphered and unreadable, so the internal server must identify to whom it belongs to load the respective keys. For that, it has a file with all the keys and initialization vectors for each device, and it tries to decrypt the message with each one, when it finds something that it expects with a determined format, it assumes that it has identified the user, so it loads the key and the initialization vector.
 
 2. AES Decryption: Once the key and the initialization vector are loaded it decrypts the data with them. The AES is 128-bit and CBC mode. 
 
@@ -124,6 +124,10 @@ Pico/iot_dev_01/Physiological_Data/Accelerometer/y
 Pico/iot_dev_01/Physiological_Data/Accelerometer/z
 Pico/iot_dev_01//Internal_Device_Data/Temperature/MCU
 Pico/iot_dev_01//Internal_Device_Data/Temperature/MPU
+Pico/iot_dev_01/Ip_address
+Pico/iot_dev_01/Port_address
+Pico/iot_dev_01/Internal_Server/Ip_address
+Pico/iot_dev_01/Internal_Server/Port_address
 ```
 Where iot_dev_01 is the device identified previously. 
 The variables that were saved in the JSON unformat are published in their respective topics.
@@ -138,15 +142,39 @@ The EMQX service is running in the server with only a piece of code in the [dock
 
 - #### Docker:
 
+Docker offers:
+- standardization, being portable anywhere.
+- lightweight, it only installs and uses the resources that it will need.
+- Security, isolating the programs and services running from the host machine. 
+
+First, a Dockerfile is used to configure specific dependencies that containers employed need, like libraries, but based on an image. Then a docker-compose is used to run the containers. Five containers are running with different ports opened (or not) depending on the service offered:
+
+- Python: 9998
+- EMQX: 18083 and 1883
+- NodeRed: 1880
+- 2 sniffers:
+    - EMQX Sniffer: without port opened. It captures all the traffic that passes through the EMQX internal network interface.
+    - Python Server Sniffer. It captures all the traffic that passes through its python server-internal network interface.
+
+An internal network is deployed to connect EMQX, Python Server and NodeRed containers. A static IP address has been set for them, that can be modified in the docker-compose file. The network is 172.20.0.0/16 and the static addresses given are:
+- Python Server: 172.20.0.10
+- EMQX: 172.20.0.20
+- NodeRed: 172.20.0.25
+
+The Sniffers capture all the traffic and save it in two files (with .pcap extension) that can be accessed when the infrastructure is working to watch what is happening inside the docker network.
+The files are located in the Docker directory in the data folder. It can be read using Wireshark and then each packet can be filtered using the tools that offer this program. 
+
 -----------------
 ## Node Red:
+
+
 
 -----------------
 ## Other useful information:
 -----------------
 ## Keys and Password advice:
  ⚠️ The following files are only to show examples or as samples. 
-They are not the official keys or passwords.
+They are not official keys or passwords.
 
 - [DEVICES_KEYS.txt](/Python%20Server/DEVICES_KEYS.txt)
 - [PKEYS_CLIENT_MOD.txt](/Raspberry%20Pi%20Pico/PKEYS_CLIENT_MOD.txt)
