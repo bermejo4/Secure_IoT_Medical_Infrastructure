@@ -1,46 +1,53 @@
 # Development of a Secure Medical IoT Infrastructure:
 # Abstract
+
+The aim of the present project is the development of a secure IoT infrastructure with medical purposes, capable of being configurable to offer a close user-friendly experience. The system works by collecting the data from the user in an IoT device, encrypting it and sending it to a remote server. Once the data arrive they are decrypted and shared with other legitimate devices through MQTT using an MQTT broker server with different purposes. The data from the MQTT broker is presented in a dashboard as an example of these purposes.
+
 # 1. Introduction:
 
-The Internet of Things (IoT) is the concept of connecting any device (so long as it has an on/off switch) to the Internet and to other connected devices [1]. The IoT world is mostly made up of systems with low computing power, power consumption, memory and disk space that are deployed in insecure networking environments [2] for that reason IoT devices and their infrastructure can be considered vulnerable assets which must be protected using different controls and cybersecurity policies in order to avoid failures, and especially in the health sector, due to, consequences of IoT security failures might cause a direct loss of life [3]. 
+The Internet of Things (IoT) is the concept of connecting any device (so long as it has an on/off switch) to the Internet and to other connected devices [1]. The IoT world is mostly made up of systems with low computing power, power consumption, memory and disk space that are deployed in insecure networking environments [2]. For that, IoT devices and their infrastructure can be considered vulnerable assets which must be protected using different controls and cybersecurity policies in order to avoid failures. These must be taken into account, especially 
 
-An IoT ecosystem is typically composed of embedded devices and sensors, mobile applications, cloud infrastructure, and network communication protocols [4], and in each one of these components must be present the CIA triad (Confidentiality, integrity and availability) to be a secure system, that is a model designed to guide policies for information security within an organization. The elements of the triad are considered the three most crucial components of security [5]. A solution to fulfill these requirements is the encryption of the communication between the elements that compose the IoT infrastructure. Symmetric or asymmetric encryption can be applied, the difference is trust between the data intermediaries. In this work symmetric will be enough because there is trust in the IoT ecosystem. The most famous, used and secure symmetric encryption algorithm is AES (Advanced Encryption Standard). It is based on a design principle known as a substitution–permutation network and is efficient in both software and hardware. AES processes blocks of 128 bits using a secret key of 128, 192 or 256 bits [6]. AES has a variety of modes of operation. In cryptography, a block cipher mode of operation is an algorithm that uses a block cipher to provide information security such as confidentiality or authenticity. [7]
+Especially in the health sector these must be taken into account, due to, the consequences of IoT security failures might cause a direct loss of life [3] or a sensible data loss (LOPD). 
 
-The secure IoT infrastructure challenge is well known by the whole cybersecurity community, and proof of that is the work of K. Siva Kumar Swamy et al.[8] where a secure IoT infrastructure is built using esp32 board as a device and client, MQTT bridge and broker (Mosquitto) as intermediaries, MQTT protocol with AES over WiFi as communication protocols, and services as final receivers. MQTT is a Machine-Machine connectivity protocol. It works on top of the TCP/IP stack but is extremely lightweight because it minimizes messaging using a publish-subscribe architecture [9]. One of the main problems with MQTT is that authentication is optional, and even if it is used, it is unencrypted by default. When credentials are transmitted in cleartext, attackers with a man-in-the-middle position on the network can steal them and also brokers don't typically limit the number of authentication attempts per client [10]. So before using MQTT these problems should be solved or be used in a controlled environment. A system very similar to the previous work mentioned is shown by Mohammad Al-Mashhadani et al. [11], using also AES, but they avoid MQTT and their infrastructure. The Esp32 is also used, a versatile and multifunction, but more functionality than a device needs, increasing the ways an attacker can exploit it [12], and also, as more disadvantages, the device has high consumes and size.
+An IoT ecosystem is typically composed of embedded devices and sensors, mobile applications, cloud infrastructure, and network communication protocols [4], and in each one of these components must be present the CIA triad (Confidentiality, integrity and availability) to be a secure system, that is a model designed to guide policies for information security within an organization. The elements of the triad are considered the three most crucial components of security [5]. 
 
-One disadvantage of encryption is that increase the consumption, complexity and delays of the system in a way directly proportional to the size of data to be encrypted. Some cryptographers try to improve the AES algorithm to be applied in a light mode to IoT devices in order to reduce the consumption and times, as Meryam Saad Fadhil et al.[13] show in their work. The problem with that is that it is trying to reinvent the wheel when AES is standardized and tested, and applying a new algorithm (or only a little modification) that has not been sufficiently tested can be a risky action in cybersecurity words only to reduce a little unit of consumption or time. 
+A solution to fulfill these requirements is the encryption of the communication between the elements that compose the IoT infrastructure. Symmetric or asymmetric encryption can be applied, the difference is trust between the data intermediaries, who have to encrypt and decrypt data. In this work symmetric will be enough because there is trust in the IoT ecosystem. The most famous, used and secure symmetric encryption algorithm is AES (Advanced Encryption Standard). It is based on a design principle known as a substitution–permutation network and is efficient in both software and hardware. AES processes blocks of 128 bits using a secret key of 128, 192 or 256 bits [6]. AES has a variety of modes of operation: ECB, CBC, CFB, etc. 
 
-From a broad point of view, the final destination of this project is to improve the previous project [14] developed giving it security and new features to enhance the system and infrastructure to a close user-friendly and professional experience.
+The secure IoT infrastructure challenge is well known by the whole cybersecurity community, and proof of that is the work of K. Siva Kumar Swamy et al.[8] where a secure IoT infrastructure is built using esp32 board as a device and client, MQTT bridge and broker (Mosquitto) as intermediaries, MQTT protocol with AES over WiFi as communication protocols, and services as final receivers. MQTT is a Machine-Machine connectivity protocol. It works on top of the TCP/IP stack but is extremely lightweight because it minimizes messaging using a publish-subscribe architecture [9]. One of the main problems with MQTT is that authentication is optional, and even if it is used, it is unencrypted by default. When credentials are transmitted in cleartext, attackers with a man-in-the-middle position on the network can steal them and even brokers don't typically limit the number of authentication attempts per client [10]. So before using MQTT these problems should be solved or be used in a controlled environment. A system very similar to the previous work mentioned is shown by Mohammad Al-Mashhadani et al. [11], using also AES, but they avoid MQTT and their infrastructure. The Esp32 is also used, a versatile and multifunction, but more functionality than a device needs, increasing the ways an attacker can exploit it [12], and also, as more disadvantages, the device has high consumes and size.
+
+One disadvantage of encryption is the consumption increase, complexity and delays of the system in a way directly proportional to the size of the data to be encrypted. Some cryptographers try to improve the AES algorithm to be applied in a light mode to IoT devices in order to reduce the consumption and times, as Meryam Saad Fadhil et al.[13] show in their work. But they are trying to reinvent the wheel, because AES is standardized and tested, and applying a new algorithm (or only a little modification) that has not been sufficiently tested can be a risky action, in cybersecurity words, only to reduce a little unit of consumption or time. 
+
+From a broad point of view, the final destination of this project is to improve the previous project [14], giving it security, new features and services to enhance the system and infrastructure for a close user-friendly and professional experience.
 
 
 # 2. Technical Proposal:
 
+## 2.1 Requirements:
+
 The main purpose is to develop a platform that reaches the following objectives:
 
-- First, keep the features and objectives reached in the previous project of multisensor, wearable, wireless, low-cost, scalable, and small device system without interfering with the new objectives here proposed. 
+- First, keep the features and objectives reached in the previous project (those were a multisensor, wearable, wireless, low-cost, scalable, and small device system) without interfering with the new objectives here proposed. 
 
-- Second, Configurability: some parameters can change in the IoT environment like the Server IP and port, or the wifi network and its password. For a more user-friendly experience, it can be changed put the device in a configuration mode, and modify it in a web browser with a graphical user interface.
+- Second, apply configurability: some parameters can change in the IoT environment like the Server IP and port, or the wifi network and its password. For a more user-friendly experience, it can be changed put the device in a configuration mode, and modify it in a web browser with a graphical user interface.
 
-- Third, communication encryption and authentification: using AES 128-bit key for both purposes. The encryption is reasonable with AES, authentification is a consequence of it because only those who have the key can encrypt and decrypt the data, and only two parties know the key, so each one can identify the other. 
+- Third, communication encryption and authentification: using AES 128-bit key for both purposes. The encryption is reasonable with AES, and authentification is a consequence of it because only those who have the key can encrypt and decrypt the data, only two parties know the key, so each one can identify the other. 
 
-- Fourth, multiclient service: The server can manipulate multiple TCP/IP connections that arrive and deploy a new service for each connection that arrives authenticating each device depending on a list of keys previously registered in the server as well-known devices.
+- Fourth, a multiclient service: The server can manipulate multiple TCP/IP connections that arrive and deploy a new service for each connection that arrives authenticating each device depending on a list of keys previously registered in the server as well-known devices.
 
-- Fifth, MQTT Broker and MQTT: as a scalable system to share the data collected from each device and share it with authenticated applications or other devices.
+- Fifth, to use an MQTT Broker and MQTT as a scalable system to share the data collected from each device and share it with authenticated applications or other devices.
 
-The system now works as follows:
-
-If the system has never been configured it must be put in configuration mode with a slide button that is in the device. Then a wifi network is enabled without a password, when the user access it, opens the web browser and searches "192.168.4.1", then a page is shown as in figure 1, where the user can register the IP address and port of the server, the Wi-Fi where the device will be connected and its password, also there are two keys that must be entered to cipher the data which will be sent to the device. Once everything is completed the user clicks on the save button and this information is saved into the device. 
+## 2.2 Process
+The device consists of a Raspberry Pi Pico connected to an ESP-8266 Wi-Fi Module and 3 module sensors (pulse, temperature and movement) connected to the Pico. The device has two slide buttons one for switching on-off and the other to change work mode. The device can work in a Configuration Mode or in a Data Collector Mode.
+If the system has never been configured it must be put in the configuration mode with a slide button that is in the device. Then a wifi network is enabled without a password, when the user access it, opens the web browser and searches "192.168.4.1", then a page is shown as in figure 1, where the user can register the IP address and port of the server, the Wi-Fi where the device will be connected and its password, also there are two keys that must be entered to cipher the data which will be sent to the device. Once everything is completed the user clicks on the save button and this information is saved into the device. 
 
 ![Configuration Page image](/Documentation/Images/conf_page_mobile.png)
 **Figure 1.** *Configuration page shown in the browser*
 
 Next, the device switches automatically to work mode, it collects data and sends it to an access point (using the Wi-Fi network and password specified in the configuration mode). A server in the IP address and listen in the port specified receives the data and sends it to an MQTT broker where it will be published to be used by authenticated applications, like a dashboard where the data will be shown in a graphical mode.
 
-# 3. Architecture: 
+# 3. Architecture:  
 
-The architecture can be understood in two phases, the first one the configuration phase, where the device operates as an access point and web server, and the second, the work phase, where the device operates as a client. 
-
-## 3.1. The device as an access point and server:
+## 3.1. Configuration Mode:
 
 The device works as an access point enabling a Wi-Fi network called "Med_IoT" without a password but allowing only one connection as a cybersecurity policy. Then whatever user can access it with a laptop or a smartphone.
 Immediately after the access point is enabled, a web server is deployed in port 80, so the device is working as a server, and the laptop or smartphone that is used to communicate with it as a client. It offers a web page based on HTML and Javascript in the IP address 192.168.4.1 (the IP address of the device in the network created by itself) called "init_page.html". When the user clicks on save the data is sent ciphered to the device, where will be decrypted and stored in a configuration file. All the communication process is carried over HTTP/TCP. Figure 2 shows the whole process.
@@ -48,13 +55,20 @@ Immediately after the access point is enabled, a web server is deployed in port 
 ![Pico as a web server](/Documentation/Images/Pico_as_web_server.png)
 **Figure 2.** *Pico as server diagram*
 
-## 3.2. The device as a Client:
-Once the data is configured the device starts to operate in work mode or also if the slide button is in work mode state. It takes the parameter that needs to establish the TCP connection with the server (IP address and port 9998; and the Wi-Fi network and password as network gateway), collects the data from its sensors, formats it in a JSON, encrypts it using AES and then sends the encrypted data through the connection established. Next, it starts again the loop since the part of collecting sensor data and so on as Figure 3 shows.
+## 3.2. Data Collector Mode:
+Once the data is configured the device starts to operate in work mode or also if the slide button is in work mode state. 
+
+To have an idea of how this mode works a diagram of it is presented in Figure 6 and is explained along this section.
+
+The device takes the parameter that needs to establish the TCP connection with the server (IP address and port 9998; and the Wi-Fi network and password as network gateway), collects the data from its sensors, formats it in a JSON, encrypts it using AES and then sends the encrypted data through the connection established. Next, it starts again the loop since the part of collecting sensor data and so on as Figure 3 shows.
 
 ![Intern process](/Documentation/Images/pico_intern_process.png) 
 **Figure 3.** *Pico intern process diagram* 
 
-Then the data travel secure, by the encryption, through a network, that can be a local network or the Internet, until arriving at the destination, a server listens in the 9998 port. 
+Then the data travel secure, by the encryption, through a network, that can be a local network or the Internet, until arriving at the destination, a server listens in the 9998 port (figure 6).
+
+Figure 6 describes the whole process of collector mode presented along this section.
+
 The server can be explained in three parts: proxy server, internal server and MQTT broker. The proxy server listens in the 9998 port, when a connection arrives it manages the connection, deploys an internal server listens in a specific port (random free port), establishes a TCP connection with that port, and bypass all the traffic that arrives from the initial connection to the TCP connection that connects with the internal server. If it receives another connection in port 9998, the same process is repeated, and so on but changing the port of the internal server. When the data is received by the internal server deployed it has the following tasks:
 
 - Authentication: When data flow arrives at the server, it is ciphered and is unreadable, so the internal server must identify to whom it belongs to load the respective key. For that, it has a file with all the keys for each device, and it tries to decrypt the message with each one, when it finds something that it expects with a determined format, it assumes that it has identified the user, so it loads the key and the initialization vector. This process only occurs once, then the key will be associated with the connection.
@@ -83,7 +97,7 @@ All the server infrastructure can be dockerized, giving the infrastructure the a
 
 ## 4.1. Cybersecurity:
 
-All the communications susceptible to Man in the Middle attacks are encrypted using AES. Specifically, AES CBC (Cipher Block Chaining) operation mode, using a 128-bit key and a 128-bit initialization vector. In CBC mode, each block of plaintext is XORed with the previous ciphertext block before being encrypted. This way, each ciphertext block depends on all plaintext blocks processed up to that point. To make each message unique, an initialization vector must be used in the first block. The initialization vector can be generated randomly.
+All the communications susceptible to Man in the Middle attacks are encrypted using AES. Specifically, AES CBC (Cipher Block Chaining) operation mode, using a 128-bit key and a 128-bit initialization vector. In cryptography, a block cipher mode of operation is an algorithm that uses a block cipher to provide information security such as confidentiality or authenticity [7]. In CBC mode, each block of plaintext is XORed with the previous ciphertext block before being encrypted. This way, each ciphertext block depends on all plaintext blocks processed up to that point. To make each message unique, an initialization vector must be used in the first block. The initialization vector can be generated randomly.
 Other cybersecurity policies applied to the infrastructure can be the unique connection to the wi-fi network generated by the device in the configuration mode, the lack of the Internet in that phase, the avoidance of MQTT protocol in the device and its threats, or the dockerization of the server isolating it.
 
 ## 4.2. Configurability:
