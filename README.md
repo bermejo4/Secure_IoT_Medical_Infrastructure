@@ -230,3 +230,5 @@ kill -15 [Process_ID]
 ----------
 
 ## Paper:
+
+[Project Paper in pdf](/Medical_iot_secure_infrastructure.pdf)
